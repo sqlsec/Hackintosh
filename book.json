@@ -1,0 +1,44 @@
+{
+    "title": "Python学习记录",
+      "author": "国光",
+      "language": "zh-hans",
+      "links": {
+          "sidebar": {
+            "个人博客": "//www.sqlsec.com"
+          }
+        },
+      "plugins": [
+          "splitter",
+          "-lunr", 
+          "-search", 
+          "-sharing",
+          "search-plus",
+          "anchor-navigation-ex",
+          "expandable-chapters-small",
+          "copy-code-button",
+          "lightbox",
+          "tbfed-pagefooter",
+          "hide-element",
+          "-highlight",
+          "prism", 
+          "prism-themes"
+        ],
+      "pluginsConfig": {
+          "anchor-navigation-ex": {
+              "showLevel": false
+          },
+          "tbfed-pagefooter": {
+            "copyright":"",
+            "modify_label": "该文章最后修改时间：",
+            "modify_format": "YYYY-MM-DD HH:mm:ss"
+        },
+        "hide-element": {
+            "elements": [".gitbook-link"]
+        },
+        "prism": {
+          "css": [
+            "prism-themes/themes/prism-dracula.css"
+          ]
+        }
+      }
+}

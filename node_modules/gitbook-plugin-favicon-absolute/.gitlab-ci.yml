@@ -1,0 +1,14 @@
+pages:
+  stage: deploy
+  script:
+    - cd docs
+    - tar -zcvf ./public.tar.gz ./*
+    - cd ..
+    - mkdir ./public
+    - tar -zxvf ./docs/public.tar.gz -C ./public
+    - rm -rf ./docs/public.tar.gz
+  artifacts:
+    paths:
+      - public
+  only:
+    - master
