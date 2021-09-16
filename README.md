@@ -8,7 +8,7 @@
 
 本 Gitbook 系列的原版文件开源项目地址为：https://github.com/sqlsec/Hackintosh
 
-## Why Reinventing the wheel?
+## Why Reinventing 轮子?
 
 为什么要重复造轮子呢？国光我不是一个喜欢重复造轮子的人，而且这个工作量本身也很大，平时的工作任务本身就很有挑战性了，还得抽出时间写这个系列，这不是自讨苦吃吗。所以我想分享一下，写这个系列的 Gitbook 的几个原因：
 
@@ -24,3 +24,12 @@
 
 好了，说了一堆乱七八糟的了，下面黑苹果教程正式开始。
 
+## 一起完善 together
+
+当然一个人的经历是有限的，疏漏难以避免，如果你发现错误或者遗留的话可以直接发我邮箱即可 admin@sqlsec.com 或者直接通过 Github 提交 PR 也是很欢迎的。
+
+## 参考资料 Reference
+
+- [Dortania's OpenCore Install Guide](https://dortania.github.io/OpenCore-Install-Guide/) 
+- [[指南] hackintosh之SSDT/DSDT · Mac OS之程序员 · 看云](https://www.kancloud.cn/chandler/mac_os/482278#SSDTDSDT_9) 
+- [DSDT - ArchWiki](https://wiki.archlinux.org/title/DSDT) 
