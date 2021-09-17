@@ -1,0 +1,857 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>2. 硬件限制 · Python学习记录</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="国光">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-lightbox/css/lightbox.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-dracula.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="1-3.html" />
+    
+    
+    <link rel="prev" href="1-1.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="//www.sqlsec.com" target="_blank" class="custom-link">个人博客</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    一、前言介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    二、基础知识
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="1-1.html">
+            
+                <a href="1-1.html">
+            
+                    
+                    1. 基操勿六
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.2" data-path="1-2.html">
+            
+                <a href="1-2.html">
+            
+                    
+                    2. 硬件限制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="1-3.html">
+            
+                <a href="1-3.html">
+            
+                    
+                    3. 寻找硬件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="1-4.html">
+            
+                <a href="1-4.html">
+            
+                    
+                    4. 专业术语
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../2-启动盘制作/">
+            
+                <a href="../2-启动盘制作/">
+            
+                    
+                    三、U盘制作
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../2-启动盘制作/2-1.html">
+            
+                <a href="../2-启动盘制作/2-1.html">
+            
+                    
+                    1. 下载镜像
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../2-启动盘制作/2-2.html">
+            
+                <a href="../2-启动盘制作/2-2.html">
+            
+                    
+                    2. 写入镜像
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../2-启动盘制作/2-3.html">
+            
+                <a href="../2-启动盘制作/2-3.html">
+            
+                    
+                    3. 结构讲解
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../3-准备工作/">
+            
+                <a href="../3-准备工作/">
+            
+                    
+                     四、准备工作
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../3-准备工作/3-1.html">
+            
+                <a href="../3-准备工作/3-1.html">
+            
+                    
+                    1. BIOS设置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../3-准备工作/3-2.html">
+            
+                <a href="../3-准备工作/3-2.html">
+            
+                    
+                    2. OC 文件结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../3-准备工作/3-3.html">
+            
+                <a href="../3-准备工作/3-3.html">
+            
+                    
+                    3. 准备 ACPI
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../3-准备工作/3-4.html">
+            
+                <a href="../3-准备工作/3-4.html">
+            
+                    
+                    4. 准备 Kexts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../3-准备工作/3-5.html">
+            
+                <a href="../3-准备工作/3-5.html">
+            
+                    
+                    5. Drivers说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../3-准备工作/3-6.html">
+            
+                <a href="../3-准备工作/3-6.html">
+            
+                    
+                    6. Tools说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="../3-准备工作/3-7.html">
+            
+                <a href="../3-准备工作/3-7.html">
+            
+                    
+                    7. 初步配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >2. 硬件限制</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div class="search-plus" id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#2-&#x786C;&#x4EF6;&#x9650;&#x5236;"><b></b>2. &#x786C;&#x4EF6;&#x9650;&#x5236;</a></li><ul><li><span class="title-icon "></span><a href="#cpu-&#x652F;&#x6301;"><b></b>CPU &#x652F;&#x6301;</a></li><ul><li><span class="title-icon "></span><a href="#&#x684C;&#x9762;-cpu"><b></b>&#x684C;&#x9762; CPU</a></li><li><span class="title-icon "></span><a href="#&#x7B14;&#x8BB0;&#x672C;-cpu"><b></b>&#x7B14;&#x8BB0;&#x672C; CPU</a></li><li><span class="title-icon "></span><a href="#&#x9AD8;&#x7AEF;&#x684C;&#x9762;-cpu"><b></b>&#x9AD8;&#x7AEF;&#x684C;&#x9762; CPU</a></li><li><span class="title-icon "></span><a href="#amd-cpu"><b></b>AMD CPU</a></li></ul><li><span class="title-icon "></span><a href="#gpu-&#x652F;&#x6301;"><b></b>GPU &#x652F;&#x6301;</a></li><li><span class="title-icon "></span><a href="#&#x4E3B;&#x677F;&#x652F;&#x6301;"><b></b>&#x4E3B;&#x677F;&#x652F;&#x6301;</a></li><li><span class="title-icon "></span><a href="#&#x786C;&#x76D8;&#x652F;&#x6301;"><b></b>&#x786C;&#x76D8;&#x652F;&#x6301;</a></li><li><span class="title-icon "></span><a href="#&#x6709;&#x7EBF;&#x7F51;&#x5361;"><b></b>&#x6709;&#x7EBF;&#x7F51;&#x5361;</a></li><li><span class="title-icon "></span><a href="#&#x65E0;&#x7EBF;&#x7F51;&#x5361;"><b></b>&#x65E0;&#x7EBF;&#x7F51;&#x5361;</a></li><li><span class="title-icon "></span><a href="#&#x58F0;&#x5361;&#x652F;&#x6301;"><b></b>&#x58F0;&#x5361;&#x652F;&#x6301;</a></li><li><span class="title-icon "></span><a href="#&#x5176;&#x4ED6;&#x786C;&#x4EF6;"><b></b>&#x5176;&#x4ED6;&#x786C;&#x4EF6;</a></li></ul></ul></div><a href="#2-&#x786C;&#x4EF6;&#x9650;&#x5236;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="2-&#x786C;&#x4EF6;&#x9650;&#x5236;"><a name="2-&#x786C;&#x4EF6;&#x9650;&#x5236;" class="anchor-navigation-ex-anchor" href="#2-&#x786C;&#x4EF6;&#x9650;&#x5236;"><i class="fa fa-link" aria-hidden="true"></i></a>2. &#x786C;&#x4EF6;&#x9650;&#x5236;</h1>
+<p>&#x9ED1;&#x82F9;&#x679C;&#x7684;&#x786C;&#x4EF6;&#x548C;&#x767D;&#x82F9;&#x679C;&#x8D8A;&#x63A5;&#x8FD1;&#x7EA6;&#x597D;&#xFF0C;&#x8FD9;&#x6837;&#x9ED1;&#x8D77;&#x6765;&#x624D;&#x6BD4;&#x8F83;&#x987A;&#x5229;&#xFF0C;&#x6700;&#x540E;&#x7684;&#x5B8C;&#x6210;&#x5EA6;&#x4E5F;&#x6BD4;&#x8F83;&#x9AD8;&#x3002;</p>
+<h2 id="cpu-&#x652F;&#x6301;"><a name="cpu-&#x652F;&#x6301;" class="anchor-navigation-ex-anchor" href="#cpu-&#x652F;&#x6301;"><i class="fa fa-link" aria-hidden="true"></i></a>CPU &#x652F;&#x6301;</h2>
+<h3 id="&#x684C;&#x9762;-cpu"><a name="&#x684C;&#x9762;-cpu" class="anchor-navigation-ex-anchor" href="#&#x684C;&#x9762;-cpu"><i class="fa fa-link" aria-hidden="true"></i></a>&#x684C;&#x9762; CPU</h3>
+<p>&#x4EE5;&#x4F60;&#x7684; CPU &#x4EE3;&#x53F7;&#x67B6;&#x6784;&#x4E3A;&#x51C6;&#xFF0C;&#x540E;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#x4EC5;&#x4F9B;&#x53C2;&#x8003;&#xFF0C;CPU &#x578B;&#x53F7;&#x6DF7;&#x4E71;&#xFF0C;&#x6240;&#x4EE5;&#x5E76;&#x4E0D;&#x5B8C;&#x6574;&#x3002;</p>
+<table>
+<thead>
+<tr>
+<th>CPU &#x4EE3;&#x53F7;</th>
+<th>&#x4E2D;&#x6587;&#x540D;</th>
+<th>for example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Penryn</td>
+<td>&#xFF1F;&#xFF1F;&#xFF1F;</td>
+<td>&#x592A;&#x8001;&#x4E86; &#x6211;&#x4E5F;&#x592A;&#x61D2;&#x4E86; &#x4E0D;&#x5199;&#x4E86;</td>
+</tr>
+<tr>
+<td>Yonah</td>
+<td>&#x5C24;&#x5A1C;&#xFF1F;</td>
+<td>&#x592A;&#x8001;&#x4E86; &#x6211;&#x4E5F;&#x592A;&#x61D2;&#x4E86; &#x4E0D;&#x5199;&#x4E86;</td>
+</tr>
+<tr>
+<td>Conroe</td>
+<td>&#xFF1F;&#xFF1F;&#xFF1F;</td>
+<td>&#x592A;&#x8001;&#x4E86; &#x6211;&#x4E5F;&#x592A;&#x61D2;&#x4E86; &#x4E0D;&#x5199;&#x4E86;</td>
+</tr>
+<tr>
+<td>Merom</td>
+<td>&#xFF1F;&#xFF1F;&#xFF1F;</td>
+<td>&#x592A;&#x8001;&#x4E86; &#x6211;&#x4E5F;&#x592A;&#x61D2;&#x4E86; &#x4E0D;&#x5199;&#x4E86;</td>
+</tr>
+<tr>
+<td>Penryn</td>
+<td>&#xFF1F;&#xFF1F;&#xFF1F;</td>
+<td>&#x592A;&#x8001;&#x4E86; &#x6211;&#x4E5F;&#x592A;&#x61D2;&#x4E86; &#x4E0D;&#x5199;&#x4E86;</td>
+</tr>
+<tr>
+<td>Lynnfield</td>
+<td>&#xFF1F;&#xFF1F;&#xFF1F;</td>
+<td>&#x592A;&#x8001;&#x4E86; &#x6211;&#x4E5F;&#x592A;&#x61D2;&#x4E86; &#x4E0D;&#x5199;&#x4E86;</td>
+</tr>
+<tr>
+<td>Clarkdale</td>
+<td>&#xFF1F;&#xFF1F;&#xFF1F;</td>
+<td>&#x592A;&#x8001;&#x4E86; &#x6211;&#x4E5F;&#x592A;&#x61D2;&#x4E86; &#x4E0D;&#x5199;&#x4E86;</td>
+</tr>
+<tr>
+<td>Sandy Bridge</td>
+<td>&#x6851;&#x8FEA;&#x6865;</td>
+<td>2 &#x4EE3;&#x9177;&#x777F;</td>
+</tr>
+<tr>
+<td>Ivy Bridge</td>
+<td>&#xFF1F;&#xFF1F;&#xFF1F;</td>
+<td>3 &#x4EE3;&#x9177;&#x777F;</td>
+</tr>
+<tr>
+<td>Haswell</td>
+<td>&#x54C8;&#x65AF;&#x5A01;&#x5C14;</td>
+<td>4 &#x4EE3;&#x9177;&#x777F;</td>
+</tr>
+<tr>
+<td>Broadwell</td>
+<td>&#x5E03;&#x7F57;&#x5FB7;&#x97E6;&#x5C14;</td>
+<td>5 &#x4EE3;&#x9177;&#x777F;</td>
+</tr>
+<tr>
+<td>SkyLake</td>
+<td>&#x5929;&#x7A7A;&#x6E56;</td>
+<td>6 &#x4EE3;&#x9177;&#x777F;</td>
+</tr>
+<tr>
+<td>Kaby Lake</td>
+<td>&#x5361;&#x6BD4;&#x6E56;</td>
+<td>7 &#x4EE3;&#x9177;&#x777F;</td>
+</tr>
+<tr>
+<td>Coffee Lake</td>
+<td>&#x5496;&#x5561;&#x6E56;</td>
+<td>8&#x3001;9 &#x4EE3;&#x9177;&#x777F;</td>
+</tr>
+<tr>
+<td>Comet Lake</td>
+<td>&#x5F57;&#x661F;&#x6E56;</td>
+<td>10 &#x4EE3;&#x9177;&#x777F;</td>
+</tr>
+</tbody>
+</table>
+<h3 id="&#x7B14;&#x8BB0;&#x672C;-cpu"><a name="&#x7B14;&#x8BB0;&#x672C;-cpu" class="anchor-navigation-ex-anchor" href="#&#x7B14;&#x8BB0;&#x672C;-cpu"><i class="fa fa-link" aria-hidden="true"></i></a>&#x7B14;&#x8BB0;&#x672C; CPU</h3>
+<p>&#x4EE5;&#x4F60;&#x7684; CPU &#x4EE3;&#x53F7;&#x67B6;&#x6784;&#x4E3A;&#x51C6;&#xFF0C;&#x540E;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#x4EC5;&#x4F9B;&#x53C2;&#x8003;&#xFF0C;CPU &#x578B;&#x53F7;&#x6DF7;&#x4E71;&#xFF0C;&#x6240;&#x4EE5;&#x5E76;&#x4E0D;&#x5B8C;&#x6574;&#x3002;</p>
+<table>
+<thead>
+<tr>
+<th>CPU &#x4EE3;&#x53F7;</th>
+<th>&#x4E2D;&#x6587;&#x540D;</th>
+<th>for example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Clarksfield</td>
+<td>&#xFF1F;&#xFF1F;&#xFF1F;</td>
+<td>&#x592A;&#x8001;&#x4E86; &#x6211;&#x4E5F;&#x592A;&#x61D2;&#x4E86; &#x4E0D;&#x5199;&#x4E86;</td>
+</tr>
+<tr>
+<td>Arrandale</td>
+<td>&#xFF1F;&#xFF1F;&#xFF1F;</td>
+<td>&#x592A;&#x8001;&#x4E86; &#x6211;&#x4E5F;&#x592A;&#x61D2;&#x4E86; &#x4E0D;&#x5199;&#x4E86;</td>
+</tr>
+<tr>
+<td>Sandy Bridge</td>
+<td>&#x6851;&#x8FEA;&#x6865;</td>
+<td>2 &#x4EE3;&#x9177;&#x777F;</td>
+</tr>
+<tr>
+<td>Ivy Bridge</td>
+<td>&#xFF1F;&#xFF1F;&#xFF1F;</td>
+<td>3 &#x4EE3;&#x9177;&#x777F;</td>
+</tr>
+<tr>
+<td>Haswell</td>
+<td>&#x54C8;&#x65AF;&#x5A01;&#x5C14;</td>
+<td>4 &#x4EE3;&#x9177;&#x777F;</td>
+</tr>
+<tr>
+<td>Broadwell</td>
+<td>&#x5E03;&#x7F57;&#x5FB7;&#x97E6;&#x5C14;</td>
+<td>5 &#x4EE3;&#x9177;&#x777F;</td>
+</tr>
+<tr>
+<td>SkyLake</td>
+<td>&#x5929;&#x7A7A;&#x6E56;</td>
+<td>6 &#x4EE3;&#x9177;&#x777F;</td>
+</tr>
+<tr>
+<td>Kaby Lake</td>
+<td>&#x5361;&#x6BD4;&#x6E56;</td>
+<td>7 &#x4EE3;&#x9177;&#x777F;</td>
+</tr>
+<tr>
+<td>Whiskey Lake</td>
+<td>&#x5A01;&#x58EB;&#x5FCC;&#x6E56;</td>
+<td>8 &#x4EE3;&#x9177;&#x777F;</td>
+</tr>
+<tr>
+<td>Coffee Lake</td>
+<td>&#x5496;&#x5561;&#x6E56;</td>
+<td>8&#x3001;9 &#x4EE3;&#x9177;&#x777F;</td>
+</tr>
+<tr>
+<td>Comet Lake</td>
+<td>&#x5F57;&#x661F;&#x6E56;</td>
+<td>10 &#x4EE3;&#x9177;&#x777F;</td>
+</tr>
+<tr>
+<td>Ice Lake</td>
+<td>&#x51B0;&#x6E56;</td>
+<td>10 &#x4EE3;&#x9177;&#x777F; i5-1035G4&#x3001;i7-1065G7...</td>
+</tr>
+</tbody>
+</table>
+<h3 id="&#x9AD8;&#x7AEF;&#x684C;&#x9762;-cpu"><a name="&#x9AD8;&#x7AEF;&#x684C;&#x9762;-cpu" class="anchor-navigation-ex-anchor" href="#&#x9AD8;&#x7AEF;&#x684C;&#x9762;-cpu"><i class="fa fa-link" aria-hidden="true"></i></a>&#x9AD8;&#x7AEF;&#x684C;&#x9762; CPU</h3>
+<p>&#x4EE5;&#x4F60;&#x7684; CPU &#x4EE3;&#x53F7;&#x67B6;&#x6784;&#x4E3A;&#x51C6;&#xFF0C;&#x540E;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#x4EC5;&#x4F9B;&#x53C2;&#x8003;&#xFF0C;CPU &#x578B;&#x53F7;&#x6DF7;&#x4E71;&#xFF0C;&#x6240;&#x4EE5;&#x5E76;&#x4E0D;&#x5B8C;&#x6574;&#x3002;</p>
+<table>
+<thead>
+<tr>
+<th>CPU &#x4EE3;&#x53F7;</th>
+<th>&#x4E2D;&#x6587;&#x540D;</th>
+<th>for example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Nehalem</td>
+<td>&#xFF1F;&#xFF1F;&#xFF1F;</td>
+<td>&#x592A;&#x8001;&#x4E86; &#x6211;&#x4E5F;&#x592A;&#x61D2;&#x4E86; &#x4E0D;&#x5199;&#x4E86;</td>
+</tr>
+<tr>
+<td>Westmere</td>
+<td>&#xFF1F;&#xFF1F;&#xFF1F;</td>
+<td>&#x592A;&#x8001;&#x4E86; &#x6211;&#x4E5F;&#x592A;&#x61D2;&#x4E86; &#x4E0D;&#x5199;&#x4E86;</td>
+</tr>
+<tr>
+<td>Sandy Bridge-E</td>
+<td>&#x6851;&#x8FEA;&#x6865;</td>
+<td>i7-3960X&#x3001;i7-3960K&#x3001;i7-3820K</td>
+</tr>
+<tr>
+<td>Ivy Bridge-E</td>
+<td>&#xFF1F;&#xFF1F;&#xFF1F;</td>
+<td>i7-4960X&#x3001;i7-4960K&#x3001;i7-4820K</td>
+</tr>
+<tr>
+<td>Haswell-E</td>
+<td>&#x54C8;&#x65AF;&#x5A01;&#x5C14;</td>
+<td>i7 5960X&#x3001;i7 5820K&#x3001;i7 5930K</td>
+</tr>
+<tr>
+<td>Broadwell-E</td>
+<td>&#x5E03;&#x7F57;&#x5FB7;&#x97E6;&#x5C14;</td>
+<td>i7-6950X&#x3001;i7-6900K&#x3001;i7-6850K&#x3001;i7-6800K</td>
+</tr>
+<tr>
+<td>Skylake-X/W</td>
+<td>&#x5929;&#x7A7A;&#x6E56;</td>
+<td>i7-7800X&#x3001;i7-9800X&#x3001;Xeon W-2104</td>
+</tr>
+<tr>
+<td>Cascade Lake-X/W</td>
+<td>&#x7EA7;&#x8054;&#x6E56;</td>
+<td>Xeon Gold 6142M</td>
+</tr>
+</tbody>
+</table>
+<h3 id="amd-cpu"><a name="amd-cpu" class="anchor-navigation-ex-anchor" href="#amd-cpu"><i class="fa fa-link" aria-hidden="true"></i></a>AMD CPU</h3>
+<p>&#x4EE5;&#x4F60;&#x7684; CPU &#x4EE3;&#x53F7;&#x67B6;&#x6784;&#x4E3A;&#x51C6;&#xFF0C;&#x540E;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#x4EC5;&#x4F9B;&#x53C2;&#x8003;&#xFF0C;CPU &#x578B;&#x53F7;&#x6DF7;&#x4E71;&#xFF0C;&#x6240;&#x4EE5;&#x5E76;&#x4E0D;&#x5B8C;&#x6574;&#x3002;</p>
+<table>
+<thead>
+<tr>
+<th>CPU &#x4EE3;&#x53F7;</th>
+<th>&#x4E2D;&#x6587;&#x540D;</th>
+<th>for example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Bulldozer(15h)</td>
+<td>&#x63A8;&#x571F;&#x673A;</td>
+<td>FX-41X0&#x3001;FX-6XX0&#x3001;FX-81X0</td>
+</tr>
+<tr>
+<td>Jaguar(16h)</td>
+<td>&#x7F8E;&#x6D32;&#x8C79;</td>
+<td>&#x592A;&#x8001;&#x4E86; &#x6211;&#x4E5F;&#x592A;&#x61D2;&#x4E86; &#x4E0D;&#x5199;&#x4E86;</td>
+</tr>
+<tr>
+<td>Ryzen</td>
+<td>&#x9510;&#x9F99;</td>
+<td>&#x6BD4;&#x8F83;&#x8457;&#x540D;&#x7684;&#x67B6;&#x6784;</td>
+</tr>
+<tr>
+<td>Threadripper(17h and 19h)</td>
+<td>&#x7EBF;&#x7A0B;&#x6495;&#x88C2;&#x8005;</td>
+<td>1950X&#x3001;2990WX&#x3001;3990X&#x3001;3995WX</td>
+</tr>
+</tbody>
+</table>
+<h2 id="gpu-&#x652F;&#x6301;"><a name="gpu-&#x652F;&#x6301;" class="anchor-navigation-ex-anchor" href="#gpu-&#x652F;&#x6301;"><i class="fa fa-link" aria-hidden="true"></i></a>GPU &#x652F;&#x6301;</h2>
+<p>&#x663E;&#x5361;&#x8FD9;&#x5757;&#x4E5F;&#x6BD4;&#x8F83;&#x6742;&#xFF0C;&#x96BE;&#x4EE5;&#x5217;&#x7684;&#x5F88;&#x5168;&#xFF0C;&#x5EFA;&#x8BAE;&#x4E70;&#x4E4B;&#x524D;&#x5148;&#x786E;&#x5B9A;&#x4F60;&#x7684;&#x578B;&#x53F7;&#x663E;&#x5361;&#x6709;&#x6210;&#x529F;&#x7684;&#x6848;&#x4F8B;&#x518D;&#x8FDB;&#x884C;&#x8D2D;&#x4E70;&#x3002;&#x663E;&#x5361;&#x9A71;&#x52A8;&#x60C5;&#x51B5;&#x5927;&#x4F53;&#x4E0A;&#x53EF;&#x4EE5;&#x53C2;&#x8003;&#x5982;&#x4E0B;&#xFF1A;</p>
+<ul>
+<li><p>AMD &#x7684; GPU &#x652F;&#x6301;&#x60C5;&#x51B5;&#xFF1A;</p>
+<ul>
+<li>AMD &#x7684; APU &#x7CFB;&#x5217;&#x76EE;&#x524D;&#x65E0;&#x6CD5;&#x9A71;&#x52A8;</li>
+<li>AMD &#x7684;&#x72EC;&#x663E;&#x4ECE; GCN &#x67B6;&#x6784;&#x5F00;&#x59CB;&#x540E;&#x9762;&#x9A71;&#x52A8;&#x60C5;&#x51B5;&#x90FD;&#x8FD8;&#x4E0D;&#x9519;</li>
+</ul>
+</li>
+<li><p>Intel &#x7684; GPU &#x652F;&#x6301;&#x60C5;&#x51B5;&#xFF1A;</p>
+<ul>
+<li>macOS &#x4E0D;&#x652F;&#x6301; Pentium&#x3001;Celeron &#x548C; Atom &#x4E0A;&#x7684;&#x4F4E;&#x7AEF; GT1 iGPU</li>
+<li>&#x7EDD;&#x5927;&#x591A;&#x6570;&#x7684; intel &#x6838;&#x663E;&#x90FD;&#x53EF;&#x4EE5;&#x5F88;&#x597D;&#x7684;&#x9A71;&#x52A8;</li>
+<li>&#x7406;&#x8BBA;&#x4E0A;&#x6700;&#x5F3A;&#x7684;&#x6838;&#x663E;&#x662F; i7-1065G7&#x3001;&#x5176;&#x6B21;&#x662F; lris &#x9510;&#x77E9;&#x7CFB;&#x5217;&#x3001;&#x63A5;&#x7740;&#x662F; UHD&#x3001;HD &#x7CFB;&#x5217;</li>
+</ul>
+</li>
+<li><p>NVIDIA &#x7684; GPU &#x652F;&#x6301;&#x60C5;&#x51B5;&#xFF1A;</p>
+<ul>
+<li>Maxwell &#x9EA6;&#x514B;&#x65AF;&#x97E6;&#xFF08;9XX&#xFF09;&#x548C; Pascal &#x5E15;&#x65AF;&#x5361;&#xFF08;10XX&#xFF09;&#x7CFB;&#x5217;&#x6700;&#x9AD8;&#x53EA;&#x80FD;&#x5B89;&#x88C5;&#x5230; macOS 10.13 High Sierra</li>
+<li>Turing &#x56FE;&#x7075;&#xFF08;20XX, 16XX&#xFF09;&#x76EE;&#x524D;&#x65E0;&#x89E3;</li>
+<li>Ampere &#x5B89;&#x57F9; &#xFF08;30XX&#xFF09;&#x76EE;&#x524D;&#x65E0;&#x89E3;</li>
+<li>Keler &#xFF08;6XX&#xFF0C;7XX&#xFF09;&#x76EE;&#x524D;&#x652F;&#x6301;&#x6700;&#x65B0;&#x7248;&#x672C;&#x7684; macOS&#xFF0C;&#x8FD9;&#x662F;&#x56E0;&#x4E3A; MBP &#x5386;&#x53F2;&#x4E0A;&#x914D;&#x5907;&#x8FC7;&#x8FD9;&#x4E2A;&#x663E;&#x5361;</li>
+</ul>
+</li>
+</ul>
+<p>GPU &#x578B;&#x53F7;&#x4E5F;&#x592A;&#x6742;&#x4E86;&#xFF0C;&#x8FD9;&#x4E9B;&#x4E5F;&#x4E0D;&#x5728;&#x672C;&#x6559;&#x7A0B;&#x8303;&#x56F4;&#x7C7B;&#xFF0C;OpenCore &#x5B98;&#x65B9;&#x603B;&#x7ED3;&#x7684;&#x5DF2;&#x7ECF;&#x5F88;&#x8BE6;&#x7EC6;&#x4E86;&#xFF0C;&#x5927;&#x5BB6;&#x53EF;&#x4EE5;&#x53C2;&#x8003;&#xFF1A;</p>
+<p><a href="https://dortania.github.io/GPU-Buyers-Guide/" target="_blank"> GPU Buyers Guide- &#x663E;&#x5361;&#x8D2D;&#x4E70;&#x6307;&#x5357;</a></p>
+<h2 id="&#x4E3B;&#x677F;&#x652F;&#x6301;"><a name="&#x4E3B;&#x677F;&#x652F;&#x6301;" class="anchor-navigation-ex-anchor" href="#&#x4E3B;&#x677F;&#x652F;&#x6301;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E3B;&#x677F;&#x652F;&#x6301;</h2>
+<p>&#x7EDD;&#x5927;&#x591A;&#x6570;&#x7684;&#x4E3B;&#x677F;&#x90FD;&#x53EF;&#x4EE5;&#x9A71;&#x52A8;</p>
+<h2 id="&#x786C;&#x76D8;&#x652F;&#x6301;"><a name="&#x786C;&#x76D8;&#x652F;&#x6301;" class="anchor-navigation-ex-anchor" href="#&#x786C;&#x76D8;&#x652F;&#x6301;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x786C;&#x76D8;&#x652F;&#x6301;</h2>
+<p>&#x5728;&#x5927;&#x591A;&#x6570;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x652F;&#x6301;&#x6240;&#x6709;&#x57FA;&#x4E8E; SATA &#x7684;&#x786C;&#x76D8;&#x4EE5;&#x53CA;&#x5927;&#x591A;&#x6570; NVMe &#x786C;&#x76D8;&#xFF0C;&#x4F46;&#x662F;&#x4E5F;&#x6709;&#x5C11;&#x6570;&#x6BD4;&#x8F83;&#x5751;&#x7684;&#x578B;&#x53F7;&#xFF1A;</p>
+<ul>
+<li><strong>&#x4E09;&#x661F; PM981&#x3001;PM991 &#x548C;&#x7F8E;&#x5149; 2200S NVMe SSD</strong></li>
+<li><strong>&#x82F1;&#x7279;&#x5C14; 600p</strong></li>
+</ul>
+<p>&#x8FD9;&#x4E9B;&#x578B;&#x53F7;&#x5C3D;&#x7BA1;&#x540E;&#x9762;&#x4F7F;&#x7528; NVMeFix.kext &#x53EF;&#x4EE5;&#x4FEE;&#x590D;&#x5185;&#x6838;&#x6050;&#x614C;&#xFF0C;&#x4F46;&#x662F;&#x4F9D;&#x7136;&#x53EF;&#x80FD;&#x4F1A;&#x6709;&#x4E00;&#x4E9B;&#x5C0F;&#x6BDB;&#x75C5;&#xFF0C;&#x65B0;&#x624B;&#x7684;&#x8BDD;&#x8FD8;&#x662F;&#x5EFA;&#x8BAE;&#x6362;&#x786C;&#x76D8;&#xFF0C;&#x4E0D;&#x5EFA;&#x8BAE;&#x78B0;&#x8FD9;&#x4E9B;&#x578B;&#x53F7;&#x3002;</p>
+<h2 id="&#x6709;&#x7EBF;&#x7F51;&#x5361;"><a name="&#x6709;&#x7EBF;&#x7F51;&#x5361;" class="anchor-navigation-ex-anchor" href="#&#x6709;&#x7EBF;&#x7F51;&#x5361;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6709;&#x7EBF;&#x7F51;&#x5361;</h2>
+<p>&#x51E0;&#x4E4E;&#x6240;&#x6709;&#x6709;&#x7EBF;&#x7F51;&#x7EDC;&#x9002;&#x914D;&#x5668;&#x5728; macOS &#x4E2D;&#x90FD;&#x6709;&#x67D0;&#x79CD;&#x5F62;&#x5F0F;&#x7684;&#x652F;&#x6301;&#xFF0C;&#x901A;&#x8FC7;&#x5185;&#x7F6E;&#x9A71;&#x52A8;&#x7A0B;&#x5E8F;&#x6216;&#x793E;&#x533A;&#x5236;&#x4F5C;&#x7684; kexts&#x3002;&#x4E3B;&#x4F46;&#x662F;&#x4E5F;&#x6709;&#x4E00;&#x4E9B;&#x68D8;&#x624B;&#x7684;&#x578B;&#x53F7;&#xFF1A;</p>
+<ul>
+<li><p>&#x82F1;&#x7279;&#x5C14; I225 2.5Gb &#x7F51;&#x5361;</p>
+<ul>
+<li>&#x9AD8;&#x7AEF;&#x684C;&#x9762; Comet Lake &#x4E3B;&#x677F;&#x53EF;&#x80FD;&#x914D;&#x5907;</li>
+<li>&#x53EF;&#x80FD;&#x7684;&#x89E3;&#x51B3;&#x65B9;&#x6CD5;&#xFF1A;<a href="https://www.hackintosh-forum.de/forum/thread/48568-i9-10900k-gigabyte-z490-vision-d-er-l&#xE4;uft/?postID=606059#post606059" target="_blank">&#x6765;&#x6E90;</a>&#x548C;<a href="https://dortania.github.io/OpenCore-Install-Guide/config.plist/comet-lake.html#deviceproperties" target="_blank">&#x4F8B;&#x5B50;</a></li>
+</ul>
+</li>
+<li><p>Intel I350 1Gb &#x670D;&#x52A1;&#x5668;&#x7F51;&#x5361;</p>
+<ul>
+<li>&#x5728;&#x5404;&#x4EE3; Intel &#x548C; Supermicro &#x670D;&#x52A1;&#x5668;&#x4E3B;&#x677F;&#x4E0A;&#x53EF;&#x80FD;&#x914D;&#x5907;</li>
+<li><a href="https://dortania.github.io/OpenCore-Install-Guide/config-HEDT/ivy-bridge-e.html#deviceproperties" target="_blank">&#x89E3;&#x51B3;&#x65B9;&#x6CD5;</a></li>
+</ul>
+</li>
+<li><p>Intel 10Gb &#x670D;&#x52A1;&#x5668;&#x7F51;&#x5361;</p>
+<ul>
+<li><a href="https://www.tonymacx86.com/threads/how-to-build-your-own-imac-pro-successful-build-extended-guide.229353/" target="_blank">X520 &#x548C; X540 &#x82AF;&#x7247;&#x7EC4;</a>&#x53EF;&#x80FD;&#x7684;&#x53D8;&#x901A;&#x65B9;&#x6CD5;</li>
+</ul>
+</li>
+<li><p>Mellanox &#x548C; Qlogic &#x670D;&#x52A1;&#x5668;&#x7F51;&#x5361;</p>
+</li>
+</ul>
+<h2 id="&#x65E0;&#x7EBF;&#x7F51;&#x5361;"><a name="&#x65E0;&#x7EBF;&#x7F51;&#x5361;" class="anchor-navigation-ex-anchor" href="#&#x65E0;&#x7EBF;&#x7F51;&#x5361;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x65E0;&#x7EBF;&#x7F51;&#x5361;</h2>
+<p>&#x5927;&#x591A;&#x6570;&#x7B14;&#x8BB0;&#x672C;&#x7535;&#x8111;&#x9644;&#x5E26;&#x7684;&#x65E0;&#x7EBF;&#x7F51;&#x5361;&#x4E0D;&#x53D7;&#x652F;&#x6301;&#xFF0C;&#x56E0;&#x4E3A;&#x5B83;&#x4EEC;&#x901A;&#x5E38;&#x662F; Intel/Qualcomm&#x3002;&#x5982;&#x679C;&#x5E78;&#x8FD0;&#x7684;&#x8BDD;&#xFF0C;&#x60A8;&#x53EF;&#x80FD;&#x6709;&#x4E00;&#x5F20;&#x53D7;&#x652F;&#x6301;&#x7684; Atheros &#x5361;&#xFF0C;&#x4F46;&#x652F;&#x6301;&#x6700;&#x591A;&#x53EA;&#x80FD;&#x8FBE;&#x5230; High Sierra&#x3002;</p>
+<p>&#x6700;&#x597D;&#x7684;&#x9009;&#x62E9;&#x662F;&#x83B7;&#x5F97;&#x53D7;&#x652F;&#x6301;&#x7684; Broadcom &#x535A;&#x901A;&#x5361;&#xFF1B;&#x53EF;&#x4EE5;&#x53C2;&#x8003;</p>
+<p> <a href="https://dortania.github.io/Wireless-Buyers-Guide/" target="_blank">WiFi &#x8D2D;&#x4E70;&#x8005;&#x6307;&#x5357;</a> </p>
+<p>&#x540E;&#x7EED;&#x56FD;&#x5185;&#x7684;&#x5927;&#x4F6C; <a href="https://github.com/zxystd" target="_blank">zxystd</a> &#x79FB;&#x690D;&#x5F00;&#x6E90;&#x4E86; intel &#x7684;&#x7F51;&#x5361;&#x9A71;&#x52A8;&#x4E5F;&#x53EF;&#x4EE5;&#x89E3;&#x51B3;&#x5927;&#x591A;&#x6570; intel &#x7F51;&#x5361;&#x7684;&#x9A71;&#x52A8;&#x95EE;&#x9898;&#xFF0C;&#x867D;&#x7136;&#x76EE;&#x524D;&#x6682;&#x65F6;&#x65E0;&#x6CD5;&#x4F7F;&#x7528;&#x9694;&#x7A7A;&#x6295;&#x9001; AirDrop &#x4F46;&#x662F;&#x5DF2;&#x7ECF;&#x8FDB;&#x6B65;&#x5F88;&#x5927;&#x4E86;&#xFF1A;</p>
+<p><a href="https://openintelwireless.github.io/itlwm/Compat.html#dvm-iwn" target="_blank">intel &#x7F51;&#x5361;&#x53EF;&#x9A71;&#x52A8;&#x7684;&#x578B;&#x53F7;&#x5217;&#x8868;</a></p>
+<h2 id="&#x58F0;&#x5361;&#x652F;&#x6301;"><a name="&#x58F0;&#x5361;&#x652F;&#x6301;" class="anchor-navigation-ex-anchor" href="#&#x58F0;&#x5361;&#x652F;&#x6301;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x58F0;&#x5361;&#x652F;&#x6301;</h2>
+<p>&#x58F0;&#x5361;&#x4E3B;&#x8981;&#x4F9D;&#x8D56; AppleALC &#x5F00;&#x6E90; kexts &#x6765;&#x9A71;&#x52A8;&#xFF0C;&#x53EF;&#x4EE5;&#x542F;&#x7528;&#x539F;&#x751F;&#x7684; macOS &#x9AD8;&#x6E05;&#x97F3;&#x9891;&#x3002;</p>
+<p><a href="https://github.com/acidanthera/AppleALC/wiki/Supported-codecs" target="_blank">&#x9ED1;&#x82F9;&#x679C;&#x58F0;&#x5361;&#x7684;&#x9A71;&#x52A8;&#x60C5;&#x51B5;&#x8868;&#x4EE5;&#x53CA; layouts id &#x60C5;&#x51B5;</a></p>
+<h2 id="&#x5176;&#x4ED6;&#x786C;&#x4EF6;"><a name="&#x5176;&#x4ED6;&#x786C;&#x4EF6;" class="anchor-navigation-ex-anchor" href="#&#x5176;&#x4ED6;&#x786C;&#x4EF6;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5176;&#x4ED6;&#x786C;&#x4EF6;</h2>
+<ul>
+<li><p>&#x6307;&#x7EB9;&#x4F20;&#x611F;&#x5668;</p>
+<ul>
+<li>&#x76EE;&#x524D;&#x65E0;&#x6CD5;&#x6A21;&#x62DF; Touch ID &#x4F20;&#x611F;&#x5668;&#xFF0C;&#x56E0;&#x6B64;&#x6307;&#x7EB9;&#x4F20;&#x611F;&#x5668;&#x57FA;&#x672C;&#x4E0A;&#x65E0;&#x89E3;</li>
+</ul>
+</li>
+<li><p>Windows Hello &#x4EBA;&#x8138;&#x8BC6;&#x522B;</p>
+<ul>
+<li>&#x67D0;&#x4E9B;&#x7B14;&#x8BB0;&#x672C;&#x7535;&#x8111;&#x5E26;&#x6709; I2C &#x8FDE;&#x63A5;&#x7684; WHFR&#xFF08;&#x5E76;&#x901A;&#x8FC7;&#x60A8;&#x7684; iGPU &#x4F7F;&#x7528;&#xFF09;&#xFF0C;&#x8FD9;&#x4E9B;&#x5C06;&#x65E0;&#x6CD5;&#x6B63;&#x5E38;&#x5DE5;&#x4F5C;&#x3002;</li>
+<li>&#x4E00;&#x4E9B;&#x7B14;&#x8BB0;&#x672C;&#x7535;&#x8111;&#x5E26;&#x6709; USB &#x8FDE;&#x63A5;&#x7684; WHFR&#xFF0C;&#x5982;&#x679C;&#x5E78;&#x8FD0;&#x7684;&#x8BDD;&#xFF0C;&#x60A8;&#x53EF;&#x80FD;&#x4F1A;&#x83B7;&#x5F97;&#x76F8;&#x673A;&#x529F;&#x80FD;&#xFF0C;&#x4F46;&#x6CA1;&#x6709;&#x5176;&#x4ED6;&#x529F;&#x80FD;&#x3002;</li>
+</ul>
+</li>
+<li><p>&#x82F1;&#x7279;&#x5C14;&#x667A;&#x80FD;&#x58F0;&#x97F3;&#x6280;&#x672F;</p>
+<ul>
+<li>&#x914D;&#x5907;&#x82F1;&#x7279;&#x5C14; SST &#x7684;&#x7B14;&#x8BB0;&#x672C;&#x7535;&#x8111;&#x4E0D;&#x4F1A;&#x901A;&#x8FC7;&#x5B83;&#x4EEC;&#xFF08;&#x901A;&#x5E38;&#x662F;&#x5185;&#x90E8;&#x9EA6;&#x514B;&#x98CE;&#xFF09;&#x5DE5;&#x4F5C;&#x8FDE;&#x63A5;&#x4EFB;&#x4F55;&#x4E1C;&#x897F;&#xFF0C;&#x56E0;&#x4E3A;&#x5B83;&#x4E0D;&#x53D7;&#x652F;&#x6301;&#x3002;&#x60A8;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; Windows &#x4E0A;&#x7684;&#x8BBE;&#x5907;&#x7BA1;&#x7406;&#x5668;&#x8FDB;&#x884C;&#x68C0;&#x67E5;&#x3002;</li>
+</ul>
+</li>
+<li><p>&#x8033;&#x673A;&#x9EA6;&#x514B;&#x98CE;&#x4E00;&#x4F53;&#x63A5;&#x53E3;&#x7EC4;&#x5408;</p>
+<ul>
+<li>&#x67D0;&#x4E9B;&#x5E26;&#x6709;&#x7EC4;&#x5408;&#x8033;&#x673A;&#x9EA6;&#x514B;&#x98CE;&#x63A5;&#x53E3;&#x7684;&#x7B14;&#x8BB0;&#x672C;&#x7535;&#x8111;&#x53EF;&#x80FD;&#x65E0;&#x6CD5;&#x901A;&#x8FC7;&#x5B83;&#x4EEC;&#x83B7;&#x5F97;&#x97F3;&#x9891;&#x8F93;&#x5165;&#xFF0C;&#x800C;&#x5FC5;&#x987B;&#x4F7F;&#x7528;&#x5185;&#x7F6E;&#x9EA6;&#x514B;&#x98CE;&#x6216;&#x901A;&#x8FC7; USB &#x7684;&#x5916;&#x90E8;&#x97F3;&#x9891;&#x8F93;&#x5165;&#x8BBE;&#x5907;&#x3002;</li>
+</ul>
+</li>
+<li>&#x96F7;&#x7535;&#x63A5;&#x53E3;<ul>
+<li>&#x96F7;&#x7535;&#x63A5;&#x53E3;&#x6BD4;&#x8F83;&#x96BE;&#x641E;&#x548C;&#x7384;&#x5B66;&#xFF0C;OC &#x5B98;&#x65B9;&#x5EFA;&#x8BAE;&#x4E3B;&#x677F;&#x7981;&#x7528;&#x6389;&#x96F7;&#x7535;&#x53E3;&#xFF0C;&#x4F46;&#x662F;&#x4E0D;&#x4EE3;&#x8868;&#x65E0;&#x89E3;&#x53EA;&#x662F;&#x96BE;&#x641E; </li>
+</ul>
+</li>
+</ul>
+<footer class="page-footer"><span class="copyright">powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x7AE0;&#x6700;&#x540E;&#x4FEE;&#x6539;&#x65F6;&#x95F4;&#xFF1A;
+2021-09-17 15:45:42
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="1-1.html" class="navigation navigation-prev " aria-label="Previous page: 1. 基操勿六">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="1-3.html" class="navigation navigation-next " aria-label="Next page: 3. 寻找硬件">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"2. 硬件限制","level":"1.2.2","depth":2,"next":{"title":"3. 寻找硬件","level":"1.2.3","depth":2,"path":"1-基础知识/1-3.md","ref":"1-基础知识/1-3.md","articles":[]},"previous":{"title":"1. 基操勿六","level":"1.2.1","depth":2,"path":"1-基础知识/1-1.md","ref":"1-基础知识/1-1.md","articles":[]},"dir":"ltr"},"config":{"plugins":["splitter","-lunr","-search","-sharing","search-plus","anchor-navigation-ex","expandable-chapters-small","copy-code-button","lightbox","tbfed-pagefooter","hide-element","-highlight","prism","prism-themes","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"","modify_label":"该文章最后修改时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prism-themes/themes/prism-dracula.css"]},"livereload":{},"splitter":{},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"lightbox":{"jquery":true,"sameUuid":false},"prism-themes":{},"expandable-chapters-small":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"search-plus":{}},"theme":"default","author":"国光","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Python学习记录","language":"zh-hans","links":{"sidebar":{"个人博客":"//www.sqlsec.com"}},"gitbook":"*"},"file":{"path":"1-基础知识/1-2.md","mtime":"2021-09-17T07:45:42.513Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-09-17T12:54:51.809Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lightbox/js/lightbox.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-hide-element/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

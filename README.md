@@ -33,3 +33,6 @@
 - [Dortania's OpenCore Install Guide](https://dortania.github.io/OpenCore-Install-Guide/) 
 - [[指南] hackintosh之SSDT/DSDT · Mac OS之程序员 · 看云](https://www.kancloud.cn/chandler/mac_os/482278#SSDTDSDT_9) 
 - [DSDT - ArchWiki](https://wiki.archlinux.org/title/DSDT) 
+- [黑果小兵的部落阁](https://blog.daliansky.net/)
+- [黑苹果星球-分享Mac的精彩世界](https://heipg.cn/) 
+
