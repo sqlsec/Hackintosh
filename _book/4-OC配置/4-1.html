@@ -1,0 +1,683 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>1. ACPI · Python学习记录</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="国光">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-lightbox/css/lightbox.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-dracula.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="4-2.html" />
+    
+    
+    <link rel="prev" href="./" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="//www.sqlsec.com" target="_blank" class="custom-link">个人博客</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    一、前言介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../1-基础知识/">
+            
+                <a href="../1-基础知识/">
+            
+                    
+                    二、基础知识
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../1-基础知识/1-1.html">
+            
+                <a href="../1-基础知识/1-1.html">
+            
+                    
+                    1. 基操勿六
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../1-基础知识/1-2.html">
+            
+                <a href="../1-基础知识/1-2.html">
+            
+                    
+                    2. 硬件限制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../1-基础知识/1-3.html">
+            
+                <a href="../1-基础知识/1-3.html">
+            
+                    
+                    3. 寻找硬件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../1-基础知识/1-4.html">
+            
+                <a href="../1-基础知识/1-4.html">
+            
+                    
+                    4. 专业术语
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../2-启动盘制作/">
+            
+                <a href="../2-启动盘制作/">
+            
+                    
+                    三、U盘制作
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../2-启动盘制作/2-1.html">
+            
+                <a href="../2-启动盘制作/2-1.html">
+            
+                    
+                    1. 下载镜像
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../2-启动盘制作/2-2.html">
+            
+                <a href="../2-启动盘制作/2-2.html">
+            
+                    
+                    2. 写入镜像
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../2-启动盘制作/2-3.html">
+            
+                <a href="../2-启动盘制作/2-3.html">
+            
+                    
+                    3. 结构讲解
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../3-准备工作/">
+            
+                <a href="../3-准备工作/">
+            
+                    
+                     四、准备工作
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../3-准备工作/3-1.html">
+            
+                <a href="../3-准备工作/3-1.html">
+            
+                    
+                    1. BIOS设置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../3-准备工作/3-2.html">
+            
+                <a href="../3-准备工作/3-2.html">
+            
+                    
+                    2. OC 文件结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../3-准备工作/3-3.html">
+            
+                <a href="../3-准备工作/3-3.html">
+            
+                    
+                    3. 准备 ACPI
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../3-准备工作/3-4.html">
+            
+                <a href="../3-准备工作/3-4.html">
+            
+                    
+                    4. 准备 Kexts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../3-准备工作/3-5.html">
+            
+                <a href="../3-准备工作/3-5.html">
+            
+                    
+                    5. Drivers说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../3-准备工作/3-6.html">
+            
+                <a href="../3-准备工作/3-6.html">
+            
+                    
+                    6. OC 编辑器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="../3-准备工作/3-7.html">
+            
+                <a href="../3-准备工作/3-7.html">
+            
+                    
+                    7. 初步配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="../3-准备工作/3-8.html">
+            
+                <a href="../3-准备工作/3-8.html">
+            
+                    
+                    8. Kexts 微调
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    五、配置 config.list
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.5.1" data-path="4-1.html">
+            
+                <a href="4-1.html">
+            
+                    
+                    1. ACPI
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="4-2.html">
+            
+                <a href="4-2.html">
+            
+                    
+                    2. Booter
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="4-3.html">
+            
+                <a href="4-3.html">
+            
+                    
+                    3. DeviceProperties
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="4-4.html">
+            
+                <a href="4-4.html">
+            
+                    
+                    4. Kernel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="4-5.html">
+            
+                <a href="4-5.html">
+            
+                    
+                    5. Misc
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="4-6.html">
+            
+                <a href="4-6.html">
+            
+                    
+                    6. NVRAM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7" data-path="4-7.html">
+            
+                <a href="4-7.html">
+            
+                    
+                    7. PlatformInfo
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8" data-path="4-8.html">
+            
+                <a href="4-8.html">
+            
+                    
+                    8. UEFI
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >1. ACPI</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div class="search-plus" id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#1-acpi"><b></b>1. ACPI</a></li><ul><li><span class="title-icon "></span><a href="#&#x5B8C;&#x6574;&#x7684;--quiks-&#x602A;&#x7656;"><b></b>&#x5B8C;&#x6574;&#x7684;  Quiks &#x602A;&#x7656;</a></li><li><span class="title-icon "></span><a href="#intel-&#x684C;&#x9762;&#x5E73;&#x53F0;"><b></b>Intel &#x684C;&#x9762;&#x5E73;&#x53F0;</a></li><li><span class="title-icon "></span><a href="#intel-&#x9AD8;&#x7AEF;&#x684C;&#x9762;&#x5E73;&#x53F0;"><b></b>Intel &#x9AD8;&#x7AEF;&#x684C;&#x9762;&#x5E73;&#x53F0;</a></li><li><span class="title-icon "></span><a href="#intel-&#x7B14;&#x8BB0;&#x672C;&#x5E73;&#x53F0;"><b></b>Intel &#x7B14;&#x8BB0;&#x672C;&#x5E73;&#x53F0;</a></li><li><span class="title-icon "></span><a href="#amd-&#x684C;&#x9762;&#x5E73;&#x53F0;"><b></b>AMD &#x684C;&#x9762;&#x5E73;&#x53F0;</a></li></ul></ul></div><a href="#1-acpi" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="1-acpi"><a name="1-acpi" class="anchor-navigation-ex-anchor" href="#1-acpi"><i class="fa fa-link" aria-hidden="true"></i></a>1. ACPI</h1>
+<p>&#x901A;&#x8FC7;&#x4E0A;&#x4E00;&#x8282;&#x51C6;&#x5907;&#x5DE5;&#x4F5C;&#x7684;&#x914D;&#x7F6E;&#xFF0C;&#x6211;&#x4EEC;&#x7684; SSDT &#x5E94;&#x8BE5;&#x90FD;&#x5DF2;&#x7ECF;&#x52A0;&#x8F7D;&#x8FDB;&#x6765;&#x4E86;&#xFF0C;&#x6B64;&#x65F6;&#x4E00;&#x822C;&#x8C03;&#x6574;&#x4E0B; Quiks&#xFF08;&#x602A;&#x7656;&#xFF09;&#x5373;&#x53EF;&#xFF0C;&#x5C11;&#x6570;&#x7684; SSDT &#x9700;&#x8981;&#x6253;&#x5BF9;&#x5E94;&#x7684;&#x8865;&#x4E01;&#x624D;&#x53EF;&#x4EE5;&#x751F;&#x6548;&#xFF0C;&#x5173;&#x4E8E;&#x6253;&#x8865;&#x4E01;&#x7EC6;&#x8282;&#x53EF;&#x4EE5;&#x53C2;&#x8003;&#x89C6;&#x9891;&#x5185;&#x5BB9;&#xFF0C;&#x4E0D;&#x8FC7;&#x4E0B;&#x9762;&#x7684;&#x793A;&#x4F8B;&#x914D;&#x7F6E;&#x5982;&#x679C;&#x9700;&#x8981;&#x6253;&#x8865;&#x4E01;&#x7684;&#x8BDD;&#xFF0C;&#x4E5F;&#x4F1A;&#x5199;&#x51FA;&#x6765;&#x7684;&#xFF0C;&#x6A21;&#x4EFF;&#x4E00;&#x4E0B;&#x5373;&#x53EF;&#x3002;</p>
+<h2 id="&#x5B8C;&#x6574;&#x7684;--quiks-&#x602A;&#x7656;"><a name="&#x5B8C;&#x6574;&#x7684;--quiks-&#x602A;&#x7656;" class="anchor-navigation-ex-anchor" href="#&#x5B8C;&#x6574;&#x7684;--quiks-&#x602A;&#x7656;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5B8C;&#x6574;&#x7684;  Quiks &#x602A;&#x7656;</h2>
+<p>&#x56E0;&#x4E3A;&#x5404;&#x4E2A;&#x5E73;&#x53F0;&#x7684;&#x7248;&#x672C;&#x4E0D;&#x592A;&#x4E00;&#x6837;&#xFF0C;&#x5728;&#x8BE6;&#x7EC6;&#x8BF4;&#x660E;&#x4E4B;&#x524D;&#x5199;&#x6765;&#x4E00;&#x4E2A; OC 0.7.3 &#x5B8C;&#x6574;&#x7684; Quiks &#x602A;&#x7656; &#x8BF4;&#x660E;&#xFF0C;&#x8FD9;&#x6837;&#x5FC3;&#x91CC;&#x5927;&#x5BB6;&#x8BBE;&#x7F6E;&#x7684;&#x65F6;&#x5019;&#x5FC3;&#x91CC;&#x4E00;&#x822C;&#x5C31;&#x6709;&#x4E2A;&#x5E95;&#x4E86;&#x3002;</p>
+<ul>
+<li><strong>FadtEnableReset</strong><ul>
+<li>&#x5728;&#x65E7;&#x786C;&#x4EF6;&#x4E0A;&#x4FEE;&#x590D;&#x91CD;&#x542F;&#x548C;&#x5173;&#x673A;, &#x9664;&#x975E;&#x9700;&#x8981;, &#x5426;&#x5219;&#x4E0D;&#x63A8;&#x8350;&#x5F00;&#x542F;</li>
+<li>&#x4E00;&#x4E9B;&#x8F83;&#x65B0;&#x7684;&#x7B14;&#x8BB0;&#x672C;&#x53EF;&#x80FD;&#x4E5F;&#x9700;&#x8981;&#x8FD9;&#x4E2A;&#x9009;&#x9879;&#x6765;&#x4FEE;&#x590D;&#x91CD;&#x542F;&#x548C;&#x5173;&#x673A;</li>
+</ul>
+</li>
+<li><strong>NormalizeHeaders</strong><ul>
+<li>&#x6E05;&#x9664; ACPI &#x5934;&#x5B57;&#x6BB5;, &#x53EA;&#x6709; macOS 10.13 &#x9700;&#x8981;</li>
+<li>10.14 &#x540E;&#x9762;&#x7684;&#x7248;&#x672C;&#x5DF2;&#x7ECF;&#x4FEE;&#x590D;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#x4E86;</li>
+</ul>
+</li>
+<li><strong>RebaseRegions</strong><ul>
+<li>&#x5C1D;&#x8BD5;&#x8BD5;&#x63A2;&#x6027;&#x5730;&#x91CD;&#x65B0;&#x5B9A;&#x4F4D; ACPI &#x5185;&#x5B58;&#x533A;&#x57DF;, &#x4F7F;&#x7528;&#x81EA;&#x5B9A;&#x4E49; DSDT &#x5219;&#x5FC5;&#x987B;&#x5F00;&#x542F;</li>
+</ul>
+</li>
+<li><strong>ResetHwSig</strong><ul>
+<li>&#x9002;&#x7528;&#x4E8E;&#x65E0;&#x6CD5;&#x5728;&#x91CD;&#x65B0;&#x542F;&#x52A8;&#x671F;&#x95F4;&#x7EF4;&#x62A4;&#x786C;&#x4EF6;&#x7B7E;&#x540D;&#x5E76;&#x5BFC;&#x81F4;&#x4ECE;&#x4F11;&#x7720;&#x4E2D;&#x5524;&#x9192;&#x95EE;&#x9898;&#x7684;&#x786C;&#x4EF6;</li>
+</ul>
+</li>
+<li><strong>ResetLogoStatus</strong><ul>
+<li>&#x65E0;&#x6CD5;&#x5728;&#x6709; BGRT &#x8868;&#x7684;&#x7CFB;&#x7EDF;&#x4E0A;&#x663E;&#x793A; OEM Windows &#x6807;&#x5FD7;&#x7684;&#x786C;&#x4EF6;&#x9700;&#x8981;&#x5F00;&#x542F;</li>
+</ul>
+</li>
+<li><strong>SyncTableIds</strong><ul>
+<li>&#x8FD9;&#x53EF;&#x4EE5;&#x89E3;&#x51B3;&#x4FEE;&#x8865;&#x8868;&#x4E0E; SLIC &#x8868;&#x4E0D;&#x517C;&#x5BB9;&#x5BFC;&#x81F4;&#x65E7; Windows &#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x4E2D;&#x7684;&#x8BB8;&#x53EF;&#x95EE;&#x9898;&#x3002;</li>
+</ul>
+</li>
+</ul>
+<h2 id="intel-&#x684C;&#x9762;&#x5E73;&#x53F0;"><a name="intel-&#x684C;&#x9762;&#x5E73;&#x53F0;" class="anchor-navigation-ex-anchor" href="#intel-&#x684C;&#x9762;&#x5E73;&#x53F0;"><i class="fa fa-link" aria-hidden="true"></i></a>Intel &#x684C;&#x9762;&#x5E73;&#x53F0;</h2>
+<h2 id="intel-&#x9AD8;&#x7AEF;&#x684C;&#x9762;&#x5E73;&#x53F0;"><a name="intel-&#x9AD8;&#x7AEF;&#x684C;&#x9762;&#x5E73;&#x53F0;" class="anchor-navigation-ex-anchor" href="#intel-&#x9AD8;&#x7AEF;&#x684C;&#x9762;&#x5E73;&#x53F0;"><i class="fa fa-link" aria-hidden="true"></i></a>Intel &#x9AD8;&#x7AEF;&#x684C;&#x9762;&#x5E73;&#x53F0;</h2>
+<h2 id="intel-&#x7B14;&#x8BB0;&#x672C;&#x5E73;&#x53F0;"><a name="intel-&#x7B14;&#x8BB0;&#x672C;&#x5E73;&#x53F0;" class="anchor-navigation-ex-anchor" href="#intel-&#x7B14;&#x8BB0;&#x672C;&#x5E73;&#x53F0;"><i class="fa fa-link" aria-hidden="true"></i></a>Intel &#x7B14;&#x8BB0;&#x672C;&#x5E73;&#x53F0;</h2>
+<h2 id="amd-&#x684C;&#x9762;&#x5E73;&#x53F0;"><a name="amd-&#x684C;&#x9762;&#x5E73;&#x53F0;" class="anchor-navigation-ex-anchor" href="#amd-&#x684C;&#x9762;&#x5E73;&#x53F0;"><i class="fa fa-link" aria-hidden="true"></i></a>AMD &#x684C;&#x9762;&#x5E73;&#x53F0;</h2>
+<footer class="page-footer"><span class="copyright">powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x7AE0;&#x6700;&#x540E;&#x4FEE;&#x6539;&#x65F6;&#x95F4;&#xFF1A;
+2021-09-19 23:30:56
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: 五、配置 config.list">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="4-2.html" class="navigation navigation-next " aria-label="Next page: 2. Booter">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"1. ACPI","level":"1.5.1","depth":2,"next":{"title":"2. Booter","level":"1.5.2","depth":2,"path":"4-OC配置/4-2.md","ref":"4-OC配置/4-2.md","articles":[]},"previous":{"title":"五、配置 config.list","level":"1.5","depth":1,"path":"4-OC配置/README.md","ref":"4-OC配置/README.md","articles":[{"title":"1. ACPI","level":"1.5.1","depth":2,"path":"4-OC配置/4-1.md","ref":"4-OC配置/4-1.md","articles":[]},{"title":"2. Booter","level":"1.5.2","depth":2,"path":"4-OC配置/4-2.md","ref":"4-OC配置/4-2.md","articles":[]},{"title":"3. DeviceProperties","level":"1.5.3","depth":2,"path":"4-OC配置/4-3.md","ref":"4-OC配置/4-3.md","articles":[]},{"title":"4. Kernel","level":"1.5.4","depth":2,"path":"4-OC配置/4-4.md","ref":"4-OC配置/4-4.md","articles":[]},{"title":"5. Misc","level":"1.5.5","depth":2,"path":"4-OC配置/4-5.md","ref":"4-OC配置/4-5.md","articles":[]},{"title":"6. NVRAM","level":"1.5.6","depth":2,"path":"4-OC配置/4-6.md","ref":"4-OC配置/4-6.md","articles":[]},{"title":"7. PlatformInfo","level":"1.5.7","depth":2,"path":"4-OC配置/4-7.md","ref":"4-OC配置/4-7.md","articles":[]},{"title":"8. UEFI","level":"1.5.8","depth":2,"path":"4-OC配置/4-8.md","ref":"4-OC配置/4-8.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["splitter","-lunr","-search","-sharing","search-plus","anchor-navigation-ex","expandable-chapters-small","copy-code-button","lightbox","tbfed-pagefooter","hide-element","-highlight","prism","prism-themes","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"","modify_label":"该文章最后修改时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prism-themes/themes/prism-dracula.css"]},"livereload":{},"splitter":{},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"lightbox":{"jquery":true,"sameUuid":false},"prism-themes":{},"expandable-chapters-small":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"search-plus":{}},"theme":"default","author":"国光","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Python学习记录","language":"zh-hans","links":{"sidebar":{"个人博客":"//www.sqlsec.com"}},"gitbook":"*"},"file":{"path":"4-OC配置/4-1.md","mtime":"2021-09-19T15:30:56.563Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-09-19T15:07:54.422Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lightbox/js/lightbox.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-hide-element/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

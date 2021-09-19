@@ -1,0 +1,754 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>8. Kexts 微调 · Python学习记录</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="国光">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-lightbox/css/lightbox.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-dracula.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../4-OC配置/" />
+    
+    
+    <link rel="prev" href="3-7.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="//www.sqlsec.com" target="_blank" class="custom-link">个人博客</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    一、前言介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../1-基础知识/">
+            
+                <a href="../1-基础知识/">
+            
+                    
+                    二、基础知识
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../1-基础知识/1-1.html">
+            
+                <a href="../1-基础知识/1-1.html">
+            
+                    
+                    1. 基操勿六
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../1-基础知识/1-2.html">
+            
+                <a href="../1-基础知识/1-2.html">
+            
+                    
+                    2. 硬件限制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../1-基础知识/1-3.html">
+            
+                <a href="../1-基础知识/1-3.html">
+            
+                    
+                    3. 寻找硬件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../1-基础知识/1-4.html">
+            
+                <a href="../1-基础知识/1-4.html">
+            
+                    
+                    4. 专业术语
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../2-启动盘制作/">
+            
+                <a href="../2-启动盘制作/">
+            
+                    
+                    三、U盘制作
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../2-启动盘制作/2-1.html">
+            
+                <a href="../2-启动盘制作/2-1.html">
+            
+                    
+                    1. 下载镜像
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../2-启动盘制作/2-2.html">
+            
+                <a href="../2-启动盘制作/2-2.html">
+            
+                    
+                    2. 写入镜像
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../2-启动盘制作/2-3.html">
+            
+                <a href="../2-启动盘制作/2-3.html">
+            
+                    
+                    3. 结构讲解
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="./">
+            
+                <a href="./">
+            
+                    
+                     四、准备工作
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="3-1.html">
+            
+                <a href="3-1.html">
+            
+                    
+                    1. BIOS设置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="3-2.html">
+            
+                <a href="3-2.html">
+            
+                    
+                    2. OC 文件结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="3-3.html">
+            
+                <a href="3-3.html">
+            
+                    
+                    3. 准备 ACPI
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="3-4.html">
+            
+                <a href="3-4.html">
+            
+                    
+                    4. 准备 Kexts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="3-5.html">
+            
+                <a href="3-5.html">
+            
+                    
+                    5. Drivers说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="3-6.html">
+            
+                <a href="3-6.html">
+            
+                    
+                    6. OC 编辑器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="3-7.html">
+            
+                <a href="3-7.html">
+            
+                    
+                    7. 初步配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.8" data-path="3-8.html">
+            
+                <a href="3-8.html">
+            
+                    
+                    8. Kexts 微调
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../4-OC配置/">
+            
+                <a href="../4-OC配置/">
+            
+                    
+                    五、配置 config.list
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../4-OC配置/4-1.html">
+            
+                <a href="../4-OC配置/4-1.html">
+            
+                    
+                    1. ACPI
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../4-OC配置/4-2.html">
+            
+                <a href="../4-OC配置/4-2.html">
+            
+                    
+                    2. Booter
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../4-OC配置/4-3.html">
+            
+                <a href="../4-OC配置/4-3.html">
+            
+                    
+                    3. DeviceProperties
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../4-OC配置/4-4.html">
+            
+                <a href="../4-OC配置/4-4.html">
+            
+                    
+                    4. Kernel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../4-OC配置/4-5.html">
+            
+                <a href="../4-OC配置/4-5.html">
+            
+                    
+                    5. Misc
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="../4-OC配置/4-6.html">
+            
+                <a href="../4-OC配置/4-6.html">
+            
+                    
+                    6. NVRAM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7" data-path="../4-OC配置/4-7.html">
+            
+                <a href="../4-OC配置/4-7.html">
+            
+                    
+                    7. PlatformInfo
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8" data-path="../4-OC配置/4-8.html">
+            
+                <a href="../4-OC配置/4-8.html">
+            
+                    
+                    8. UEFI
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >8. Kexts 微调</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div class="search-plus" id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#8-kexts-&#x5FAE;&#x8C03;"><b></b>8. Kexts &#x5FAE;&#x8C03;</a></li><ul><li><span class="title-icon "></span><a href="#&#x81EA;&#x52A8;&#x8C03;&#x6574;-kexts-&#x987A;&#x5E8F;"><b></b>&#x81EA;&#x52A8;&#x8C03;&#x6574; Kexts &#x987A;&#x5E8F;</a></li><li><span class="title-icon "></span><a href="#&#x624B;&#x52A8;&#x8C03;&#x6574;-kexts-&#x987A;&#x5E8F;"><b></b>&#x624B;&#x52A8;&#x8C03;&#x6574; Kexts &#x987A;&#x5E8F;</a></li><ul><li><span class="title-icon "></span><a href="#opencore-configurator"><b></b>OpenCore Configurator</a></li><li><span class="title-icon "></span><a href="#qtopencoreconfig"><b></b>QtOpenCoreConfig</a></li></ul><li><span class="title-icon "></span><a href="#&#x5E38;&#x89C1;-kexts-&#x7684;&#x8C03;&#x6574;&#x7EC6;&#x8282;"><b></b>&#x5E38;&#x89C1; Kexts &#x7684;&#x8C03;&#x6574;&#x7EC6;&#x8282;</a></li><ul><li><span class="title-icon "></span><a href="#&#x5FC5;&#x5907;-kexts-&#x7684;&#x52A0;&#x8F7D;&#x987A;&#x5E8F;"><b></b>&#x5FC5;&#x5907; Kexts &#x7684;&#x52A0;&#x8F7D;&#x987A;&#x5E8F;</a></li><li><span class="title-icon "></span><a href="#bcm-&#x535A;&#x901A;&#x65E0;&#x7EBF;&#x548C;&#x84DD;&#x7259;&#x52A0;&#x8F7D;&#x987A;&#x5E8F;"><b></b>BCM &#x535A;&#x901A;&#x65E0;&#x7EBF;&#x548C;&#x84DD;&#x7259;&#x52A0;&#x8F7D;&#x987A;&#x5E8F;</a></li><li><span class="title-icon "></span><a href="#bcm-&#x535A;&#x901A;&#x65E0;&#x7EBF;&#x7EC6;&#x8282;&#x8C03;&#x6574;"><b></b>BCM &#x535A;&#x901A;&#x65E0;&#x7EBF;&#x7EC6;&#x8282;&#x8C03;&#x6574;</a></li><li><span class="title-icon "></span><a href="#intel-&#x65E0;&#x7EBF;&#x548C;&#x84DD;&#x7259;&#x52A0;&#x8F7D;&#x987A;&#x5E8F;"><b></b>Intel &#x65E0;&#x7EBF;&#x548C;&#x84DD;&#x7259;&#x52A0;&#x8F7D;&#x987A;&#x5E8F;</a></li><li><span class="title-icon "></span><a href="#&#x7B14;&#x8BB0;&#x672C;-ps2-&#x952E;&#x9F20;&#x3001;&#x89E6;&#x63A7;&#x677F;&#x52A0;&#x8F7D;&#x987A;&#x5E8F;"><b></b>&#x7B14;&#x8BB0;&#x672C; PS2 &#x952E;&#x9F20;&#x3001;&#x89E6;&#x63A7;&#x677F;&#x52A0;&#x8F7D;&#x987A;&#x5E8F;</a></li><li><span class="title-icon "></span><a href="#&#x7B14;&#x8BB0;&#x672C;-i2c-&#x548C;-ps2-&#x914D;&#x5408;&#x9A71;&#x52A8;&#x89E6;&#x63A7;&#x677F;&#x52A0;&#x8F7D;&#x987A;&#x5E8F;"><b></b>&#x7B14;&#x8BB0;&#x672C; I2C &#x548C; PS2 &#x914D;&#x5408;&#x9A71;&#x52A8;&#x89E6;&#x63A7;&#x677F;&#x52A0;&#x8F7D;&#x987A;&#x5E8F;</a></li><li><span class="title-icon "></span><a href="#&#x7B14;&#x8BB0;&#x672C;-ps2smart-&#x952E;&#x76D8;&#x9A71;&#x52A8;&#x52A0;&#x8F7D;&#x987A;&#x5E8F;"><b></b>&#x7B14;&#x8BB0;&#x672C; PS2Smart &#x952E;&#x76D8;&#x9A71;&#x52A8;&#x52A0;&#x8F7D;&#x987A;&#x5E8F;</a></li><li><span class="title-icon "></span><a href="#&#x7B14;&#x8BB0;&#x672C;-voodoormikext-&#x548C;-voodoosmbuskext-&#x7EC6;&#x8282;&#x8C03;&#x6574;"><b></b>&#x7B14;&#x8BB0;&#x672C; VoodooRMI.kext &#x548C; VoodooSMBus.kext &#x7EC6;&#x8282;&#x8C03;&#x6574;</a></li></ul></ul></ul></div><a href="#8-kexts-&#x5FAE;&#x8C03;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="8-kexts-&#x5FAE;&#x8C03;"><a name="8-kexts-&#x5FAE;&#x8C03;" class="anchor-navigation-ex-anchor" href="#8-kexts-&#x5FAE;&#x8C03;"><i class="fa fa-link" aria-hidden="true"></i></a>8. Kexts &#x5FAE;&#x8C03;</h1>
+<p>Kexts &#x4E5F;&#x6709;&#x987A;&#x5E8F;&#x7684;&#x8981;&#x6C42;&#xFF0C;&#x800C;&#x4E14;&#x6709;&#x4E9B; Kexts &#x4F1A;&#x51B2;&#x7A81;&#x65E0;&#x6CD5;&#x5F00;&#x673A;&#xFF0C;&#x5173;&#x4E8E;&#x8FD9;&#x5757;&#x4E5F;&#x6BD4;&#x6742;&#x4E86;&#xFF0C;&#x56E0;&#x4E3A; Kexts &#x7684;&#x5F00;&#x53D1;&#x8005;&#x90FD;&#x4E0D;&#x76F8;&#x540C;&#xFF0C;&#x6240;&#x4EE5;&#x56FD;&#x5149;&#x6211;&#x53EA;&#x80FD;&#x5C3D;&#x529B;&#x53BB;&#x63CF;&#x8FF0;&#x4E86;&#xFF0C;&#x5982;&#x679C;&#x6587;&#x6863;&#x63CF;&#x8FF0;&#x4E0D;&#x6E05;&#x695A;&#x7684;&#x8BDD;&#xFF0C;&#x53EF;&#x4EE5;&#x53BB;&#x770B; B &#x7AD9;&#x5BF9;&#x5E94;&#x7684;&#x8BB2;&#x89E3;&#x89C6;&#x9891;&#x3002;</p>
+<h2 id="&#x81EA;&#x52A8;&#x8C03;&#x6574;-kexts-&#x987A;&#x5E8F;"><a name="&#x81EA;&#x52A8;&#x8C03;&#x6574;-kexts-&#x987A;&#x5E8F;" class="anchor-navigation-ex-anchor" href="#&#x81EA;&#x52A8;&#x8C03;&#x6574;-kexts-&#x987A;&#x5E8F;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x81EA;&#x52A8;&#x8C03;&#x6574; Kexts &#x987A;&#x5E8F;</h2>
+<p>ProperTree &#x5728;&#x8FDB;&#x884C; <strong>Cmd/Ctrl + Shift + R</strong> &#x6216;&#x8005;&#x4F7F;&#x7528;&#x56FE;&#x5F62;&#x5316;&#x83DC;&#x5355;&#x9009;&#x62E9; &#x300C;Clean Snapshot&#x300D;&#x64CD;&#x4F5C;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x4F1A;&#x81EA;&#x52A8;&#x8C03;&#x6574; Kexts &#x7684;&#x52A0;&#x8F7D;&#x987A;&#x5E8F;&#x5E76;&#x4E14;&#x7981;&#x7528;&#x6389;&#x51B2;&#x7A81;&#x7684; Kexts</p>
+<p>&#x5B9E;&#x9645;&#x4E0A; OpenCore Configurator &#x4E5F;&#x6709;&#x8FD9;&#x4E2A;&#x529F;&#x80FD;&#xFF0C;&#x70B9;&#x51FB;&#x5E95;&#x90E8;&#x7684;&#x300C;&#x68C0;&#x67E5; Kexts&#x300D;&#x5373;&#x53EF;&#xFF1A;</p>
+<p><a href="https://image.3001.net/images/20210919/16320620884857.png" data-lightbox="b9f44f6e-7297-4f45-8d19-c0fb8260457d" data-title="" target="_blank"><img src="https://image.3001.net/images/20210919/16320620884857.png" alt=""></a> </p>
+<h2 id="&#x624B;&#x52A8;&#x8C03;&#x6574;-kexts-&#x987A;&#x5E8F;"><a name="&#x624B;&#x52A8;&#x8C03;&#x6574;-kexts-&#x987A;&#x5E8F;" class="anchor-navigation-ex-anchor" href="#&#x624B;&#x52A8;&#x8C03;&#x6574;-kexts-&#x987A;&#x5E8F;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x624B;&#x52A8;&#x8C03;&#x6574; Kexts &#x987A;&#x5E8F;</h2>
+<p>&#x8F6F;&#x4EF6;&#x81EA;&#x52A8;&#x8C03;&#x6574;&#x7684;&#x987A;&#x5E8F;&#x4E0D;&#x4E00;&#x5B9A;&#x662F;&#x6700;&#x51C6;&#x786E;&#x7684;&#xFF0C;&#x56E0;&#x4E3A;&#x4ED6;&#x4E0D;&#x77E5;&#x9053;&#x4F60;&#x7528;&#x4E86;&#x54EA;&#x4E9B;&#x4E71;&#x4E03;&#x516B;&#x7CDF;&#x7684; Kexts&#xFF0C;&#x6240;&#x4EE5;&#x6709;&#x65F6;&#x5019;&#x8FD8;&#x9700;&#x8981;&#x6211;&#x4EEC;&#x624B;&#x52A8;&#x8C03;&#x6574;&#x4E0B; Kexts &#x7684;&#x52A0;&#x8F7D;&#x987A;&#x5E8F;&#x3002;</p>
+<h3 id="opencore-configurator"><a name="opencore-configurator" class="anchor-navigation-ex-anchor" href="#opencore-configurator"><i class="fa fa-link" aria-hidden="true"></i></a>OpenCore Configurator</h3>
+<p>OpenCore Configurator &#x64CD;&#x4F5C;&#x6BD4;&#x8F83;&#x7B80;&#x5355;&#xFF0C;&#x9009;&#x62E9;&#x597D;&#x4F60;&#x8981;&#x64CD;&#x4F5C;&#x7684; Kext&#xFF0C;&#x7136;&#x540E;&#x76F4;&#x63A5;&#x4E0A;&#x4E0B;&#x62D6;&#x52A8;&#x5373;&#x53EF;&#x8C03;&#x6574;&#x987A;&#x5E8F;&#xFF1A;</p>
+<p><a href="https://image.3001.net/images/20210919/16320622615904.png" data-lightbox="3935c1ef-a688-4c59-bcda-2255271814f2" data-title="" target="_blank"><img src="https://image.3001.net/images/20210919/16320622615904.png" alt=""></a> </p>
+<h3 id="qtopencoreconfig"><a name="qtopencoreconfig" class="anchor-navigation-ex-anchor" href="#qtopencoreconfig"><i class="fa fa-link" aria-hidden="true"></i></a>QtOpenCoreConfig</h3>
+<p>QtOpenCoreConfig &#x867D;&#x7136;&#x65E0;&#x6CD5;&#x76F4;&#x63A5;&#x62D6;&#x52A8;&#xFF0C;&#x4F46;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x5E95;&#x90E8;&#x7684;&#x300C;&#x5411;&#x4E0A;&#x300D;&#x548C;&#x300C;&#x5411;&#x4E0B;&#x300D;&#x7BAD;&#x5934;&#x7684;&#x56FE;&#x6807;&#x6765;&#x8C03;&#x6574; Kexts &#x7684;&#x52A0;&#x8F7D;&#x987A;&#x5E8F;&#xFF1A;</p>
+<p><a href="https://image.3001.net/images/20210919/16320623284819.png" data-lightbox="5ca6ea35-8afd-4988-819e-add7fb3a9e40" data-title="" target="_blank"><img src="https://image.3001.net/images/20210919/16320623284819.png" alt=""></a>  </p>
+<h2 id="&#x5E38;&#x89C1;-kexts-&#x7684;&#x8C03;&#x6574;&#x7EC6;&#x8282;"><a name="&#x5E38;&#x89C1;-kexts-&#x7684;&#x8C03;&#x6574;&#x7EC6;&#x8282;" class="anchor-navigation-ex-anchor" href="#&#x5E38;&#x89C1;-kexts-&#x7684;&#x8C03;&#x6574;&#x7EC6;&#x8282;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5E38;&#x89C1; Kexts &#x7684;&#x8C03;&#x6574;&#x7EC6;&#x8282;</h2>
+<h3 id="&#x5FC5;&#x5907;-kexts-&#x7684;&#x52A0;&#x8F7D;&#x987A;&#x5E8F;"><a name="&#x5FC5;&#x5907;-kexts-&#x7684;&#x52A0;&#x8F7D;&#x987A;&#x5E8F;" class="anchor-navigation-ex-anchor" href="#&#x5FC5;&#x5907;-kexts-&#x7684;&#x52A0;&#x8F7D;&#x987A;&#x5E8F;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5FC5;&#x5907; Kexts &#x7684;&#x52A0;&#x8F7D;&#x987A;&#x5E8F;</h3>
+<ol>
+<li>Lilu.kext</li>
+<li>VirtualSMC.kext</li>
+<li>WhateverGreen.kext</li>
+<li>SMCBatteryManager.kext &#xFF08;&#x53F0;&#x5F0F;&#x673A;&#x4E0D;&#x9700;&#x8981;&#xFF09;</li>
+<li>SMCLightSensor.kext        &#xFF08;&#x53F0;&#x5F0F;&#x673A;&#x4E0D;&#x9700;&#x8981;&#xFF09;</li>
+<li>SMCProcessor.kext </li>
+<li>SMCSuperIO.kext</li>
+<li>AppleALC.kext</li>
+</ol>
+<h3 id="bcm-&#x535A;&#x901A;&#x65E0;&#x7EBF;&#x548C;&#x84DD;&#x7259;&#x52A0;&#x8F7D;&#x987A;&#x5E8F;"><a name="bcm-&#x535A;&#x901A;&#x65E0;&#x7EBF;&#x548C;&#x84DD;&#x7259;&#x52A0;&#x8F7D;&#x987A;&#x5E8F;" class="anchor-navigation-ex-anchor" href="#bcm-&#x535A;&#x901A;&#x65E0;&#x7EBF;&#x548C;&#x84DD;&#x7259;&#x52A0;&#x8F7D;&#x987A;&#x5E8F;"><i class="fa fa-link" aria-hidden="true"></i></a>BCM &#x535A;&#x901A;&#x65E0;&#x7EBF;&#x548C;&#x84DD;&#x7259;&#x52A0;&#x8F7D;&#x987A;&#x5E8F;</h3>
+<ol>
+<li>AirportBrcmFixup.kext</li>
+<li>BrcmBluetoothInjector.kext</li>
+<li>BrcmFirmwareData.kext</li>
+<li>BrcmPatchRAM3.kext</li>
+</ol>
+<h3 id="bcm-&#x535A;&#x901A;&#x65E0;&#x7EBF;&#x7EC6;&#x8282;&#x8C03;&#x6574;"><a name="bcm-&#x535A;&#x901A;&#x65E0;&#x7EBF;&#x7EC6;&#x8282;&#x8C03;&#x6574;" class="anchor-navigation-ex-anchor" href="#bcm-&#x535A;&#x901A;&#x65E0;&#x7EBF;&#x7EC6;&#x8282;&#x8C03;&#x6574;"><i class="fa fa-link" aria-hidden="true"></i></a>BCM &#x535A;&#x901A;&#x65E0;&#x7EBF;&#x7EC6;&#x8282;&#x8C03;&#x6574;</h3>
+<p>&#x76F4;&#x63A5;&#x52A0;&#x8F7D; AirportBrcmFixup.kext &#x4F1A;&#x53D1;&#x73B0;&#x5B9E;&#x9645;&#x4E0A;&#x52A0;&#x8F7D;&#x4E86; 3 &#x4E2A; Kext&#xFF1A;</p>
+<ol>
+<li>AirportBrcmFixup.kext</li>
+<li>AirportBrcmFixup.kext/Contents/PlugIns/AirPortBrcmNIC_Injector.kext</li>
+<li>AirportBrcmFixup.kext/Contents/PlugIns/AirPortBrcm4360_Injector.kext</li>
+</ol>
+<p>&#x5176;&#x4E2D;&#x5B89;&#x88C5; Big Sur &#x4EE5;&#x53CA;&#x66F4;&#x65B0;&#x7248;&#x672C;&#x7684;&#x8BDD;&#xFF0C;AirPortBrcm4360_Injector.kext &#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#x4F1A;&#x51FA;&#x95EE;&#x9898;&#xFF0C;&#x6240;&#x4EE5;&#x9700;&#x8981;&#x6211;&#x4EEC;&#x8BBE;&#x7F6E;&#x4E00;&#x4E0B;&#x6700;&#x5927;&#x5185;&#x6838;&#x4E3A; 19.9.9 &#xFF0C;&#x8FD9;&#x6837;&#x53EF;&#x80FD;&#x4F1A;&#x51CF;&#x5C11;&#x4E00;&#x4E9B;&#x5F02;&#x5E38;&#x9519;&#x8BEF;&#xFF1A;</p>
+<p><a href="https://image.3001.net/images/20210919/16320628447557.png" data-lightbox="5295ec88-151f-49c2-a6a8-4ea79dba5f8b" data-title="" target="_blank"><img src="https://image.3001.net/images/20210919/16320628447557.png" alt=""></a>  </p>
+<p>&#x53E6;&#x5916;&#xFF0C;BCM94352Z &#x82AF;&#x7247;&#x7684;&#x7F51;&#x5361;&#x5F80;&#x5F80;&#x8FD8;&#x9700;&#x8981;&#x5728;&#x542F;&#x52A8;&#x9879;&#x91CC;&#x9762;&#x6DFB;&#x52A0;&#xFF1A;<code>brcmfx-driver=2</code> &#x89E3;&#x51B3;&#x4E00;&#x4E9B;&#x7761;&#x7720;&#x6216;&#x8005;&#x5176;&#x4ED6;&#x7384;&#x5B66;&#x95EE;&#x9898;&#xFF1A;</p>
+<p><a href="https://image.3001.net/images/20210919/16320629319077.png" data-lightbox="6c97a19f-3bf1-49f3-a39a-4923fae9da42" data-title="" target="_blank"><img src="https://image.3001.net/images/20210919/16320629319077.png" alt=""></a>  </p>
+<h3 id="intel-&#x65E0;&#x7EBF;&#x548C;&#x84DD;&#x7259;&#x52A0;&#x8F7D;&#x987A;&#x5E8F;"><a name="intel-&#x65E0;&#x7EBF;&#x548C;&#x84DD;&#x7259;&#x52A0;&#x8F7D;&#x987A;&#x5E8F;" class="anchor-navigation-ex-anchor" href="#intel-&#x65E0;&#x7EBF;&#x548C;&#x84DD;&#x7259;&#x52A0;&#x8F7D;&#x987A;&#x5E8F;"><i class="fa fa-link" aria-hidden="true"></i></a>Intel &#x65E0;&#x7EBF;&#x548C;&#x84DD;&#x7259;&#x52A0;&#x8F7D;&#x987A;&#x5E8F;</h3>
+<ol>
+<li>AirportItlwm.kext</li>
+<li>IntelBluetoothInjector.kext</li>
+<li>IntelBluetoothFirmware.kext</li>
+</ol>
+<h3 id="&#x7B14;&#x8BB0;&#x672C;-ps2-&#x952E;&#x9F20;&#x3001;&#x89E6;&#x63A7;&#x677F;&#x52A0;&#x8F7D;&#x987A;&#x5E8F;"><a name="&#x7B14;&#x8BB0;&#x672C;-ps2-&#x952E;&#x9F20;&#x3001;&#x89E6;&#x63A7;&#x677F;&#x52A0;&#x8F7D;&#x987A;&#x5E8F;" class="anchor-navigation-ex-anchor" href="#&#x7B14;&#x8BB0;&#x672C;-ps2-&#x952E;&#x9F20;&#x3001;&#x89E6;&#x63A7;&#x677F;&#x52A0;&#x8F7D;&#x987A;&#x5E8F;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x7B14;&#x8BB0;&#x672C; PS2 &#x952E;&#x9F20;&#x3001;&#x89E6;&#x63A7;&#x677F;&#x52A0;&#x8F7D;&#x987A;&#x5E8F;</h3>
+<ol>
+<li>VoodooPS2Controller.kext</li>
+<li>VoodooPS2Controller.kext/Contents/PlugIns/VoodooPS2Keyboard.kext</li>
+<li>VoodooPS2Controller.kext/Contents/PlugIns/VoodooPS2Mouse.kext</li>
+<li>VoodooPS2Controller.kext/Contents/PlugIns/VoodooPS2Trackpad.kext</li>
+<li>VoodooPS2Controller.kext/Contents/PlugIns/VoodooInput.kext</li>
+<li>BrightnessKeys.kext&#xFF08;&#x529F;&#x80FD;&#x4EAE;&#x5EA6;&#x8C03;&#x8282;&#x6309;&#x952E;&#x9A71;&#x52A8; &#x4E0D;&#x4E00;&#x5B9A;&#x9700;&#x8981;&#xFF09;</li>
+</ol>
+<h3 id="&#x7B14;&#x8BB0;&#x672C;-i2c-&#x548C;-ps2-&#x914D;&#x5408;&#x9A71;&#x52A8;&#x89E6;&#x63A7;&#x677F;&#x52A0;&#x8F7D;&#x987A;&#x5E8F;"><a name="&#x7B14;&#x8BB0;&#x672C;-i2c-&#x548C;-ps2-&#x914D;&#x5408;&#x9A71;&#x52A8;&#x89E6;&#x63A7;&#x677F;&#x52A0;&#x8F7D;&#x987A;&#x5E8F;" class="anchor-navigation-ex-anchor" href="#&#x7B14;&#x8BB0;&#x672C;-i2c-&#x548C;-ps2-&#x914D;&#x5408;&#x9A71;&#x52A8;&#x89E6;&#x63A7;&#x677F;&#x52A0;&#x8F7D;&#x987A;&#x5E8F;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x7B14;&#x8BB0;&#x672C; I2C &#x548C; PS2 &#x914D;&#x5408;&#x9A71;&#x52A8;&#x89E6;&#x63A7;&#x677F;&#x52A0;&#x8F7D;&#x987A;&#x5E8F;</h3>
+<ol>
+<li>VoodooI2C.kext/Contents/PlugIns/VoodooI2CServices.kext</li>
+<li>VoodooI2C.kext/Contents/PlugIns/VoodooGPIO.kext</li>
+<li>VoodooI2C.kext</li>
+<li>VoodooI2CHID.kext</li>
+<li>VoodooPS2Controller.kext</li>
+<li>VoodooPS2Controller.kext/Contents/PlugIns/VoodooPS2Keyboard.kext</li>
+<li>VoodooI2C.kext/Contents/PlugIns/VoodooInput.kext</li>
+<li>BrightnessKeys.kext &#xFF08;&#x529F;&#x80FD;&#x4EAE;&#x5EA6;&#x8C03;&#x8282;&#x6309;&#x952E;&#x9A71;&#x52A8; &#x4E0D;&#x4E00;&#x5B9A;&#x9700;&#x8981;&#xFF09;</li>
+</ol>
+<p>&#x8865;&#x5145;&#x4E00;&#x4E2A;&#x5C0F;&#x59FF;&#x52BF;&#xFF1A;&#x56E0;&#x4E3A; IC2 &#x548C; PS2 &#x90FD;&#x6709; VoodooInput.kext&#xFF0C;&#x6240;&#x4EE5;&#x5982;&#x679C;&#x4E0D;&#x5220;&#x9664;&#x6389;&#x6216;&#x8005;&#x7981;&#x7528;&#x6389; PS2 &#x7684; VoodooInput.kext &#x7684;&#x8BDD;&#xFF0C;&#x4F1A;&#x5BFC;&#x81F4;&#x5F00;&#x673A;&#x5185;&#x6838;&#x51B2;&#x7A81;&#x5361;&#x6B7B;&#x65E0;&#x6CD5;&#x5F00;&#x673A;&#x3002;</p>
+<h3 id="&#x7B14;&#x8BB0;&#x672C;-ps2smart-&#x952E;&#x76D8;&#x9A71;&#x52A8;&#x52A0;&#x8F7D;&#x987A;&#x5E8F;"><a name="&#x7B14;&#x8BB0;&#x672C;-ps2smart-&#x952E;&#x76D8;&#x9A71;&#x52A8;&#x52A0;&#x8F7D;&#x987A;&#x5E8F;" class="anchor-navigation-ex-anchor" href="#&#x7B14;&#x8BB0;&#x672C;-ps2smart-&#x952E;&#x76D8;&#x9A71;&#x52A8;&#x52A0;&#x8F7D;&#x987A;&#x5E8F;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x7B14;&#x8BB0;&#x672C; PS2Smart &#x952E;&#x76D8;&#x9A71;&#x52A8;&#x52A0;&#x8F7D;&#x987A;&#x5E8F;</h3>
+<ol>
+<li>ApplePS2SmartTouchPad.kext/Contents/PlugIns/ApplePS2Controller.kext</li>
+<li>ApplePS2SmartTouchPad.kext/Contents/PlugIns/ApplePS2Keyboard.kext</li>
+<li>ApplePS2SmartTouchPad.kext</li>
+</ol>
+<h3 id="&#x7B14;&#x8BB0;&#x672C;-voodoormikext-&#x548C;-voodoosmbuskext-&#x7EC6;&#x8282;&#x8C03;&#x6574;"><a name="&#x7B14;&#x8BB0;&#x672C;-voodoormikext-&#x548C;-voodoosmbuskext-&#x7EC6;&#x8282;&#x8C03;&#x6574;" class="anchor-navigation-ex-anchor" href="#&#x7B14;&#x8BB0;&#x672C;-voodoormikext-&#x548C;-voodoosmbuskext-&#x7EC6;&#x8282;&#x8C03;&#x6574;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x7B14;&#x8BB0;&#x672C; VoodooRMI.kext &#x548C; VoodooSMBus.kext &#x7EC6;&#x8282;&#x8C03;&#x6574;</h3>
+<p>&#x9996;&#x5148;&#x786E;&#x4FDD; VoodooPS2 &#x914D;&#x7F6E;&#x5982;&#x4E0B;&#xFF1A;</p>
+<ul>
+<li>&#x542F;&#x7528;<ul>
+<li>VoodooPS2Controller.kext</li>
+<li>VoodooPS2Controller.kext/Contents/PlugIns/VoodooPS2Mouse.kext</li>
+<li>VoodooPS2Controller.kext/Contents/PlugIns/VoodooPS2Keyboard.kext</li>
+<li>VoodooPS2Controller.kext/Contents/PlugIns/VoodooPS2Trackpad.kext</li>
+</ul>
+</li>
+<li>&#x7981;&#x7528;<ul>
+<li>VoodooPS2Controller.kext/Contents/PlugIns/VoodooInput.kext</li>
+</ul>
+</li>
+</ul>
+<p>&#x7136;&#x540E;<strong>&#x542F;&#x7528;</strong>&#x52A0;&#x8F7D;&#x57FA;&#x7840;&#x7684; RMI &#x914D;&#x7F6E;&#xFF1A;</p>
+<ul>
+<li>VoodooRMI.kext</li>
+<li>VoodooRMI.kext/Contents/PlugIns/VoodooInput.kext</li>
+</ul>
+<p>&#x5982;&#x679C;&#x4F60;&#x662F; SMBus &#x89E6;&#x63A7;&#x677F;&#x7684;&#x8BDD;&#xFF0C;&#x8FD8;&#x9700;&#x8981;&#x52A0;&#x8F7D;&#xFF1A;</p>
+<ul>
+<li>VoodooSMBus.kext</li>
+<li>VoodooRMI.kext/Contents/PlugIns/RMISMBus.kext</li>
+</ul>
+<p>&#x5982;&#x679C;&#x4F60;&#x662F; I2C&#x89E6;&#x63A7;&#x677F;&#x7684;&#x8BDD;&#xFF0C;&#x8FD8;&#x9700;&#x8981;&#x52A0;&#x8F7D;&#xFF1A;</p>
+<ul>
+<li>VoodooI2C.kext</li>
+<li>VoodooRMI.kext/Contents/PlugIns/RMII2C.kext</li>
+</ul>
+<footer class="page-footer"><span class="copyright">powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x7AE0;&#x6700;&#x540E;&#x4FEE;&#x6539;&#x65F6;&#x95F4;&#xFF1A;
+2021-09-19 22:59:56
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="3-7.html" class="navigation navigation-prev " aria-label="Previous page: 7. 初步配置">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../4-OC配置/" class="navigation navigation-next " aria-label="Next page: 五、配置 config.list">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"8. Kexts 微调","level":"1.4.8","depth":2,"next":{"title":"五、配置 config.list","level":"1.5","depth":1,"path":"4-OC配置/README.md","ref":"4-OC配置/README.md","articles":[{"title":"1. ACPI","level":"1.5.1","depth":2,"path":"4-OC配置/4-1.md","ref":"4-OC配置/4-1.md","articles":[]},{"title":"2. Booter","level":"1.5.2","depth":2,"path":"4-OC配置/4-2.md","ref":"4-OC配置/4-2.md","articles":[]},{"title":"3. DeviceProperties","level":"1.5.3","depth":2,"path":"4-OC配置/4-3.md","ref":"4-OC配置/4-3.md","articles":[]},{"title":"4. Kernel","level":"1.5.4","depth":2,"path":"4-OC配置/4-4.md","ref":"4-OC配置/4-4.md","articles":[]},{"title":"5. Misc","level":"1.5.5","depth":2,"path":"4-OC配置/4-5.md","ref":"4-OC配置/4-5.md","articles":[]},{"title":"6. NVRAM","level":"1.5.6","depth":2,"path":"4-OC配置/4-6.md","ref":"4-OC配置/4-6.md","articles":[]},{"title":"7. PlatformInfo","level":"1.5.7","depth":2,"path":"4-OC配置/4-7.md","ref":"4-OC配置/4-7.md","articles":[]},{"title":"8. UEFI","level":"1.5.8","depth":2,"path":"4-OC配置/4-8.md","ref":"4-OC配置/4-8.md","articles":[]}]},"previous":{"title":"7. 初步配置","level":"1.4.7","depth":2,"path":"3-准备工作/3-7.md","ref":"3-准备工作/3-7.md","articles":[]},"dir":"ltr"},"config":{"plugins":["splitter","-lunr","-search","-sharing","search-plus","anchor-navigation-ex","expandable-chapters-small","copy-code-button","lightbox","tbfed-pagefooter","hide-element","-highlight","prism","prism-themes","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"","modify_label":"该文章最后修改时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prism-themes/themes/prism-dracula.css"]},"livereload":{},"splitter":{},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"lightbox":{"jquery":true,"sameUuid":false},"prism-themes":{},"expandable-chapters-small":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"search-plus":{}},"theme":"default","author":"国光","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Python学习记录","language":"zh-hans","links":{"sidebar":{"个人博客":"//www.sqlsec.com"}},"gitbook":"*"},"file":{"path":"3-准备工作/3-8.md","mtime":"2021-09-19T14:59:56.611Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-09-19T15:07:54.422Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lightbox/js/lightbox.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-hide-element/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
