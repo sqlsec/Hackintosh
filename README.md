@@ -45,7 +45,7 @@
 <table>
     <tr>
         <td>微信
-            <center><img src="https://image.3001.net/images/20200421/1587449920128.jpg " width="70%"></center>
+            <center><img src="https://image.3001.net/images/20200421/1587449920128.jpg" width="70%"></center>
         </td>
         <td width="50%">
           支付宝
