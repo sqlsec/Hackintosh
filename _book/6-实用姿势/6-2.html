@@ -1,0 +1,1014 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>2. 编译触控板驱动 · 国光的黑苹果安装教程</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="国光">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-lightbox/css/lightbox.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-dracula.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="6-3.html" />
+    
+    
+    <link rel="prev" href="6-1.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="//www.sqlsec.com" target="_blank" class="custom-link">个人博客</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    一、前言介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../1-基础知识/">
+            
+                <a href="../1-基础知识/">
+            
+                    
+                    二、基础知识
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../1-基础知识/1-1.html">
+            
+                <a href="../1-基础知识/1-1.html">
+            
+                    
+                    1. 基操勿六
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../1-基础知识/1-2.html">
+            
+                <a href="../1-基础知识/1-2.html">
+            
+                    
+                    2. 硬件限制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../1-基础知识/1-3.html">
+            
+                <a href="../1-基础知识/1-3.html">
+            
+                    
+                    3. 寻找硬件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../1-基础知识/1-4.html">
+            
+                <a href="../1-基础知识/1-4.html">
+            
+                    
+                    4. 专业术语
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../2-启动盘制作/">
+            
+                <a href="../2-启动盘制作/">
+            
+                    
+                    三、U盘制作
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../2-启动盘制作/2-1.html">
+            
+                <a href="../2-启动盘制作/2-1.html">
+            
+                    
+                    1. 下载镜像
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../2-启动盘制作/2-2.html">
+            
+                <a href="../2-启动盘制作/2-2.html">
+            
+                    
+                    2. 写入镜像
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../2-启动盘制作/2-3.html">
+            
+                <a href="../2-启动盘制作/2-3.html">
+            
+                    
+                    3. 结构讲解
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../3-准备工作/">
+            
+                <a href="../3-准备工作/">
+            
+                    
+                     四、准备工作
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../3-准备工作/3-1.html">
+            
+                <a href="../3-准备工作/3-1.html">
+            
+                    
+                    1. BIOS设置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../3-准备工作/3-2.html">
+            
+                <a href="../3-准备工作/3-2.html">
+            
+                    
+                    2. OC 文件结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../3-准备工作/3-3.html">
+            
+                <a href="../3-准备工作/3-3.html">
+            
+                    
+                    3. 准备 ACPI
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../3-准备工作/3-4.html">
+            
+                <a href="../3-准备工作/3-4.html">
+            
+                    
+                    4. 准备 Kexts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../3-准备工作/3-5.html">
+            
+                <a href="../3-准备工作/3-5.html">
+            
+                    
+                    5. Drivers说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../3-准备工作/3-6.html">
+            
+                <a href="../3-准备工作/3-6.html">
+            
+                    
+                    6. OC 编辑器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="../3-准备工作/3-7.html">
+            
+                <a href="../3-准备工作/3-7.html">
+            
+                    
+                    7. 初步配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="../3-准备工作/3-8.html">
+            
+                <a href="../3-准备工作/3-8.html">
+            
+                    
+                    8. Kexts 微调
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../4-OC配置/">
+            
+                <a href="../4-OC配置/">
+            
+                    
+                    五、配置 config.list
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../4-OC配置/4-1.html">
+            
+                <a href="../4-OC配置/4-1.html">
+            
+                    
+                    1. ACPI
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../4-OC配置/4-2.html">
+            
+                <a href="../4-OC配置/4-2.html">
+            
+                    
+                    2. Booter
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../4-OC配置/4-3.html">
+            
+                <a href="../4-OC配置/4-3.html">
+            
+                    
+                    3. DeviceProperties
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../4-OC配置/4-4.html">
+            
+                <a href="../4-OC配置/4-4.html">
+            
+                    
+                    4. Kernel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../4-OC配置/4-5.html">
+            
+                <a href="../4-OC配置/4-5.html">
+            
+                    
+                    5. Misc
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="../4-OC配置/4-6.html">
+            
+                <a href="../4-OC配置/4-6.html">
+            
+                    
+                    6. NVRAM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7" data-path="../4-OC配置/4-7.html">
+            
+                <a href="../4-OC配置/4-7.html">
+            
+                    
+                    7. PlatformInfo
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8" data-path="../4-OC配置/4-8.html">
+            
+                <a href="../4-OC配置/4-8.html">
+            
+                    
+                    8. UEFI
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../5-实战演示/">
+            
+                <a href="../5-实战演示/">
+            
+                    
+                    六、实战演示
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../5-实战演示/5-1.html">
+            
+                <a href="../5-实战演示/5-1.html">
+            
+                    
+                    1. 机器概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../5-实战演示/5-2.html">
+            
+                <a href="../5-实战演示/5-2.html">
+            
+                    
+                    2. BIOS 设置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../5-实战演示/5-3.html">
+            
+                <a href="../5-实战演示/5-3.html">
+            
+                    
+                    3. 磁盘划分
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../5-实战演示/5-4.html">
+            
+                <a href="../5-实战演示/5-4.html">
+            
+                    
+                    4. 安装 Windows
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../5-实战演示/5-5.html">
+            
+                <a href="../5-实战演示/5-5.html">
+            
+                    
+                    5. 安装 macOS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="../5-实战演示/5-6.html">
+            
+                <a href="../5-实战演示/5-6.html">
+            
+                    
+                    6. 完善引导
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    七、实用姿势
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="6-1.html">
+            
+                <a href="6-1.html">
+            
+                    
+                    1. USB 定制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.7.2" data-path="6-2.html">
+            
+                <a href="6-2.html">
+            
+                    
+                    2. 编译触控板驱动
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="6-3.html">
+            
+                <a href="6-3.html">
+            
+                    
+                    3. 触控板中断示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="6-4.html">
+            
+                <a href="6-4.html">
+            
+                    
+                    4. 台式机双显卡显示
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5" data-path="6-5.html">
+            
+                <a href="6-5.html">
+            
+                    
+                    5. 开启 HiDPi
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.6" data-path="6-6.html">
+            
+                <a href="6-6.html">
+            
+                    
+                    6. 睡眠问题排查
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.7" data-path="6-7.html">
+            
+                <a href="6-7.html">
+            
+                    
+                    7. macOS 12 蓝牙
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.8" data-path="6-8.html">
+            
+                <a href="6-8.html">
+            
+                    
+                    8. 屏蔽不支持的硬盘
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../7-完美黑果/">
+            
+                <a href="../7-完美黑果/">
+            
+                    
+                    八、完美黑果
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../8-授人以鱼/">
+            
+                <a href="../8-授人以鱼/">
+            
+                    
+                    九、授人以鱼
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../9-常见QA/">
+            
+                <a href="../9-常见QA/">
+            
+                    
+                    十、常见 QA
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../10-排错/">
+            
+                <a href="../10-排错/">
+            
+                    
+                    OpenCore 排错
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="../持续更新/">
+            
+                <a href="../持续更新/">
+            
+                    
+                    持续更新中....
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >2. 编译触控板驱动</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div class="search-plus" id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#2-&#x7F16;&#x8BD1;&#x89E6;&#x63A7;&#x677F;&#x9A71;&#x52A8;"><b></b>2. &#x7F16;&#x8BD1;&#x89E6;&#x63A7;&#x677F;&#x9A71;&#x52A8;</a></li><ul><li><span class="title-icon "></span><a href="#&#x524D;&#x8A00;"><b></b>&#x524D;&#x8A00;</a></li><li><span class="title-icon "></span><a href="#&#x514B;&#x9686;&#x6E90;&#x7801;"><b></b>&#x514B;&#x9686;&#x6E90;&#x7801;</a></li><li><span class="title-icon "></span><a href="#&#x6253;&#x5F00;&#x9879;&#x76EE;"><b></b>&#x6253;&#x5F00;&#x9879;&#x76EE;</a></li><li><span class="title-icon "></span><a href="#iokit-&#x7F3A;&#x5931;"><b></b>IOKit &#x7F3A;&#x5931;</a></li><li><span class="title-icon "></span><a href="#voodooinputmultitouch-&#x7F3A;&#x5931;"><b></b>VoodooInputMultitouch &#x7F3A;&#x5931;</a></li><li><span class="title-icon "></span><a href="#cldoc-&#x6216;&#x8005;-cpplint-&#x7F3A;&#x5931;"><b></b>cldoc &#x6216;&#x8005; cpplint &#x7F3A;&#x5931;</a></li><li><span class="title-icon "></span><a href="#&#x7F16;&#x8BD1;&#x9879;&#x76EE;"><b></b>&#x7F16;&#x8BD1;&#x9879;&#x76EE;</a></li><li><span class="title-icon "></span><a href="#&#x5751;&#x70B9;&#x8BB0;&#x5F55;"><b></b>&#x5751;&#x70B9;&#x8BB0;&#x5F55;</a></li><li><span class="title-icon "></span><a href="#&#x652F;&#x6301;&#x4E00;&#x4E0B;&#xFF1F;"><b></b>&#x652F;&#x6301;&#x4E00;&#x4E0B;&#xFF1F;</a></li></ul></ul></div><a href="#2-&#x7F16;&#x8BD1;&#x89E6;&#x63A7;&#x677F;&#x9A71;&#x52A8;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="2-&#x7F16;&#x8BD1;&#x89E6;&#x63A7;&#x677F;&#x9A71;&#x52A8;"><a name="2-&#x7F16;&#x8BD1;&#x89E6;&#x63A7;&#x677F;&#x9A71;&#x52A8;" class="anchor-navigation-ex-anchor" href="#2-&#x7F16;&#x8BD1;&#x89E6;&#x63A7;&#x677F;&#x9A71;&#x52A8;"><i class="fa fa-link" aria-hidden="true"></i></a>2. &#x7F16;&#x8BD1;&#x89E6;&#x63A7;&#x677F;&#x9A71;&#x52A8;</h1>
+<h2 id="&#x524D;&#x8A00;"><a name="&#x524D;&#x8A00;" class="anchor-navigation-ex-anchor" href="#&#x524D;&#x8A00;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x524D;&#x8A00;</h2>
+<p>&#x5F53;&#x4F60;&#x770B;&#x5230;&#x8FD9;&#x90E8;&#x5206;&#x5185;&#x5BB9;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x8868;&#x793A;&#x4F60;&#x9ED1;&#x82F9;&#x679C;&#x5DF2;&#x7ECF;&#x7814;&#x7A76;&#x7684;&#x6BD4;&#x8F83;&#x6DF1;&#x4E86;&#xFF0C;&#x9A71;&#x52A8;&#x5F97;&#x81EA;&#x5DF1;&#x5B9A;&#x5236;&#x9B54;&#x6539;&#x4E86;&#x3002;&#x6240;&#x4EE5;&#x8FD9;&#x91CC;&#x5C31;&#x5047;&#x8BBE;&#x4F60;&#x5DF2;&#x7ECF;&#x662F;&#x4E00;&#x4E2A;&#x9AD8;&#x73A9;&#x4E86;&#xFF0C;&#x4E0D;&#x4F1A;&#x518D;&#x5570;&#x55E6;&#x4E00;&#x4E9B;&#x57FA;&#x7840;&#x7684;&#x59FF;&#x52BF;&#x3002;</p>
+<p>&#x5B9E;&#x9645;&#x4E0A;&#x8FD9;&#x5757;&#x5185;&#x5BB9;&#x642C;&#x8FD0;&#x81EA;&#x6211;&#x535A;&#x5BA2;&#x7684;&#x8FD9;&#x7BC7;&#x6587;&#x7AE0;&#xFF1A;<a href="https://www.sqlsec.com/2021/12/screenpad.html" target="_blank">&#x53CC;&#x5C4F;&#x7B14;&#x8BB0;&#x672C;&#x5728; macOS &#x4E0B;&#x7684;&#x89E6;&#x63A7;&#x677F;&#x9A71;&#x52A8;&#x7814;&#x7A76;</a> </p>
+<p>&#x7531;&#x4E8E;&#x6587;&#x7AE0;&#x6BD4;&#x8F83;&#x957F;&#xFF0C;&#x6240;&#x4EE5;&#x5C31;&#x4ECE;&#x91CC;&#x9762;&#x63D0;&#x8D77;&#x5173;&#x952E;&#x7684;&#x90E8;&#x5206;&#x653E;&#x5230;&#x4E86;&#x8FD9;&#x4E2A;&#x6559;&#x7A0B;&#x91CC;&#x9762;&#xFF0C;&#x611F;&#x5174;&#x8DA3;&#x7684;&#x670B;&#x53CB;&#x4E5F;&#x53EF;&#x4EE5;&#x53BB;&#x539F;&#x6587;&#x89C2;&#x770B;&#x4E00;&#x4E0B;&#x3002;&#x4E0B;&#x9762;&#x76F4;&#x63A5;&#x5F00;&#x59CB; VoodooI2C &#x9879;&#x76EE;&#x7684;&#x7F16;&#x8BD1;&#x6559;&#x7A0B;&#x3002;</p>
+<h2 id="&#x514B;&#x9686;&#x6E90;&#x7801;"><a name="&#x514B;&#x9686;&#x6E90;&#x7801;" class="anchor-navigation-ex-anchor" href="#&#x514B;&#x9686;&#x6E90;&#x7801;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x514B;&#x9686;&#x6E90;&#x7801;</h2>
+<p>VoodooI2C &#x9879;&#x76EE;&#x6240;&#x4F9D;&#x8D56;&#x7684;&#x6A21;&#x5757;&#x5C5E;&#x4E8E;&#x4E0D;&#x540C;&#x7684;&#x4ED3;&#x5E93;&#xFF0C;&#x6240;&#x4EE5; git clone &#x7684;&#x65F6;&#x5019;&#x9700;&#x8981;&#x4F7F;&#x7528; <code>recursive</code> &#x53C2;&#x6570;&#x4E00;&#x6B21;&#x6027;&#x514B;&#x9686;&#x4E0B;&#x8F7D;&#x5B8C;&#xFF1A;</p>
+<pre class="language-"><code class="lang-bash"><span class="token comment"># &#x672C;&#x6B21;&#x5B58;&#x653E;&#x7684;&#x6587;&#x4EF6;&#x5939;&#x8DEF;&#x5F84;&#x4EC5;&#x4F9B;&#x53C2;&#x8003;</span>
+$ <span class="token builtin class-name">pwd</span>
+/Users/bytedance/Desktop/XCode
+
+$ <span class="token builtin class-name">cd</span> ~/Desktop/XCode
+
+$ <span class="token function">git</span> clone --recursive https://github.com/VoodooI2C/VoodooI2C.git
+</code></pre>
+<h2 id="&#x6253;&#x5F00;&#x9879;&#x76EE;"><a name="&#x6253;&#x5F00;&#x9879;&#x76EE;" class="anchor-navigation-ex-anchor" href="#&#x6253;&#x5F00;&#x9879;&#x76EE;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6253;&#x5F00;&#x9879;&#x76EE;</h2>
+<p>&#x4F7F;&#x7528; Xcode &#x6253;&#x5F00;<code>VoodooI2C.xcworkspace</code>&#x6587;&#x4EF6;&#xFF1A;</p>
+<p><a href="https://image.3001.net/images/20211220/16399676482692.png" data-lightbox="d6af2e99-aeec-4f80-806b-b0081421451c" data-title="" target="_blank"><img src="https://image.3001.net/images/20211220/16399676482692.png" alt=""></a> </p>
+<p>&#x6253;&#x5F00;&#x9879;&#x76EE;&#x80AF;&#x5B9A;&#x4E0D;&#x662F;&#x4E00;&#x5E06;&#x98CE;&#x987A;&#x7684;&#xFF0C;&#x6211;&#x4EEC;&#x4F1A;&#x770B;&#x5230;&#x8BB8;&#x591A; issue&#xFF1A;</p>
+<p><a href="https://image.3001.net/images/20211220/16399684967484.jpeg" data-lightbox="905c20b7-0945-4a3a-827f-94774733402b" data-title="" target="_blank"><img src="https://image.3001.net/images/20211220/16399684967484.jpeg" alt=""></a> </p>
+<p>&#x8FD9;&#x91CC;&#x5B9E;&#x9645;&#x4E0A;&#x6211;&#x4EEC;&#x4E0D;&#x7528;&#x7BA1;&#x5B83;&#xFF0C;&#x5168;&#x90E8;&#x9ED8;&#x8BA4;&#x5C31;&#x597D;&#x4E86;&#xFF0C;&#x4E0D;&#x8981;&#x624B;&#x52A8;&#x53BB;&#x70B9;&#x51FB;&#x300C;Perform Changes&#x300D;&#x54E6;&#x3002;</p>
+<h2 id="iokit-&#x7F3A;&#x5931;"><a name="iokit-&#x7F3A;&#x5931;" class="anchor-navigation-ex-anchor" href="#iokit-&#x7F3A;&#x5931;"><i class="fa fa-link" aria-hidden="true"></i></a>IOKit &#x7F3A;&#x5931;</h2>
+<p>&#x70B9;&#x51FB;&#x300C;Product&#x300D;-&#x300C;Build&#x300D;&#x5148;&#x7F16;&#x8BD1;&#x4E00;&#x4E0B;&#xFF0C;&#x53D1;&#x73B0;&#x62A5;&#x9519;&#x4E86;&#xFF0C;&#x63D0;&#x793A;&#xFF1A;<code>&apos;IOKit/IOLib.h&apos; file not found</code>&#xFF1A; </p>
+<p> <a href="https://image.3001.net/images/20211220/16399686079268.jpeg" data-lightbox="30fe5d03-1e92-48ea-8a90-0ccec521f31c" data-title="" target="_blank"><img src="https://image.3001.net/images/20211220/16399686079268.jpeg" alt=""></a> </p>
+<p> &#x8FD9;&#x4E2A;&#x5730;&#x65B9;&#x4E00;&#x5F00;&#x59CB;&#x5361;&#x4E86;&#x6211;&#x5F88;&#x4E45;&#xFF0C;&#x540E;&#x9762;&#x53D1;&#x73B0;&#x5728;&#x9879;&#x76EE;&#x7684;&#x300C;Build Settings&#x300D;&#x91CC;&#x9762;&#x7684;&#x300C;Library Search Paths&#x300D;&#x91CC;&#x9762;&#x7684; <code>MacKernelSDK</code>&#x8FD9;&#x4E2A;&#x6587;&#x4EF6;&#x5939;&#x6211;&#x5E76;&#x6CA1;&#x6709;&#xFF1A;</p>
+<p><a href="https://image.3001.net/images/20211220/16399688648632.png" data-lightbox="2985512c-fc9c-493e-9995-043110af62f3" data-title="" target="_blank"><img src="https://image.3001.net/images/20211220/16399688648632.png" alt=""></a> </p>
+<p>&#x6240;&#x4EE5;&#x624D;&#x4F1A;&#x5BFC;&#x81F4;&#x627E;&#x4E0D;&#x5230; IOKit &#x7684;&#x5E93;&#x6587;&#x4EF6;&#xFF0C;&#x89E3;&#x51B3;&#x65B9;&#x6CD5;&#x5C31;&#x662F;&#x624B;&#x52A8;&#x53BB;&#x8865;&#x5145;&#x5B8C;&#x5584; MacKernelSDK &#x7684;&#x6587;&#x4EF6;&#x5939;&#x3002;</p>
+<p>acidanthera &#x5927;&#x4F6C;&#x7EF4;&#x62A4;&#x7684; MacKernelSDK &#x7684;&#x4E00;&#x4E2A;&#x5F00;&#x6E90;&#x9879;&#x76EE;&#x5730;&#x5740;&#x4E3A;&#xFF1A;<a href="https://github.com/acidanthera/MacKernelSDK" target="_blank">https://github.com/acidanthera/MacKernelSDK</a></p>
+<pre class="language-"><code class="lang-bash"><span class="token comment"># &#x6CE8;&#x610F;&#x6211;&#x5F53;&#x524D;&#x64CD;&#x4F5C;&#x7684;&#x8DEF;&#x5F84;</span>
+$ <span class="token builtin class-name">pwd</span>                                                          &#xE0B2; &#x2714;
+/Users/bytedance/Desktop/XCode/VoodooI2C
+
+<span class="token comment"># &#x76F4;&#x63A5;&#x4E0B;&#x8F7D;&#x8FD9;&#x4E2A;&#x9879;&#x76EE;</span>
+$ <span class="token function">git</span> clone https://github.com/acidanthera/MacKernelSDK.git
+</code></pre>
+<p>&#x6B64;&#x65F6;&#x518D;&#x7F16;&#x8BD1;&#x4F1A;&#x53D1;&#x73B0;&#x4E4B;&#x524D;&#x7684;<code>&apos;IOKit/IOLib.h&apos; file not found</code> &#x62A5;&#x9519;&#x6D88;&#x5931;&#x4E86;&#xFF0C;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#x5F97;&#x5230;&#x4E86;&#x89E3;&#x51B3;&#x3002;</p>
+<h2 id="voodooinputmultitouch-&#x7F3A;&#x5931;"><a name="voodooinputmultitouch-&#x7F3A;&#x5931;" class="anchor-navigation-ex-anchor" href="#voodooinputmultitouch-&#x7F3A;&#x5931;"><i class="fa fa-link" aria-hidden="true"></i></a>VoodooInputMultitouch &#x7F3A;&#x5931;</h2>
+<p>&#x89E3;&#x51B3;&#x5B8C;&#x4E0A;&#x9762;&#x4E00;&#x4E2A;&#x5C0F;&#x95EE;&#x9898;&#x540E;&#xFF0C;&#x4F1A;&#x53D1;&#x73B0;&#x53C8;&#x51FA;&#x4E86;&#x65B0;&#x7684;&#x62A5;&#x9519;&#x4E86;&#xFF1A;</p>
+<pre class="language-"><code class="lang-ini">&apos;VoodooInputMultitouch/VoodooInputTransducer.h&apos; file not found
+</code></pre>
+<p><a href="https://image.3001.net/images/20211220/16399691969738.jpeg" data-lightbox="ce1d5b73-2b91-4e7c-9a16-367be2c61ac1" data-title="" target="_blank"><img src="https://image.3001.net/images/20211220/16399691969738.jpeg" alt=""></a> </p>
+<p>&#x4E0D;&#x8981;&#x614C;&#xFF0C;&#x95EE;&#x9898;&#x5F88;&#x5927;&#xFF0C;&#x8FD9;&#x662F;&#x56E0;&#x4E3A;&#x9879;&#x76EE;&#x91CC;&#x9762;&#x7F3A;&#x5C11;&#x4E86;&#x5BF9;&#x5E94;&#x7684;&#x6587;&#x4EF6;&#xFF0C;&#x4E5F;&#x9700;&#x8981;&#x6211;&#x4EEC;&#x624B;&#x52A8;&#x53BB;&#x8865;&#x5145;&#x4E00;&#x4E0B;&#x3002;&#x6BD4;&#x8F83;&#x5DE7;&#x5408;&#x7684;&#x662F;&#xFF0C;&#x8FD9;&#x4E2A;&#x9879;&#x76EE;&#x4E5F;&#x662F;&#x7531;acidanthera &#x5927;&#x4F6C;&#x7EF4;&#x62A4;&#x7684; &#xFF0C;&#x5730;&#x5740;&#x4E3A;&#xFF1A;<a href="https://github.com/acidanthera/VoodooInput" target="_blank">https://github.com/acidanthera/VoodooInput</a></p>
+<p>&#x5C06; <code>VoodooInputMultitouch</code> &#x6587;&#x4EF6;&#x62F7;&#x8D1D;&#x5230; <strong>VoodooI2C/Multitouch\ Support/Native</strong> &#x76EE;&#x5F55;&#x4E0B;&#xFF1A;</p>
+<p><a href="https://image.3001.net/images/20211220/1639969960300.jpeg" data-lightbox="a12d5615-ed73-4695-9035-b941f544d048" data-title="" target="_blank"><img src="https://image.3001.net/images/20211220/1639969960300.jpeg" alt=""></a> </p>
+<p>&#x6B64;&#x65F6;&#x518D;&#x7F16;&#x8BD1;&#x5E94;&#x8BE5;&#x4E0D;&#x4F1A;&#x62A5;&#x9519;&#x4E86;&#x3002;</p>
+<h2 id="cldoc-&#x6216;&#x8005;-cpplint-&#x7F3A;&#x5931;"><a name="cldoc-&#x6216;&#x8005;-cpplint-&#x7F3A;&#x5931;" class="anchor-navigation-ex-anchor" href="#cldoc-&#x6216;&#x8005;-cpplint-&#x7F3A;&#x5931;"><i class="fa fa-link" aria-hidden="true"></i></a>cldoc &#x6216;&#x8005; cpplint &#x7F3A;&#x5931;</h2>
+<p>&#x4E0D;&#x8FC7;&#x603B;&#x6709;&#x4EBA;&#x4F1A;&#x5404;&#x79CD;&#x4E0D;&#x987A;&#xFF0C;&#x8FD8;&#x53EF;&#x80FD;&#x4F1A;&#x9047;&#x5230; <code>xargs: cldoc: No such file or directory</code> &#x6216;&#x8005; <code>cpplint: command not found</code>&#x8FD9;&#x7C7B;&#x62A5;&#x9519;&#xFF0C;&#x56FD;&#x5149;&#x6211;&#x8FD9;&#x91CC;&#x5FD8;&#x8BB0;&#x600E;&#x4E48;&#x89E3;&#x51B3;&#x7684;&#x4E86;&#xFF0C;&#x597D;&#x50CF;&#x662F;&#x76F4;&#x63A5;&#x5B89;&#x88C5; Python &#x7684;&#x5E93;&#x6765;&#x89E3;&#x51B3;&#x7684;&#xFF1A;</p>
+<pre class="language-"><code class="lang-bash"><span class="token function">sudo</span> easy_install cldoc
+<span class="token function">sudo</span> easy_install cpplint
+</code></pre>
+<p>&#x5177;&#x4F53;&#x7EC6;&#x8282;&#x5FD8;&#x8BB0;&#x4E86;&#xFF0C;&#x4F46;&#x662F;&#x8FD9;&#x5757;&#x4E0D;&#x590D;&#x6742;&#xFF0C;&#x65E2;&#x7136;&#x90FD;&#x7814;&#x7A76;&#x5230; Xcode &#x7F16;&#x8BD1;&#x8FD9;&#x4E00;&#x6B65;&#x4E86;&#xFF0C;&#x6240;&#x4EE5;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#x5E94;&#x8BE5;&#x4E5F;&#x96BE;&#x4E0D;&#x5012;&#x5927;&#x5BB6;&#x7684;&#x5427;&#x3002;</p>
+<h2 id="&#x7F16;&#x8BD1;&#x9879;&#x76EE;"><a name="&#x7F16;&#x8BD1;&#x9879;&#x76EE;" class="anchor-navigation-ex-anchor" href="#&#x7F16;&#x8BD1;&#x9879;&#x76EE;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x7F16;&#x8BD1;&#x9879;&#x76EE;</h2>
+<p>&#x81F3;&#x6B64;&#x6240;&#x6709;&#x7684;&#x62A5;&#x9519;&#x90FD;&#x89E3;&#x51B3;&#x4E86;&#xFF0C;&#x4E0B;&#x9762;&#x76F4;&#x63A5;&#x6765;&#x7F16;&#x8BD1;&#x751F;&#x6210; kexts &#x5427;&#xFF0C;&#x9996;&#x5148;&#x70B9;&#x51FB; <code>build</code>&#x7F16;&#x8BD1;&#x4E00;&#x4E0B;&#xFF0C;&#x5F88;&#x987A;&#x5229;&#xFF1A;</p>
+<p><a href="https://image.3001.net/images/20211220/16399702435479.png" data-lightbox="cf74dea5-384e-4d83-9a3e-051a1447404e" data-title="" target="_blank"><img src="https://image.3001.net/images/20211220/16399702435479.png" alt=""></a> </p>
+<p>&#x7136;&#x540E;&#x70B9;&#x51FB;&#x300C;Product&#x300D;&#x63A5;&#x7740;&#x70B9;&#x51FB;&#x300C;Archive&#x300D;&#x6253;&#x5305;&#x9879;&#x76EE;&#xFF1A;</p>
+<p><a href="https://image.3001.net/images/20211220/16399708239549.jpeg" data-lightbox="1a055999-3a8c-405f-9132-f53ce90045d2" data-title="" target="_blank"><img src="https://image.3001.net/images/20211220/16399708239549.jpeg" alt=""></a> </p>
+<p>&#x7136;&#x540E;&#x4F1A;&#x5F39;&#x51FA;&#x5E94;&#x8BE5;&#x7A97;&#x53E3;&#xFF0C;&#x9009;&#x62E9;&#x6211;&#x4EEC;&#x6253;&#x5305;&#x7684;&#x6700;&#x65B0;&#x7248;&#x672C;&#xFF0C;&#x9009;&#x62E9;&#x300C;Distribute Content&#x300D;</p>
+<p><a href="https://image.3001.net/images/20211220/16399708882219.jpeg" data-lightbox="0c4a5a71-4201-4ce5-ac1a-81916c5fa07c" data-title="" target="_blank"><img src="https://image.3001.net/images/20211220/16399708882219.jpeg" alt=""></a> </p>
+<p>&#x540E;&#x9762;&#x9ED8;&#x8BA4;&#x9009;&#x62E9;&#x300C;Build Products&#x300D;&#x5373;&#x53EF;&#xFF1A;</p>
+<p><a href="https://image.3001.net/images/20211220/16399709722736.png" data-lightbox="6601703a-2dfe-4066-88cd-9eea7f5339e4" data-title="" target="_blank"><img src="https://image.3001.net/images/20211220/16399709722736.png" alt=""></a> </p>
+<p>&#x6700;&#x540E;&#x684C;&#x9762;&#x4E0A;&#x5C31;&#x8EBA;&#x597D;&#x4E86;&#x6211;&#x4EEC;&#x7F16;&#x8BD1;&#x597D;&#x7684; kexts &#x6587;&#x4EF6;&#x4E86;&#xFF1A;</p>
+<p><a href="https://image.3001.net/images/20211220/16399711135906.jpeg" data-lightbox="957ff892-f37c-4ab1-8d02-c8e3e2ab982c" data-title="" target="_blank"><img src="https://image.3001.net/images/20211220/16399711135906.jpeg" alt=""></a> </p>
+<h2 id="&#x5751;&#x70B9;&#x8BB0;&#x5F55;"><a name="&#x5751;&#x70B9;&#x8BB0;&#x5F55;" class="anchor-navigation-ex-anchor" href="#&#x5751;&#x70B9;&#x8BB0;&#x5F55;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5751;&#x70B9;&#x8BB0;&#x5F55;</h2>
+<p>&#x6211;&#x4EEC;&#x7F16;&#x8BD1;&#x7684; <code>VoodooI2C.kext</code> &#x7684; Pluglns &#x4E0D;&#x5B8C;&#x6574;&#xFF0C;&#x91CC;&#x9762;&#x662F;&#x4E24;&#x4E2A;&#x66FF;&#x8EAB;&#xFF1A;</p>
+<p><a href="https://image.3001.net/images/20211220/16399712181607.jpeg" data-lightbox="b0ed4eae-26dd-43d3-9266-514da3fe9d11" data-title="" target="_blank"><img src="https://image.3001.net/images/20211220/16399712181607.jpeg" alt=""></a> </p>
+<p>&#x89E3;&#x51B3;&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x624B;&#x52A8;&#x590D;&#x5236;&#x76EE;&#x5F55;&#x5916;&#x9762;&#x7684; kext &#x8FDB;&#x53BB;&#xFF0C;&#x6216;&#x8005;&#x76F4;&#x63A5;&#x4F7F;&#x7528;&#x5B98;&#x65B9;&#x7F16;&#x8BD1;&#x597D;&#x7684; <code>VoodooI2C.kext</code>&#x3002;</p>
+<h2 id="&#x652F;&#x6301;&#x4E00;&#x4E0B;&#xFF1F;"><a name="&#x652F;&#x6301;&#x4E00;&#x4E0B;&#xFF1F;" class="anchor-navigation-ex-anchor" href="#&#x652F;&#x6301;&#x4E00;&#x4E0B;&#xFF1F;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x652F;&#x6301;&#x4E00;&#x4E0B;&#xFF1F;</h2>
+<p>&#x5728;&#x8FD9;&#x4E2A;&#x55A7;&#x56A3;&#x6D6E;&#x8E81;&#x7684;&#x65F6;&#x4EE3;&#xFF0C;&#x575A;&#x6301;&#x5199;&#x535A;&#x5BA2;&#x8F93;&#x51FA;&#x539F;&#x521B;&#x6587;&#x7AE0;&#x7684;&#x4EBA;&#x8FD8;&#x6709;&#x591A;&#x5C11;&#x5462;&#xFF1F;&#x5199;&#x535A;&#x5BA2;&#x611F;&#x89C9;&#x4E00;&#x76F4;&#x662F;&#x7528;&#x7231;&#x53D1;&#x7535;&#x7684;&#x72B6;&#x6001;......</p>
+<p>&#x5982;&#x679C;&#x4F60;&#x6070;&#x5DE7;&#x8D22;&#x529B;&#x96C4;&#x539A;&#xFF0C;&#x611F;&#x89C9;&#x672C;&#x6587;&#x5BF9;&#x4F60;&#x6709;&#x6240;&#x5E2E;&#x52A9;&#x7684;&#x8BDD;&#xFF0C;&#x53EF;&#x4EE5;&#x8003;&#x8651;&#x6253;&#x8D4F;&#x4E00;&#x4E0B;&#x672C;&#x6587;&#xFF0C;&#x7528;&#x4EE5;&#x7EF4;&#x6301;&#x9AD8;&#x6602;&#x7684;&#x670D;&#x52A1;&#x5668;&#x8FD0;&#x8425;&#x8D39;&#x7528;&#xFF08;&#x57DF;&#x540D;&#x8D39;&#x7528;&#x3001;&#x670D;&#x52A1;&#x5668;&#x8D39;&#x7528;&#x3001;CDN &#x8D39;&#x7528;&#x7B49;&#xFF09;</p>
+<table>
+    <tbody><tr>
+        <td>&#x5FAE;&#x4FE1;
+            <center><a href="https://image.3001.net/images/20200421/1587449920128.jpg " data-lightbox="8dd47de1-484a-4565-8d13-e1fdf08a6ecc" data-title="undefined" target="_blank"><img src="https://image.3001.net/images/20200421/1587449920128.jpg " alt="undefined"></a></center>
+        </td>
+        <td width="50%">
+          &#x652F;&#x4ED8;&#x5B9D;
+            <center><a href="https://image.3001.net/images/20200421/15874503376388.jpg" data-lightbox="49357dbc-6d9d-4025-abd0-b5c8cad09f54" data-title="undefined" target="_blank"><img src="https://image.3001.net/images/20200421/15874503376388.jpg" alt="undefined"></a></center>
+        </td>
+    </tr>
+</tbody></table>
+
+
+
+
+
+<p>&#x56FD;&#x5149;&#x6211;&#x4E5F;&#x5199;&#x4E86;&#x4E00;&#x4E2A;&#x6253;&#x8D4F;&#x9875;&#x9762;&#x7528;&#x4EE5;&#x611F;&#x8C22;&#x652F;&#x6301;&#x6211;&#x7684;&#x670B;&#x53CB;&#xFF0C;&#x8BE6;&#x60C5;&#x8BF7;&#x770B; <a href="https://www.sqlsec.com/dashang.html" target="_blank">&#x6253;&#x8D4F;&#x5217;&#x8868; | &#x56FD;&#x5149;</a></p>
+<footer class="page-footer"><span class="copyright">powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x7AE0;&#x6700;&#x540E;&#x4FEE;&#x6539;&#x65F6;&#x95F4;&#xFF1A;
+2022-02-05 20:40:22
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="6-1.html" class="navigation navigation-prev " aria-label="Previous page: 1. USB 定制">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="6-3.html" class="navigation navigation-next " aria-label="Next page: 3. 触控板中断示例">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"2. 编译触控板驱动","level":"1.7.2","depth":2,"next":{"title":"3. 触控板中断示例","level":"1.7.3","depth":2,"path":"6-实用姿势/6-3.md","ref":"6-实用姿势/6-3.md","articles":[]},"previous":{"title":"1. USB 定制","level":"1.7.1","depth":2,"path":"6-实用姿势/6-1.md","ref":"6-实用姿势/6-1.md","articles":[]},"dir":"ltr"},"config":{"plugins":["splitter","-lunr","-search","-sharing","search-plus","anchor-navigation-ex","expandable-chapters-small","copy-code-button","lightbox","tbfed-pagefooter","hide-element","-highlight","prism","prism-themes"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"","modify_label":"该文章最后修改时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prism-themes/themes/prism-dracula.css"]},"splitter":{},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"lightbox":{"jquery":true,"sameUuid":false},"prism-themes":{},"expandable-chapters-small":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"search-plus":{}},"theme":"default","author":"国光","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"国光的黑苹果安装教程","language":"zh-hans","links":{"sidebar":{"个人博客":"//www.sqlsec.com"}},"gitbook":"*"},"file":{"path":"6-实用姿势/6-2.md","mtime":"2022-02-05T12:40:22.371Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-02-05T12:40:56.825Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lightbox/js/lightbox.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-hide-element/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
