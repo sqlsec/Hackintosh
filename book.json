@@ -21,7 +21,8 @@
           "hide-element",
           "-highlight",
           "prism", 
-          "prism-themes"
+          "prism-themes",
+          "sectionx"
         ],
       "pluginsConfig": {
           "anchor-navigation-ex": {
@@ -39,6 +40,9 @@
           "css": [
             "prism-themes/themes/prism-dracula.css"
           ]
+        },
+        "sectionx": {
+          "tag": "b"
         }
       }
 }
