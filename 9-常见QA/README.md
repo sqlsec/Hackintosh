@@ -24,3 +24,18 @@
 
 <!--endsec-->
 
+
+
+<!--sec data-title="3. 笔记本睡眠唤醒黑屏" data-id="section3" data-show=true ces-->
+
+这种情况有很多种可能，有一种可能是没有屏蔽独显的原因，请尝试在启动项添加  `-wegnoegpu`  参数
+
+<!--endsec-->
+
+
+
+<!--sec data-title="4. 笔记本睡眠唤醒黑屏" data-id="section4" data-show=true ces-->
+
+这种情况有很多种可能，有一种可能是没有屏蔽独显的原因，请尝试在启动项添加  `-wegnoegpu`  参数
+
+<!--endsec-->
