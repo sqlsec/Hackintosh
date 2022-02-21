@@ -22,7 +22,8 @@
           "-highlight",
           "prism", 
           "prism-themes",
-          "sectionx"
+          "sectionx",
+          "valine"
         ],
       "pluginsConfig": {
           "anchor-navigation-ex": {
@@ -43,6 +44,10 @@
         },
         "sectionx": {
           "tag": "b"
+        },
+        "valine": {
+          "appId": "jTojmNgsJXy2kLqEYGJS6PoB-gzGzoHsz",
+          "appKey": "ds8WGWCWtYDnVT4QnyN2a3tf"
         }
       }
 }
