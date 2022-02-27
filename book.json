@@ -47,7 +47,8 @@
         },
         "valine": {
           "appId": "jTojmNgsJXy2kLqEYGJS6PoB-gzGzoHsz",
-          "appKey": "ds8WGWCWtYDnVT4QnyN2a3tf"
+          "appKey": "ds8WGWCWtYDnVT4QnyN2a3tf",
+          "placeholder": "评论重复或者没有评论？刷新一下页面有惊喜！"
         }
       }
 }

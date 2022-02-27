@@ -34,8 +34,24 @@
 
 
 
-<!--sec data-title="4. 笔记本睡眠唤醒黑屏" data-id="section4" data-show=true ces-->
+<!--sec data-title="4. 安装系统提示 An Internet connection is required to install macOS（需要互联网连接才能安装macOS）" data-id="section4" data-show=true ces-->
 
-这种情况有很多种可能，有一种可能是没有屏蔽独显的原因，请尝试在启动项添加  `-wegnoegpu`  参数
+群里有小伙伴遇到这个问题了，解决方法就是：连接网线就行了，真的是顾名思义呀。
+
+<!--endsec-->
+
+
+
+<!--sec data-title="5. macOS 老是检测不到系统更新怎么办" data-id="section5" data-show=true ces-->
+
+打开 OCC，在「Misc-其他设置」-「Security」标签下面，将 **SecureBootMode** 改为 **Default** 即可。
+
+<!--endsec-->
+
+
+
+<!--sec data-title="6. 笔记本核显打完缓冲帧后，HEVC 解码不能用，以及 REQ 最高只有 0.35Ghz" data-id="section5" data-show=true ces-->
+
+DeviceProperties 设备属性设置里面的核显设备，删除 `AAPL,slot-name` 即可。
 
 <!--endsec-->
