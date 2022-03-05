@@ -50,8 +50,16 @@
 
 
 
-<!--sec data-title="6. 笔记本核显打完缓冲帧后，HEVC 解码不能用，以及 REQ 最高只有 0.35Ghz" data-id="section5" data-show=true ces-->
+<!--sec data-title="6. 笔记本核显打完缓冲帧后，HEVC 解码不能用，以及 REQ 最高只有 0.35Ghz" data-id="section6" data-show=true ces-->
 
 DeviceProperties 设备属性设置里面的核显设备，删除 `AAPL,slot-name` 即可。
+
+<!--endsec-->
+
+
+
+<!--sec data-title="7. 启动的时候 若提示【oc grabbed zero systm-id for sb. this is not allowed halting on critlcal error 】" data-id="section7" data-show=true ces-->
+
+基本就是【Misc】-->【security】下的【SecureBootModel 】的问题，默认【Default 】可以改为【Disabled 】或其他。
 
 <!--endsec-->

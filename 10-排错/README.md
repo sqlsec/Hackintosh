@@ -8,3 +8,11 @@
 
 
 
+可能对你们排错有用的资料：
+
+- [【持续更新】OpenCore引导-v各种卡及OC引导常见问题解决方案速查表合集](http://imacos.top/2021/01/19/0154/)
+- [OpenCore配置错误、故障与解决办法（05月02日更新）](https://shuiyunxc.github.io/2020/04/06/Faults/index/)
+
+如果拍错没有帮助的话，参考我的教程来依然有错，可以考虑参考被人的教程或者 OC 官方教程：
+
+- [黑苹果快速安装手册](https://www.yuque.com/hejianzhao/zgnsc5)
