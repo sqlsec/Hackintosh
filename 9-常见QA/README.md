@@ -12,7 +12,7 @@
 
 <!--sec data-title="1. 唤醒黑屏或者开机需要插拔显示器线才可以点亮屏幕进系统。" data-id="section1" data-show=true ces-->
 
-尝试添加在启动项添加 `igfxonln=1` 参数
+尝试添加在启动项添加 `igfxonln=1` 参数，还可与尝试启动项添加`gfxrst=1` 参数
 
 <!--endsec-->
 
@@ -63,3 +63,41 @@ DeviceProperties 设备属性设置里面的核显设备，删除 `AAPL,slot-nam
 基本就是【Misc】-->【security】下的【SecureBootModel 】的问题，默认【Default 】可以改为【Disabled 】或其他。
 
 <!--endsec-->
+
+
+
+<!--sec data-title="8. 启动的时候 若开在 【End SetConsoleMode】这个报错" data-id="section8" data-show=true ces-->
+
+基本就是【Misc】-->【security】下的【SecureBootModel 】的问题，默认【Default 】可以改为【Disabled 】或其他。
+
+<!--endsec-->
+
+
+
+<!--sec data-title="9. 睡眠唤醒后出现莫名其妙的花屏现象" data-id="section9" data-show=true ces-->
+
+尝试核显属性里面注入更大的显存，比如 2048MB framebuffer-unifiedmem 00000080 data 类型
+
+<!--endsec-->
+
+## 打个广告
+
+目前已经有的资料和教程足够动手能力强的网友自己去安装黑苹果了，但是也有一些网友没有时间学习完教程，或者设备比较复杂遇到的问题
+都很奇葩难以靠已有的知识去解决，
+
+所以铛铛铛，国光我就抓住了这个用户痛点，咸鱼上挂了这个宝贝，嘿嘿嘿（手动狗头）
+
+我这个服务适合什么样的人群呢？
+
+1. 自己了解基本的黑苹果原理，最起码知道给你 EFI 自己如何替换安装
+2. 掌握基本的 Windows 安装技巧，这个应该都懂的吧，否则也不会想折腾黑苹果了
+3. 对黑苹果感兴趣，想体验黑苹果但是没有时间系统学习教程的
+4. 手上的设备太过小众冷门的，网上没有相关的资料可以解决
+5. 强迫症患者，对黑苹果完美度要求比较高，忍受不了各种小毛病
+....
+
+![](https://image.3001.net/images/20220319/16476611133376.png) 
+
+感兴趣可以去咸鱼看看哦：
+
+![](https://image.3001.net/images/20220319/16476612238377.jpg) 
