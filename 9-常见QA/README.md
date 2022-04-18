@@ -80,6 +80,99 @@ DeviceProperties 设备属性设置里面的核显设备，删除 `AAPL,slot-nam
 
 <!--endsec-->
 
+
+
+<!--sec data-title="10. 发现不了已经安装好 macOS 的磁盘分区" data-id="section10" data-show=true ces-->
+
+使用 OCC在 ACPI 选项中打一个 `Fix RTC _STA bug` 补丁即可，或者是你的 OCC 版本高于已安装系统的版本，在「UEFI设置」-「嵌入式 APFS」-「MinVersion」改为「-1」无限制即可。
+
+<!--endsec-->
+
+
+
+<!--sec data-title="11. 安装系统的时候，提示：「安装无法继续，因为安装器已损坏」" data-id="section11" data-show=true ces-->
+
+两种可能
+
+1. 顾名思义，安装镜像真的损坏了，解决方法就是换个镜像重新刻录安装。（这种可能性不高）
+2. 当前的时间不太对，打开终端输入 date 看看时间是否正确，不正确的话使用 date 命令改下时间就 OK 了
+
+<!--endsec-->
+
+<!--sec data-title="12. 我进系统几分钟之后就死机黑屏重启，不插网线就正常，1225V 网卡无法正常工作" data-id="section12" data-show=true ces-->
+
+首先确保你的网卡路径正确，然后驱动的姿势正确，下面两个是关键的参数：
+
+![image-20220328001930240](imgs/image-20220328001930240.png) 
+
+然后从 macOS12.3 开始，启动项参数也由之前的`dk.e1000=0`参数变为了添加`e1000=0`参数 ，所以如果不对就替换或者添加一下。
+
+<!--endsec-->
+
+
+
+<!--sec data-title="13. USB 不定制就正常，使用 USBToolBox 定制了就会直接卡 APFS 无法进操作系统" data-id="section13" data-show=true ces-->
+
+在部分 USB3.1 的设备比如 ASMedia ASM1142 上可能出现过，定制 USB的时候不要插这个接口，然后到下面这一步的时候选择「I」忽略即可：
+
+![](https://image.3001.net/images/20220409/16494854148280.png)  
+
+<!--endsec-->
+
+
+
+<!--sec data-title="14. macOS 10.13.6 的应用商店无法使用，下载提示「使用已购页面再试一次」" data-id="section14" data-show=true ces-->
+
+其实就是  10.13.6 的应用商店太老了，更新一下浏览器和 iTunes ，这些玄学问题即可解决：
+
+  ![](https://image.3001.net/images/20220409/1649485644685.png)
+
+<!--endsec-->
+
+
+
+<!--sec data-title="15. ASMedia ASM1142 USB 3.1 Type-A 和 Type-C 一体的接口无法工作" data-id="section15" data-show=true ces-->
+
+使用这个 [SSDT-USB3-1-XHC2.aml](https://sqlsec.lanzoub.com/iWZDt02w295g) SSDT 即可解决。
+
+<!--endsec-->
+
+
+
+<!--sec data-title="16. 这个安装 macOS XXXX 应用程序副本已损坏，不能用来安装 macOS" data-id="section16" data-show=true ces-->
+
+![](https://image.3001.net/images/20220409/16494864391246.png) 
+
+原因就是当前的时间太新了，我们安装的系统已经不维护了 ，直接改时间为 2015 年就可以了，详细操作参考网上的一篇文章：[这个安装macOS Mojave 应用程序副本已损坏，不能用来安装Mac OS](https://zhuanlan.zhihu.com/p/88597219)
+
+<!--endsec-->
+
+
+
+<!--sec data-title="17. 笔记本 Type-C 没有视频输出" data-id="section17" data-show=true ces-->
+
+如果确认你的  Type-C 走的是核显的话，那么多半和机型有关，如果是16寸笔记本型号 改成13寸的，确保核显 ID 正确的情况下，多半就可以 Type-C 输出信号了。
+
+<!--endsec-->
+
+
+
+<!--sec data-title="18. 拷贝 EFI 提示 EFI 上的可用空间不足" data-id="section18" data-show=true ces-->
+
+更多的是 U 盘问题，macOS 下记得清除回收站，Windows 下可以手动删除 .Trashes 垃圾文件：
+
+![](https://image.3001.net/images/20220409/16495143059696.png) 
+
+或者在 macOS 下，挂载 EFI 分区后使用命令行手动删除垃圾文件：
+
+```shell
+cd /Volumes/EFI && rm -rf .Trashes 
+```
+
+<!--endsec-->
+
+
+
 ## 打个广告
 
 目前已经有的资料和教程足够动手能力强的网友自己去安装黑苹果了，但是也有一些网友没有时间学习完教程，或者设备比较复杂遇到的问题
