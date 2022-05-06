@@ -257,7 +257,7 @@ DefinitionBlock ("", "SSDT", 2, "LENOVO", "ICL     ", 0x20170001)
 
 <!--sec data-title="23. USB 定制完成后但是 USB3.X 依然无法正常工作" data-id="section23" data-show=true ces-->
 
-这种问题常见于 400 系列主板，这种情况打一个
+这种问题常见于 400 系列主板，这种情况打一个 [XHCI-unsupported.kext](https://sqlsec.lanzoub.com/i8CUI046dufe) 即可
 
 <!--endsec-->
 
