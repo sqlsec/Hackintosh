@@ -1,0 +1,124 @@
+site_name: 国光的黑苹果安装教程：手把手教你配置 OpenCore
+site_url: https://apple.sqlsec.com
+site_author: 国光
+site_description: "国光的黑苹果安装教程：手把手教你配置 OpenCore"
+repo_name: sqlsec/Hackintosh
+repo_url: https://github.com/sqlsec/Hackintosh
+copyright: Copyright &copy; 2021 - 2022 国光
+theme:
+  name: material
+  custom_dir: overrides
+  font: false
+  language: zh
+  icon:
+    logo: material/apple
+    repo: fontawesome/brands/git-alt
+  favicon: https://image.3001.net/images/20200922/16007336487809.jpg
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - search.suggest
+    - search.highlight
+    - search.share
+  palette:
+    # Toggle light mode
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-night
+        name: 切换深色模式
+    # Toggle dark mode
+    - scheme: slate
+      primary: black
+      accent: blue
+      toggle:
+        icon: material/weather-sunny
+        name: 切换浅色模式
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - def_list
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - toc:
+      permalink: true
+plugins:
+  - git-revision-date
+  - search:
+      prebuild_index: true
+      lang:
+        - en
+        - ja
+edit_uri: edit/main/docs/
+extra:
+  generator: false
+  social:
+    - icon: fontawesome/brands/redhat
+      link: https://www.sqlsec.com
+      name: 国光
+nav:
+  - "index.md"
+  - 前言介绍:
+    - 背景: "0-前言介绍/0-1.md"
+    - 啰嗦: "0-前言介绍/0-2.md"
+  - 基础知识:
+    - 基操勿六: "1-基础知识/1-1.md"
+    - 硬件限制: "1-基础知识/1-2.md"
+    - 寻找硬件: "1-基础知识/1-3.md"
+    - 专业术语: "1-基础知识/1-4.md"
+  - U盘制作:
+    - 下载镜像: "2-U盘制作/2-1.md"
+    - 写入镜像: "2-U盘制作/2-2.md"
+    - 结构讲解: "2-U盘制作/2-3.md"
+  - 准备工作:
+    - BIOS设置: "3-准备工作/3-1.md"
+    - OC 文件结构: "3-准备工作/3-2.md"
+    - 准备 ACPI: "3-准备工作/3-3.md"
+    - 准备 Kexts: "3-准备工作/3-4.md"
+    - Drivers 说明: "3-准备工作/3-5.md"
+    - OC 编辑器: "3-准备工作/3-6.md"
+    - 初步配置: "3-准备工作/3-7.md"
+    - Kexts 微调: "3-准备工作/3-8.md"
+  - 配置 OC:
+    - ACPI: "4-OC配置/4-1.md"
+    - Booter: "4-OC配置/4-2.md"
+    - DeviceProperties: "4-OC配置/4-3.md"
+    - Kernel: "4-OC配置/4-4.md"
+    - Misc: "4-OC配置/4-5.md"
+    - NVRAM: "4-OC配置/4-6.md"
+    - PlatformInfo: "4-OC配置/4-7.md"
+    - UEFI: "4-OC配置/4-8.md"
+  - 实战演示:
+    - 机器概览: 5-实战演示/5-1.md
+    - BIOS 设置: 5-实战演示/5-2.md
+    - 磁盘划分: 5-实战演示/5-3.md
+    - 安装 Windows: 5-实战演示/5-4.md
+    - 安装 macOS: 5-实战演示/5-5.md
+    - 完善引导: 5-实战演示/5-6.md
+    - 更新系统: 5-实战演示/5-7.md
+  - 实用姿势:
+    - USB 定制: 6-实用姿势/6-1.md
+    - 编译触控板驱动: 6-实用姿势/6-2.md
+    - 触控板中断示例: 6-实用姿势/6-3.md
+    - 台式机双显卡显示: 6-实用姿势/6-4.md
+    - 开启 HiDPi: 6-实用姿势/6-5.md
+    - 睡眠问题排查: 6-实用姿势/6-6.md
+    - macOS 12 蓝牙: 6-实用姿势/6-7.md
+    - 屏蔽不支持的硬盘: 6-实用姿势/6-8.md
+    - AMD 免驱独显优化: 6-实用姿势/6-9.md
+    - OC 主题与启动项: 6-实用姿势/6-10.md
+    - macOS 下触屏驱动: 6-实用姿势/6-11.md
+    - 自定义显示器图标: 6-实用姿势/6-12.md
+    - 核显接口输出定制: 6-实用姿势/6-13.md
+  - 完美黑果:
+    - 黑苹果: 7-完美黑果/7-1.md
+    - 白苹果: 7-完美黑果/7-2.md
+  - OC排错:
+    - 正常日志: 8-OC排错/8-1.md
+    - 异常日志: 8-OC排错/8-2.md
+  - 成果分享: 9-成果分享/index.md
+  - 常见 QA:
+    - 使用方法: 10-常见QA/10-1.md
+    - 问题列表: 10-常见QA/10-2.md
