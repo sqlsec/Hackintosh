@@ -1,0 +1,2446 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="国光的黑苹果安装教程：手把手教你配置 OpenCore">
+      
+      
+        <meta name="author" content="国光">
+      
+      
+        <link rel="canonical" href="https://apple.sqlsec.com/3-%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C/3-4/">
+      
+      <link rel="icon" href="https://image.3001.net/images/20200922/16007336487809.jpg">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.5.1">
+    
+    
+      
+        <title>准备 Kexts - 国光的黑苹果安装教程：手把手教你配置 OpenCore</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.2e8b5541.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+
+    
+    
+    
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="国光的黑苹果安装教程：手把手教你配置 OpenCore" class="md-header__button md-logo" aria-label="国光的黑苹果安装教程：手把手教你配置 OpenCore" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            国光的黑苹果安装教程：手把手教你配置 OpenCore
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              准备 Kexts
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="切换深色模式"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="切换深色模式" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="blue"  aria-label="切换浅色模式"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="切换浅色模式" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/sqlsec/Hackintosh" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    sqlsec/Hackintosh
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      主页
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../0-%E5%89%8D%E8%A8%80%E4%BB%8B%E7%BB%8D/0-1/" class="md-tabs__link">
+        前言介绍
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../1-%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/1-1/" class="md-tabs__link">
+        基础知识
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../2-U%E7%9B%98%E5%88%B6%E4%BD%9C/2-1/" class="md-tabs__link">
+        U盘制作
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../3-1/" class="md-tabs__link md-tabs__link--active">
+        准备工作
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../4-OC%E9%85%8D%E7%BD%AE/4-1/" class="md-tabs__link">
+        配置 OC
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../5-%E5%AE%9E%E6%88%98%E6%BC%94%E7%A4%BA/5-1/" class="md-tabs__link">
+        实战演示
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../6-%E5%AE%9E%E7%94%A8%E5%A7%BF%E5%8A%BF/6-1/" class="md-tabs__link">
+        实用姿势
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../7-%E5%AE%8C%E7%BE%8E%E9%BB%91%E6%9E%9C/7-1/" class="md-tabs__link">
+        完美黑果
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../8-OC%E6%8E%92%E9%94%99/8-1/" class="md-tabs__link">
+        OC排错
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../9-%E6%88%90%E6%9E%9C%E5%88%86%E4%BA%AB/" class="md-tabs__link">
+      成果分享
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../10-%E5%B8%B8%E8%A7%81QA/10-1/" class="md-tabs__link">
+        常见 QA
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="国光的黑苹果安装教程：手把手教你配置 OpenCore" class="md-nav__button md-logo" aria-label="国光的黑苹果安装教程：手把手教你配置 OpenCore" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11Z"/></svg>
+
+    </a>
+    国光的黑苹果安装教程：手把手教你配置 OpenCore
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/sqlsec/Hackintosh" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    sqlsec/Hackintosh
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        主页
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          前言介绍
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="前言介绍" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          前言介绍
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../0-%E5%89%8D%E8%A8%80%E4%BB%8B%E7%BB%8D/0-1/" class="md-nav__link">
+        背景
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../0-%E5%89%8D%E8%A8%80%E4%BB%8B%E7%BB%8D/0-2/" class="md-nav__link">
+        啰嗦
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          基础知识
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="基础知识" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          基础知识
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1-%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/1-1/" class="md-nav__link">
+        基操勿六
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1-%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/1-2/" class="md-nav__link">
+        硬件限制
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1-%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/1-3/" class="md-nav__link">
+        寻找硬件
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1-%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/1-4/" class="md-nav__link">
+        专业术语
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          U盘制作
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="U盘制作" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          U盘制作
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2-U%E7%9B%98%E5%88%B6%E4%BD%9C/2-1/" class="md-nav__link">
+        下载镜像
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2-U%E7%9B%98%E5%88%B6%E4%BD%9C/2-2/" class="md-nav__link">
+        写入镜像
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2-U%E7%9B%98%E5%88%B6%E4%BD%9C/2-3/" class="md-nav__link">
+        结构讲解
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          准备工作
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="准备工作" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          准备工作
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3-1/" class="md-nav__link">
+        BIOS设置
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3-2/" class="md-nav__link">
+        OC 文件结构
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3-3/" class="md-nav__link">
+        准备 ACPI
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          准备 Kexts
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        准备 Kexts
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    基本概念
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kexts" class="md-nav__link">
+    下载 Kexts
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kexts_1" class="md-nav__link">
+    Kexts 的分类
+  </a>
+  
+    <nav class="md-nav" aria-label="Kexts 的分类">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    必备驱动
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#virualsmc" class="md-nav__link">
+    VirualSMC 插件
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    显卡驱动
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#amd" class="md-nav__link">
+    AMD 显卡传感器
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    声卡驱动
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usb" class="md-nav__link">
+    USB 驱动
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    有线网卡驱动
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    无线网卡驱动
+  </a>
+  
+    <nav class="md-nav" aria-label="无线网卡驱动">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#intel" class="md-nav__link">
+    Intel 无线网卡系列
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#broadcom" class="md-nav__link">
+    Broadcom 博通免驱系列
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    其他驱动
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#amd_1" class="md-nav__link">
+    AMD 常用驱动
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    笔记本常用驱动
+  </a>
+  
+    <nav class="md-nav" aria-label="笔记本常用驱动">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    输入设备驱动
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    其他驱动
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kexts_2" class="md-nav__link">
+    黑苹果 Kexts 大全?
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3-5/" class="md-nav__link">
+        Drivers 说明
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3-6/" class="md-nav__link">
+        OC 编辑器
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3-7/" class="md-nav__link">
+        初步配置
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3-8/" class="md-nav__link">
+        Kexts 微调
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          配置 OC
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="配置 OC" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          配置 OC
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4-OC%E9%85%8D%E7%BD%AE/4-1/" class="md-nav__link">
+        ACPI
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4-OC%E9%85%8D%E7%BD%AE/4-2/" class="md-nav__link">
+        Booter
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4-OC%E9%85%8D%E7%BD%AE/4-3/" class="md-nav__link">
+        DeviceProperties
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4-OC%E9%85%8D%E7%BD%AE/4-4/" class="md-nav__link">
+        Kernel
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4-OC%E9%85%8D%E7%BD%AE/4-5/" class="md-nav__link">
+        Misc
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4-OC%E9%85%8D%E7%BD%AE/4-6/" class="md-nav__link">
+        NVRAM
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4-OC%E9%85%8D%E7%BD%AE/4-7/" class="md-nav__link">
+        PlatformInfo
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4-OC%E9%85%8D%E7%BD%AE/4-8/" class="md-nav__link">
+        UEFI
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          实战演示
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="实战演示" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          实战演示
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5-%E5%AE%9E%E6%88%98%E6%BC%94%E7%A4%BA/5-1/" class="md-nav__link">
+        机器概览
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5-%E5%AE%9E%E6%88%98%E6%BC%94%E7%A4%BA/5-2/" class="md-nav__link">
+        BIOS 设置
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5-%E5%AE%9E%E6%88%98%E6%BC%94%E7%A4%BA/5-3/" class="md-nav__link">
+        磁盘划分
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5-%E5%AE%9E%E6%88%98%E6%BC%94%E7%A4%BA/5-4/" class="md-nav__link">
+        安装 Windows
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5-%E5%AE%9E%E6%88%98%E6%BC%94%E7%A4%BA/5-5/" class="md-nav__link">
+        安装 macOS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5-%E5%AE%9E%E6%88%98%E6%BC%94%E7%A4%BA/5-6/" class="md-nav__link">
+        完善引导
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5-%E5%AE%9E%E6%88%98%E6%BC%94%E7%A4%BA/5-7/" class="md-nav__link">
+        更新系统
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8">
+          实用姿势
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="实用姿势" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          实用姿势
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6-%E5%AE%9E%E7%94%A8%E5%A7%BF%E5%8A%BF/6-1/" class="md-nav__link">
+        USB 定制
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6-%E5%AE%9E%E7%94%A8%E5%A7%BF%E5%8A%BF/6-2/" class="md-nav__link">
+        编译触控板驱动
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6-%E5%AE%9E%E7%94%A8%E5%A7%BF%E5%8A%BF/6-3/" class="md-nav__link">
+        触控板中断示例
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6-%E5%AE%9E%E7%94%A8%E5%A7%BF%E5%8A%BF/6-4/" class="md-nav__link">
+        台式机双显卡显示
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6-%E5%AE%9E%E7%94%A8%E5%A7%BF%E5%8A%BF/6-5/" class="md-nav__link">
+        开启 HiDPi
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6-%E5%AE%9E%E7%94%A8%E5%A7%BF%E5%8A%BF/6-6/" class="md-nav__link">
+        睡眠问题排查
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6-%E5%AE%9E%E7%94%A8%E5%A7%BF%E5%8A%BF/6-7/" class="md-nav__link">
+        macOS 12 蓝牙
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6-%E5%AE%9E%E7%94%A8%E5%A7%BF%E5%8A%BF/6-8/" class="md-nav__link">
+        屏蔽不支持的硬盘
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6-%E5%AE%9E%E7%94%A8%E5%A7%BF%E5%8A%BF/6-9/" class="md-nav__link">
+        AMD 免驱独显优化
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6-%E5%AE%9E%E7%94%A8%E5%A7%BF%E5%8A%BF/6-10/" class="md-nav__link">
+        OC 主题与启动项
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6-%E5%AE%9E%E7%94%A8%E5%A7%BF%E5%8A%BF/6-11/" class="md-nav__link">
+        macOS 下触屏驱动
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6-%E5%AE%9E%E7%94%A8%E5%A7%BF%E5%8A%BF/6-12/" class="md-nav__link">
+        自定义显示器图标
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6-%E5%AE%9E%E7%94%A8%E5%A7%BF%E5%8A%BF/6-13/" class="md-nav__link">
+        核显接口输出定制
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9">
+          完美黑果
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="完美黑果" data-md-level="1">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          完美黑果
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../7-%E5%AE%8C%E7%BE%8E%E9%BB%91%E6%9E%9C/7-1/" class="md-nav__link">
+        黑苹果
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../7-%E5%AE%8C%E7%BE%8E%E9%BB%91%E6%9E%9C/7-2/" class="md-nav__link">
+        白苹果
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" type="checkbox" id="__nav_10" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_10">
+          OC排错
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="OC排错" data-md-level="1">
+        <label class="md-nav__title" for="__nav_10">
+          <span class="md-nav__icon md-icon"></span>
+          OC排错
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../8-OC%E6%8E%92%E9%94%99/8-1/" class="md-nav__link">
+        正常日志
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../8-OC%E6%8E%92%E9%94%99/8-2/" class="md-nav__link">
+        异常日志
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../9-%E6%88%90%E6%9E%9C%E5%88%86%E4%BA%AB/" class="md-nav__link">
+        成果分享
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_12" type="checkbox" id="__nav_12" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_12">
+          常见 QA
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="常见 QA" data-md-level="1">
+        <label class="md-nav__title" for="__nav_12">
+          <span class="md-nav__icon md-icon"></span>
+          常见 QA
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../10-%E5%B8%B8%E8%A7%81QA/10-1/" class="md-nav__link">
+        使用方法
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../10-%E5%B8%B8%E8%A7%81QA/10-2/" class="md-nav__link">
+        问题列表
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    基本概念
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kexts" class="md-nav__link">
+    下载 Kexts
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kexts_1" class="md-nav__link">
+    Kexts 的分类
+  </a>
+  
+    <nav class="md-nav" aria-label="Kexts 的分类">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    必备驱动
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#virualsmc" class="md-nav__link">
+    VirualSMC 插件
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    显卡驱动
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#amd" class="md-nav__link">
+    AMD 显卡传感器
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    声卡驱动
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usb" class="md-nav__link">
+    USB 驱动
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    有线网卡驱动
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    无线网卡驱动
+  </a>
+  
+    <nav class="md-nav" aria-label="无线网卡驱动">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#intel" class="md-nav__link">
+    Intel 无线网卡系列
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#broadcom" class="md-nav__link">
+    Broadcom 博通免驱系列
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    其他驱动
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#amd_1" class="md-nav__link">
+    AMD 常用驱动
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    笔记本常用驱动
+  </a>
+  
+    <nav class="md-nav" aria-label="笔记本常用驱动">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    输入设备驱动
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    其他驱动
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kexts_2" class="md-nav__link">
+    黑苹果 Kexts 大全?
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  <a href="https://github.com/sqlsec/Hackintosh/edit/main/docs/3-准备工作/3-4.md" title="编辑此页" class="md-content__button md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
+  </a>
+
+
+  <h1>准备 Kexts</h1>
+
+<h2 id="_1">基本概念<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>Kext 的英文全称叫做 <strong>K</strong>ernel <strong>Ext</strong>ension，即内核扩展，我们可以通俗的理解为这个就是 macOS 的驱动，使用方法只需要将这些 kext 文件放入到 <code>EFI/OC/kexts</code> 文件夹下面，然后编辑 OC 配置文件加载这些 kexts 并调节好顺序即可。</p>
+<h2 id="kexts">下载 Kexts<a class="headerlink" href="#kexts" title="Permanent link">&para;</a></h2>
+<p>下面国光来简单列举一些下载 Kexts 的方法：</p>
+<ol>
+<li>使用 OpenCore Configurator 这类第三方 OC 编辑器软件下载</li>
+<li>搜索引擎搜索 Kexts 的Github 下面地址，手动去 Releases 里面寻找编译好的 kext 文件</li>
+<li>使用 OC 官方的下载页面来下载常见的 kexts：<a href="https://dortania.github.io/builds/">https://dortania.github.io/builds/</a></li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">下载不了的话是因为 Github 被国内墙掉的缘故，下面是几个解决方法思路</p>
+<ol>
+<li>使用电信网络访问下载</li>
+<li>挂代理去下载</li>
+<li>使用 Github 镜像站点下载</li>
+<li>使用别人已配置好的 EFI 文件夹里面的文件，直接拿来使用</li>
+<li>办法总比困难多，不要遇到一点点小挫折就放弃</li>
+</ol>
+</div>
+<h2 id="kexts_1">Kexts 的分类<a class="headerlink" href="#kexts_1" title="Permanent link">&para;</a></h2>
+<h3 id="_2">必备驱动<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>必备的 kexts 如果缺失的话，你的黑苹果系统就无法启动了</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://github.com/acidanthera/VirtualSMC/releases"><strong>VirtualSMC.kext</strong></a><ul>
+<li>模拟白苹果的 SMC 芯片</li>
+<li>替代古老的 FakeSMC</li>
+<li>只支持 OS X 10.6+ 版本的系统</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://github.com/acidanthera/Lilu/releases"><strong>Lilu.kext</strong></a><ul>
+<li>很多著名 kexts 的依赖，没有 Liu 就无法正常使用 AppleALC、WhateverGreen、VirtualSMC 等</li>
+<li>只支持 OS X 10.8+ 版本的系统</li>
+</ul>
+</li>
+</ul>
+<h3 id="virualsmc">VirualSMC 插件<a class="headerlink" href="#virualsmc" title="Permanent link">&para;</a></h3>
+<p>大家下载好 VirtualSMC 编译好的 kexts 的话，会发现里面还躺着其他的  kexts，这些其他的 kexts 就是 VirtualSMC 的插件了，下面来列举说明一下这些插件的作用：</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>SMCBatteryManager.kext</strong><ul>
+<li>笔记本专用，用于正确读取显示电池容量</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>SMCDellSensors.kext</strong><ul>
+<li>某些 Dell 机器专用，一般不是 Dell 的机器不需要使用</li>
+<li>对支持 SMM（系统管理模式）的 Dell 机器的风扇进行更准确的监视和控制</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>SMCLightSensor.kext</strong><ul>
+<li>笔记本专用，用于笔记本电脑上的环境光感应器</li>
+<li>大多都的笔记本都没有这个感应器，所以就算用了也只是伪感光</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>SMCProcessor.kext</strong><ul>
+<li>用于监控 CPU 温度，<code>台式机</code>和笔记本都适用</li>
+<li>不支持 AMD 的 CPU</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>SMCSuperIO.kext</strong><ul>
+<li>用于监控风扇的转速，<code>台式机</code>和笔记本都适用</li>
+<li>不支持 AMD 的 CPU</li>
+</ul>
+</li>
+</ul>
+<h3 id="_3">显卡驱动<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://github.com/acidanthera/WhateverGreen/releases"><strong>WhateverGreen.kext</strong></a><ul>
+<li>基本上所有的核显和独显都要使用这个 kext</li>
+<li>用于图形修补、DRM 修复、缓冲区修复等</li>
+<li>只支持 OS X 10.8+ 版本的系统</li>
+</ul>
+</li>
+</ul>
+<h3 id="amd">AMD 显卡传感器<a class="headerlink" href="#amd" title="Permanent link">&para;</a></h3>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://github.com/aluveitie/RadeonSensor/releases"><strong>RadeonSensor.kext 和 SMCRadeonGPU.kext</strong></a><ul class="task-list">
+<li>从 Radeon VII 开始，Apple 停止直接报告温度，需要 kexts 介入并实施该功能</li>
+<li>对于 Vega 10 及更早版本，其他工具已经可以显示 GPU 温度，而无需额外的 kext</li>
+<li>支持从 Radeon HD 7000 系列到 RX 6000 系列的所有 GPU</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>RadeonSensor.kext</strong><ul>
+<li>读取 GPU 温度所需，需要 Lilu</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>SMCRadeonGPU.kext</strong><ul>
+<li>可以选择用于将 GPU 温度导出到 VirtualSMC 以供监控工具读取</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>RadeonGadget.app</strong><ul>
+<li>在状态栏中显示 GPU 温度，只需要加载 <code>RadeonSensor.kext</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="_4">声卡驱动<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://github.com/acidanthera/AppleALC/releases"><strong>AppleALC.kext</strong></a><ul>
+<li>用于 AppleHDA 修补，支持大多数的板载声卡驱动</li>
+<li>文件夹下的 <code>AppleALCU.kext</code> 是 AppleALC 的精简版，仅支持数字音频</li>
+<li>AMD 的主板和 CPU 可能会遇到一些问题，很少可以驱动麦克风</li>
+<li>只支持 OS X 10.8+ 版本的系统</li>
+<li>详细的支持原生驱动的声卡列表可参考：<a href="https://github.com/acidanthera/AppleALC/wiki/Supported-codecs">黑苹果声卡的驱动情况表以及 layouts id 情况</a></li>
+<li>注入此驱动后只需要在启动项（boot-args）里面添加 alcid=xxxx 这种形式即可</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://sourceforge.net/projects/voodoohda/"><strong>VoodooHDA.kext</strong></a><ul>
+<li>比较古老且经典的声卡驱动，也叫万能声卡驱动</li>
+<li>如果 AppeALC.kext 无法驱动话可以考虑这个</li>
+<li>但是使用体验完美度肯定不如原生的 AppleALC.kext 的</li>
+<li>只支持 OS X 10.6+ 版本的系统</li>
+</ul>
+</li>
+</ul>
+<h3 id="usb">USB 驱动<a class="headerlink" href="#usb" title="Permanent link">&para;</a></h3>
+<p>到 macOS 11 后面的版本的时候，传统的 USB 驱动定制的方法已经不再好用了，目前最完美的方法就是 Windows 下使用 USBToolBox 来定制 USB，最后再使用 Hackintool 简单微调修正一下。</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="/6-实用姿势/6-1.html#reloaded"><strong>USBToolBox.kext 与 UTBMap.kext</strong></a><ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>USBToolBox.kext </strong><ul>
+<li>官方下载地址为：https://github.com/USBToolBox/kext/releases</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>UTBMap.kext</strong><ul>
+<li>需要参考 <a href="/6-实用姿势/6-1/">USB 定制教程</a>自己生成</li>
+</ul>
+</li>
+<li><strong>建议安装系统前先定制一下 USB，避免后面遇到不必要的麻烦</strong></li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://sqlsec.lanzoub.com/i8CUI046dufe"><strong>XHCI-unsupported.kext</strong></a><ul>
+<li>用于 USB 定制完成后但是 USB 3.X 接口依然无法正常工作</li>
+<li>常用于 400系列及其以上的主板</li>
+<li>主板不是 macOS 原生支持的 USB 驱动的话需要这个</li>
+</ul>
+</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title"><strong>下面是老的教程，不删掉，留着纪念参考。</strong></p>
+</div>
+<blockquote>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://bitbucket.org/RehabMan/os-x-usb-inject-all/downloads/"><strong>USBInjectAll.kext</strong></a></li>
+<li>RehabMan 康复者之前的 USB 驱动</li>
+<li>18 年 11 月发布的 0.7.1 是最后应该版本，后面再没有更新过</li>
+<li>用于在 ACPI 中没有定义 USB 端口的系统上注入 Intel USB 控制器</li>
+<li>Skylake+ 的桌面CPU 不需要这个</li>
+<li>AsRock 华擎主板的话可能还是需要这个</li>
+<li>Coffee Lake 貌似也还是需要这个</li>
+<li>Skykak 之前的 CPU 理论上也是需要</li>
+<li>支持 OS X 10.11+ 版本的系统</li>
+</ul>
+<p>写到这里的时候感慨万千，RehabMan 可以说是黑苹果届的元老了，他也是 Tonymacx86 的一位版主，很多著名的黑苹果 kexts 都出自于他的手里，但是因为种种原因 18 年之后就再也没有活跃了，销声匿迹仿佛这个人没有来过一样，但是江湖上依然还有他的传说：<a href="https://www.reddit.com/r/hackintosh/comments/hbu5an/can_we_all_thank_rehabman/">Can we all thank RehabMan</a></p>
+<p>我真的是太佩服这种人了，十年如一日的在论坛里面解答问题，定期更新这开源的 kexts，甚至有些 Apple 苹果开发者都来像他学习。黑苹果比较讽刺的是，伸手党没有感恩之心的人太多了，也许他安装系统遇到困难的时候就去你的 Github 下面提交 issue 催着你更新，就好像你开源这个驱动就要为他负责到底一样；安装成功之后呢，提问的人也就消失了，甚至连句谢谢都没有说，更不会留下任何有价值的文档信息之类的。这样就会导致很多大佬们每天千篇一律的回答各种重复的毫无技术含量的问题，如果是国光我的话，我肯定坚持不了几天的，但是 RehabMan 坚持了 10 余年，这真的是太令人震撼了。RehabMan 在 TonymacX86 的最后一个帖子说道：“<strong>我还在，但忙于其他（现实生活）的事情。将无法回答这里的问题。人是需要学习阅读的。</strong>” 但愿，希望真的如此，而不是被这些没有感恩之心的人伤透了心。</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://github.com/daliansky/OS-X-USB-Inject-All/releases"><strong>USBInjectAll.kext</strong></a></li>
+<li>国内黑苹果小兵大佬维护的版本</li>
+<li>在 RehabMan 基础性更新完善的版本</li>
+<li>支持后面新的 400、500 系列主板的支持</li>
+</ul>
+<p>说到黑苹果小兵，国光我也很佩服这样的人，初次接触认识他的时候，我还以为是一个 30 多岁的中年人，结果后面才知道他的儿子已经上大学了，而且他也快到了退休的年龄。</p>
+<p>黑果小兵也像 RehabMan 一样，写了很多黑苹果教程文章，也开源了很多机型的驱动，而且常年来一直坚持提供黑苹果懒人镜像的下载包，最关键的是都快退休的年龄了，还坚持做黑苹果这个比较“时髦”的技术，真的厉害了，不知道国光我老的时候，还可以坚持做这些吗？哈哈~ 如果黑苹果技术还存在的话。</p>
+</blockquote>
+<h3 id="_5">有线网卡驱动<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://github.com/Mieze/AtherosE2200Ethernet/releases"><strong>AtherosE2200Ethernet.kext</strong></a><ul>
+<li>Atheros 高通和 Killer 杀手 网卡 需要</li>
+<li>注意：Atheros Killer E2500 型号实际上是基于 Realtek 的，所以请使用 RealtekRTL8111 驱动</li>
+<li>支持 OS X 10.8+ 版本的系统</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://github.com/acidanthera/IntelMausi/releases"><strong>IntelMausi.kext</strong></a><ul>
+<li>大多数 Intel 因特尔的网卡驱动</li>
+<li>基于 I211 的芯片组的网卡需要使用 SmallTreeIntel82576 kext</li>
+<li>官方支持 Intel 的 82578、82579、I217、I218 和 I219 网卡</li>
+<li>详细支持驱动的有线网卡型号可以参考：https://github.com/acidanthera/IntelMausi</li>
+<li>需要 OS X 10.9 或更新版本，10.6-10.8 的老用户可以使用 IntelSnowMausi 替代</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://www.insanelymac.com/forum/files/file/1004-lucyrtl8125ethernet/"><strong>LucyRTL8125Ethernet.kext</strong></a> <ul>
+<li>Realtek 的 2.5Gb 的网卡驱动</li>
+<li>官方这个页面需要注册才可以下载，也可以下载国光我上传<a href="https://sqlsec.lanzouw.com/iO7rru6awad">蓝奏云</a>的版本</li>
+<li>需要 macOS 10.15+ 版本的系统</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://github.com/Mieze/RTL8111_driver_for_OS_X/releases"><strong>RealtekRTL8111.kext</strong></a><ul>
+<li>大多数 Realtek 的千兆网卡驱动</li>
+<li>注意：有时最新版本的 kext 可能无法正常工作，这个时候可以尝试使用旧版本。</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://github.com/khronokernel/SmallTree-I211-AT-patch/releases"><strong>SmallTreeIntel82576.kext</strong></a><ul>
+<li>I211 有线网卡驱动</li>
+<li>大多数配备 intel 有线网卡的 AMD 主板需要</li>
+<li>版本支持情况 OS X 10.9-12(v1.0.6)、macOS 10.13-14(v1.2.5)、macOS 10.15+(v1.3.0)</li>
+</ul>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">其他不需要 kext 的有线网卡</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>Intel I225-V</strong><ul>
+<li>某些高端的 Comet Lake 主板会配备这个  I225-V 2.5GBe 有线网卡</li>
+<li>这个网卡比较坑爹，不同版本的驱动方式都有变化</li>
+<li>如果这个网卡驱动不正常的话，<strong>进系统几分钟之后就死机黑屏重</strong></li>
+<li>驱动方法参考 <a href="/10-常见QA/10-2/">常见 QA</a></li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>Intel I350</strong><ul>
+<li>OC 配置文件的设备属性里面添加 <code>PciRoot(0x0)/Pci(0x1,0x1)/Pci(0x0,0x0)</code> 内容如<ul>
+<li>device-id <code>33150000</code> 类型为 DATA 类型</li>
+<li>这个路径不同机型不太一样，实际以 Hackintool 查看的为准</li>
+</ul>
+</li>
+<li>需要 OS X 10.10 或更新版本</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">一些比较古老的百兆有线网卡驱动</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://github.com/chris1111/AppleIntelE1000e/releases"><strong>AppleIntelE1000e.kext</strong></a><ul>
+<li>主要与基于 10/100MBe 的 Intel 有线网卡相关</li>
+<li>需要 10.6 或更高版本</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://www.insanelymac.com/forum/files/file/259-realtekrtl8100-binary/"><strong>RealtekRTL8100.kext</strong></a> <ul>
+<li>支持的网卡型号有 RTL8101E、RTL8102E、RTL8103E、RTL8401E、RTL8105E、RTL8402、RTL8106E、RTL8106EUS、RTL8107E</li>
+<li>官方这个页面需要注册才可以下载，也可以下载国光我上传<a href="https://sqlsec.lanzouw.com/itn5Eu6hykh">蓝奏云</a>的版本</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://github.com/chris1111/BCM5722D/releases"><strong>BCM5722D.kext</strong></a> <ul>
+<li>Broadcom 的有线网卡驱动</li>
+<li>支持的网卡型号有 BCM5722、BCM5754、BCM5754M、BCM5755、BCM5755M、BCM57788、BCM5787、BCM5787M、BCM5906、BCM5906M</li>
+<li>需要 OS X 10.6 或更新版本</li>
+</ul>
+</li>
+</ul>
+</div>
+<h3 id="_6">无线网卡驱动<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<h4 id="intel">Intel 无线网卡系列<a class="headerlink" href="#intel" title="Permanent link">&para;</a></h4>
+<p>国内 <a href="https://github.com/zxystd">zxystd</a> 大佬从 Linux OpenBSD 移植的驱动，非常硬核，完成度很高，接力也都可以正常使用，隔空投送目前只能识别，暂时还无法传输文件，不过已经很厉害了。</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://github.com/OpenIntelWireless/itlwm/releases"><strong>AirportItlwm.kext</strong></a><ul>
+<li>Intel 网卡的 WiFi 驱动</li>
+<li>支持驱动的 intel 无线网卡型号表：https://docs.oiw.workers.dev/itlwm/Compat.html</li>
+<li>只支持 macOS 10.13 以及更高的版本</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://github.com/OpenIntelWireless/IntelBluetoothFirmware/releases"><strong>IntelBluetoothFirmware.kext 与 IntelBluetoothFirmware.kext</strong></a><ul>
+<li>Intel 网卡的蓝牙驱动，与 <code>AirportItlwm.kext</code> 搭配使用</li>
+<li>只支持 macOS 10.13 以及更高的版本</li>
+<li>如果确定你的网卡型号支持驱动，但是蓝牙无法使用，那么多半是你的 USB 没有定制好</li>
+<li>macOS 12 后蓝牙驱动的姿势又有小变化，详细可参考：<a href="/6-实用姿势/6-7/">macOS 12 蓝牙</a></li>
+</ul>
+</li>
+</ul>
+<h4 id="broadcom">Broadcom 博通免驱系列<a class="headerlink" href="#broadcom" title="Permanent link">&para;</a></h4>
+<p>免驱网卡型号众多，可以参考 <a href="https://dortania.github.io/Wireless-Buyers-Guide/">OC 官方的无线网卡购买指南</a> </p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://github.com/acidanthera/AirportBrcmFixup/releases"><strong>AirportBrcmFixup.kext</strong></a><ul>
+<li>非苹果原装无线网卡或者非 Fenvi 奋威的博通网卡的无线网卡驱动</li>
+<li>支持 OS X 10.10 以及更高的版本</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://github.com/acidanthera/BrcmPatchRAM/releases"><strong>BrcmPatchRAM 系列</strong></a><ul class="task-list">
+<li>所有非 Apple/非 Fenvi 无线网卡的蓝牙驱动</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> BrcmPatchRAM.kext   : 10.8-10.10 系统使用</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> BrcmPatchRAM2.kext  : 10.11-10.14 系统使用</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> BrcmPatchRAM3.kext  : 10.15+的系统使用</li>
+</ul>
+</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">博通网卡的几个细节，Big Sur 以及后面的系统由于驱动有点异常，需要手动删除 <em>AirPortBrcm4360_Injector.kext</em></p>
+</div>
+<p>蓝牙加载需要一定顺序，下面是 10.15+ 系统的蓝牙加载顺序 <code>Kernel -&gt; Add</code>：
+1. BrcmBluetoothInjector.kext
+2. BrcmFirmwareData.kext
+3. BrcmPatchRAM3.kext</p>
+<p>macOS 12 后蓝牙驱动的姿势又有小变化，详细可参考：<a href="/6-实用姿势/6-7/">macOS 12 蓝牙</a></p>
+<h3 id="_7">其他驱动<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<ul class="task-list">
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://github.com/acidanthera/VoodooPS2/releases"><strong>VoodooPS2Controller.kext</strong></a></p>
+<ul>
+<li>如果你的台式机安装界面键盘或者鼠标不能使用的话，记得打这个 kext</li>
+<li>适用于配备 PS2 键盘、鼠标和触控板的系统</li>
+<li>MT2 (Magic Trackpad 2) 功能需要 macOS 10.11 或更新版本</li>
+</ul>
+</li>
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://github.com/acidanthera/CpuTscSync/releases"><strong>CpuTscSync.kext</strong></a></p>
+<ul>
+<li>在某些 Intel 的 HEDT 和服务器主板上同步 TSC 需要, 如果没有这个 macOS 可能会非常慢甚至无法启动。</li>
+<li>在一些较新的笔记本上可能也需要这个 Kext</li>
+<li>不适用于 AMD CPU</li>
+<li>需要 OS X 10.8 或更新版本</li>
+<li>为具有<code>MSR_IA32_TSC_ADJUST</code>(03Bh) 的CPU 添加了 macOS 12 兼容性</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://github.com/acidanthera/NVMeFix/releases"><strong>NVMeFix.kext</strong></a><ul>
+<li>用于修复非 Apple 苹果的 NVMe 上的电源管理和初始化</li>
+<li>建议笔记本使用这个 Kexts，有助于减少睡眠耗电</li>
+<li>台式机不要这也可以，毕竟很少有人在意台式机的睡眠耗电情况</li>
+<li>需要 macOS 10.14 或更高版本</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://github.com/acidanthera/HibernationFixup/releases"><strong>HibernationFixup.kext</strong></a><ul>
+<li>一个旨在修复休眠兼容性问题的 Lilu 插件</li>
+<li>解决黑苹果系统睡眠后无法唤醒、死机、黑屏的问题</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://raw.githubusercontent.com/khronokernel/Legacy-Kexts/master/Injectors/Zip/SATA-unsupported.kext.zip"><strong>SATA-unsupported.kext</strong></a><ul>
+<li>笔记本电脑 在 macOS 中无法看到 SATA 硬盘驱动器的话，可以考虑使用</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://raw.githubusercontent.com/dortania/OpenCore-Install-Guide/master/extra-files/CtlnaAHCIPort.kext.zip"><strong>CtlnaAHCIPort.kext</strong></a><ul>
+<li>在 macOS 11.X + 下笔记本电脑 在 macOS 中无法看到 SATA 硬盘驱动器的情况下使用</li>
+</ul>
+</li>
+</ul>
+<h3 id="amd_1">AMD 常用驱动<a class="headerlink" href="#amd_1" title="Permanent link">&para;</a></h3>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://github.com/trulyspinach/SMCAMDProcessor/releases"><strong>AMDRyzenCPUPowerManagement.kext</strong></a><ul>
+<li>AMD 处理器的电源管理驱动</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://github.com/trulyspinach/SMCAMDProcessor/releases"><strong>SMCAMDProcessor.kext</strong></a><ul>
+<li>AMD 处理器的传感器监控和 VirtualSMC 插件</li>
+</ul>
+</li>
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://raw.githubusercontent.com/AMD-OSX/AMD_Vanilla/master/Extra/AppleMCEReporterDisabler.kext.zip"><strong>AppleMCEReporterDisabler.kext</strong></a></p>
+<ul>
+<li>用于关闭 AppleMCERReport</li>
+<li>AppleMCERReport会导致AMD CPU的内核崩溃</li>
+<li>某些双 CPU 的主板可能也有帮助</li>
+<li>受影响的 SMBIOS 为：MacPro6,1、MacPro7,1、iMacPro1,1</li>
+<li>需要 macOS 10.15 或更高版本</li>
+</ul>
+</li>
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://cdn.discordapp.com/attachments/566705665616117760/566728101292408877/XLNCUSBFix.kext.zip"><strong>XLNCUSBFix.kext</strong></a> </p>
+<ul>
+<li>AMD FX 系统的 USB 修复，不推荐用于 Ryzen</li>
+<li>需要 macOS 10.13 或更高版本</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://sourceforge.net/projects/voodoohda/"><strong>VoodooHDA.kext</strong></a><ul>
+<li>FX 系统的音频和 Ryzen 系统的前面板麦克风和外放的支持</li>
+<li>请勿与 AppleALC 混合使用</li>
+<li>比较古老且经典的声卡驱动，也叫万能声卡驱动</li>
+<li>如果 AppeALC.kext 无法驱动话可以考虑这个</li>
+<li>但是使用体验完美度肯定不如原生的 AppleALC.kext 的</li>
+<li>只支持 OS X 10.6+ 版本的系统</li>
+</ul>
+</li>
+</ul>
+<h3 id="_8">笔记本常用驱动<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<h4 id="_9">输入设备驱动<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h4>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://github.com/acidanthera/VoodooPS2/releases"><strong>VoodooPS2Controller.kext</strong></a><ul>
+<li>适用于配备 PS2 键盘、鼠标和触控板的系统</li>
+<li>MT2 (Magic Trackpad 2) 功能需要 macOS 10.11 或更新版本</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://bitbucket.org/RehabMan/os-x-voodoo-ps2-controller/downloads/"><strong>RehabMan 的 VoodooPS2Controller.kext</strong></a><ul>
+<li>老的系统支持的比较好，新系统建议使用上面的 kext</li>
+<li>对于带有 PS2 键盘、鼠标和触控板的旧系统，或者当您不想使用 VoodooInput 时</li>
+<li>支持 macOS 10.6+ 支持</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://github.com/VoodooSMBus/VoodooRMI/releases"><strong>VoodooRMI.kext 和 VoodooSMBus.kext</strong></a><ul>
+<li>对于带有 Synaptics SMBus 设备的触控板驱动</li>
+<li>主要用于触控板和轨迹点，ThinkPad 小红点也可以驱动</li>
+<li>MT2 (Magic Trackpad 2) 功能需要 macOS 10.11 或更新版本</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://github.com/VoodooSMBus/VoodooSMBus/releases"><strong>VoodooSMBus.kext</strong></a><ul>
+<li>对于带有基于 ELAN SMBus 的设备触控板驱动</li>
+<li>主要用于触控板和轨迹点</li>
+<li>目前支持 macOS 10.14 或更新版本</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://github.com/VoodooI2C/VoodooI2C/releases"><strong>VoodooI2C.kext</strong></a><ul>
+<li>用于修复 I2C 设备的触控板驱动</li>
+<li>一般是一些更高级的触摸板和或者是触摸屏</li>
+<li>MT2 (Magic Trackpad 2) 功能需要 macOS 10.11 或更新版本</li>
+<li>这个经常 PS2 的 Kexts 使用，需要微调才可以，否则可能会报错，详情可见：<a href="/3-准备工作/3-8/">Kexts 微调</a></li>
+<li>VoodooI2C 的一些插件<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> VoodooI2CHID.kext<ul>
+<li>微软 HID 驱动，也支持某些型号的触控屏</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> VoodooI2CELAN.kext<ul>
+<li>ELAN 专 用，ELAN1200+ 的版本需要 VoodooI2CHID.kext 代替</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> VoodooI2CSynaptics.kext<ul>
+<li>Synaptics 专用，Synaptics F12 协议需VoodooI2CHID代替</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> VoodooI2CFTE.kext<ul>
+<li>FTE1001 触控板</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> VoodooI2CAtmelMXT.kext<ul>
+<li>Atmel 多点触控协议</li>
+</ul>
+</li>
+<li>使用前先确定你的触控板型号，一般笔记本只需要使用 1 个对应的 kext 即可</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="_10">其他驱动<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h4>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://github.com/1Revenger1/ECEnabler/releases"><strong>ECEnabler.kext</strong></a><ul>
+<li>修复了在大多数笔记本上读取电池状态的问题（允许读取超过 8 位长的 EC 字段）</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://github.com/acidanthera/BrightnessKeys/releases"><strong>BrightnessKeys.kext</strong></a><ul>
+<li>笔记本亮度快捷键驱动</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://github.com/hieplpvip/AsusSMC/releases"><strong>AsusSMC.kext</strong></a><ul>
+<li>华硕笔记本电脑专用的 VirtualSMC 插件</li>
+<li>提供  ALS、键盘背光和 Fn 键驱动，支持电池监控充电</li>
+<li>支持配备了 ATK 设备的华硕笔记本电脑</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://github.com/acidanthera/CPUFriend/releases"><strong>CPUFriend.kext 和 CPUFriendDataProvider.kext</strong></a><ul>
+<li>可以实现对 macOS CPU 频率睿频性能的调整</li>
+<li>需要配合脚本生成时候自己机型的 kexts，可参考<a href="https://github.com/acidanthera/CPUFriend/blob/master/Instructions.md">官方教程</a></li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://github.com/0xFireWolf"><strong>RealtekCardReaderFriend.kext 和 RealtekCardReader.kext</strong></a><ul>
+<li>适用于 macOS 的 Realtek 读卡器驱动程序</li>
+<li><a href="https://github.com/0xFireWolf/RealtekCardReaderFriend/releases">RealtekCardReaderFriend.kext</a></li>
+<li><a href="https://github.com/0xFireWolf/RealtekCardReader/releases">RealtekCardReader.kext</a></li>
+<li>两个 Kexts 同时搭配使用即可，且需要依赖 Lilu 1.4.7+ 的版本才可以</li>
+</ul>
+</li>
+</ul>
+<h2 id="kexts_2">黑苹果 Kexts 大全?<a class="headerlink" href="#kexts_2" title="Permanent link">&para;</a></h2>
+<p>由于 Kexts 太多太杂了，这个工作量太大了，我直接贴一些轮子的地址，大家自己去看看就行：</p>
+<ul>
+<li><a href="https://github.com/acidanthera/OpenCorePkg/blob/master/Docs/Kexts.md">OpenCore 常用 Kexts</a></li>
+<li><a href="https://docs.google.com/spreadsheets/d/15S-ocrkm_VTUJpKxNII-YUyQFd5VYdjbe0DHlZVCQyM">一些比较老的 Kexts</a></li>
+<li><a href="https://github.com/acidanthera/Lilu/blob/master/KnownPlugins.md">一些基于Liu 的 Kexts</a> </li>
+</ul>
+<p>如果你是一个有耐心的人的话，如果整理好 Kexts 完整列表的话，欢迎提交 PR</p>
+
+  <hr>
+<div class="md-source-file">
+  <small>
+    
+      最后更新:
+      2022-09-19
+    
+  </small>
+</div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="页脚" >
+      
+        
+        <a href="../3-3/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 准备 ACPI" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              准备 ACPI
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../3-5/" class="md-footer__link md-footer__link--next" aria-label="下一页: Drivers 说明" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              Drivers 说明
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2021 - 2022 国光
+    </div>
+  
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    <a href="https://www.sqlsec.com" target="_blank" rel="noopener" title="国光" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M341.52 285.56c33.65 0 82.34-6.94 82.34-47 .22-6.74.86-1.82-20.88-96.24-4.62-19.15-8.68-27.84-42.31-44.65-26.09-13.34-82.92-35.37-99.73-35.37-15.66 0-20.2 20.17-38.87 20.17-18 0-31.31-15.06-48.12-15.06-16.14 0-26.66 11-34.78 33.62-27.5 77.55-26.28 74.27-26.12 78.27 0 24.8 97.64 106.11 228.47 106.11M429 254.84c4.65 22 4.65 24.35 4.65 27.25 0 37.66-42.33 58.56-98 58.56-125.74.08-235.91-73.65-235.91-122.33a49.55 49.55 0 0 1 4.06-19.72C58.56 200.86 0 208.93 0 260.63c0 84.67 200.63 189 359.49 189 121.79 0 152.51-55.08 152.51-98.58 0-34.21-29.59-73.05-82.93-96.24"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "search.suggest", "search.highlight", "search.share"], "search": "../../assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\uff0c\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d691e9de.min.js"></script>
+      <script id="click-show-text" src="https://html.sqlsec.com/click-show-text.min.js" data-mobile="false" data-text="OpenCore,Hackintosh,DSDT,SSDT,Kernel,Kexts,UEFI,NVRAM,BIOS,ACPI,Clover,AWAC,XOSI,Lilu.kext,VirtualSMC.kext,WhateverGreen.kext" data-fontsize="15px" data-random="false" async="async"></script>
+      
+    
+  </body>
+</html>

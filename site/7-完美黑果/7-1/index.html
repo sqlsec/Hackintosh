@@ -1,0 +1,2509 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="国光的黑苹果安装教程：手把手教你配置 OpenCore">
+      
+      
+        <meta name="author" content="国光">
+      
+      
+        <link rel="canonical" href="https://apple.sqlsec.com/7-%E5%AE%8C%E7%BE%8E%E9%BB%91%E6%9E%9C/7-1/">
+      
+      <link rel="icon" href="https://image.3001.net/images/20200922/16007336487809.jpg">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.5.1">
+    
+    
+      
+        <title>黑苹果 - 国光的黑苹果安装教程：手把手教你配置 OpenCore</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.2e8b5541.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+
+    
+    
+    
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="国光的黑苹果安装教程：手把手教你配置 OpenCore" class="md-header__button md-logo" aria-label="国光的黑苹果安装教程：手把手教你配置 OpenCore" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            国光的黑苹果安装教程：手把手教你配置 OpenCore
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              黑苹果
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="切换深色模式"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="切换深色模式" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="blue"  aria-label="切换浅色模式"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="切换浅色模式" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/sqlsec/Hackintosh" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    sqlsec/Hackintosh
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      主页
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../0-%E5%89%8D%E8%A8%80%E4%BB%8B%E7%BB%8D/0-1/" class="md-tabs__link">
+        前言介绍
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../1-%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/1-1/" class="md-tabs__link">
+        基础知识
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../2-U%E7%9B%98%E5%88%B6%E4%BD%9C/2-1/" class="md-tabs__link">
+        U盘制作
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../3-%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C/3-1/" class="md-tabs__link">
+        准备工作
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../4-OC%E9%85%8D%E7%BD%AE/4-1/" class="md-tabs__link">
+        配置 OC
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../5-%E5%AE%9E%E6%88%98%E6%BC%94%E7%A4%BA/5-1/" class="md-tabs__link">
+        实战演示
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../6-%E5%AE%9E%E7%94%A8%E5%A7%BF%E5%8A%BF/6-1/" class="md-tabs__link">
+        实用姿势
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="./" class="md-tabs__link md-tabs__link--active">
+        完美黑果
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../8-OC%E6%8E%92%E9%94%99/8-1/" class="md-tabs__link">
+        OC排错
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../9-%E6%88%90%E6%9E%9C%E5%88%86%E4%BA%AB/" class="md-tabs__link">
+      成果分享
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../10-%E5%B8%B8%E8%A7%81QA/10-1/" class="md-tabs__link">
+        常见 QA
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="国光的黑苹果安装教程：手把手教你配置 OpenCore" class="md-nav__button md-logo" aria-label="国光的黑苹果安装教程：手把手教你配置 OpenCore" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11Z"/></svg>
+
+    </a>
+    国光的黑苹果安装教程：手把手教你配置 OpenCore
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/sqlsec/Hackintosh" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    sqlsec/Hackintosh
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        主页
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          前言介绍
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="前言介绍" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          前言介绍
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../0-%E5%89%8D%E8%A8%80%E4%BB%8B%E7%BB%8D/0-1/" class="md-nav__link">
+        背景
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../0-%E5%89%8D%E8%A8%80%E4%BB%8B%E7%BB%8D/0-2/" class="md-nav__link">
+        啰嗦
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          基础知识
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="基础知识" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          基础知识
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1-%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/1-1/" class="md-nav__link">
+        基操勿六
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1-%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/1-2/" class="md-nav__link">
+        硬件限制
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1-%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/1-3/" class="md-nav__link">
+        寻找硬件
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1-%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/1-4/" class="md-nav__link">
+        专业术语
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          U盘制作
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="U盘制作" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          U盘制作
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2-U%E7%9B%98%E5%88%B6%E4%BD%9C/2-1/" class="md-nav__link">
+        下载镜像
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2-U%E7%9B%98%E5%88%B6%E4%BD%9C/2-2/" class="md-nav__link">
+        写入镜像
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2-U%E7%9B%98%E5%88%B6%E4%BD%9C/2-3/" class="md-nav__link">
+        结构讲解
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          准备工作
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="准备工作" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          准备工作
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3-%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C/3-1/" class="md-nav__link">
+        BIOS设置
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3-%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C/3-2/" class="md-nav__link">
+        OC 文件结构
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3-%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C/3-3/" class="md-nav__link">
+        准备 ACPI
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3-%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C/3-4/" class="md-nav__link">
+        准备 Kexts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3-%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C/3-5/" class="md-nav__link">
+        Drivers 说明
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3-%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C/3-6/" class="md-nav__link">
+        OC 编辑器
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3-%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C/3-7/" class="md-nav__link">
+        初步配置
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3-%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C/3-8/" class="md-nav__link">
+        Kexts 微调
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          配置 OC
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="配置 OC" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          配置 OC
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4-OC%E9%85%8D%E7%BD%AE/4-1/" class="md-nav__link">
+        ACPI
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4-OC%E9%85%8D%E7%BD%AE/4-2/" class="md-nav__link">
+        Booter
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4-OC%E9%85%8D%E7%BD%AE/4-3/" class="md-nav__link">
+        DeviceProperties
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4-OC%E9%85%8D%E7%BD%AE/4-4/" class="md-nav__link">
+        Kernel
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4-OC%E9%85%8D%E7%BD%AE/4-5/" class="md-nav__link">
+        Misc
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4-OC%E9%85%8D%E7%BD%AE/4-6/" class="md-nav__link">
+        NVRAM
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4-OC%E9%85%8D%E7%BD%AE/4-7/" class="md-nav__link">
+        PlatformInfo
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4-OC%E9%85%8D%E7%BD%AE/4-8/" class="md-nav__link">
+        UEFI
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          实战演示
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="实战演示" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          实战演示
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5-%E5%AE%9E%E6%88%98%E6%BC%94%E7%A4%BA/5-1/" class="md-nav__link">
+        机器概览
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5-%E5%AE%9E%E6%88%98%E6%BC%94%E7%A4%BA/5-2/" class="md-nav__link">
+        BIOS 设置
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5-%E5%AE%9E%E6%88%98%E6%BC%94%E7%A4%BA/5-3/" class="md-nav__link">
+        磁盘划分
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5-%E5%AE%9E%E6%88%98%E6%BC%94%E7%A4%BA/5-4/" class="md-nav__link">
+        安装 Windows
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5-%E5%AE%9E%E6%88%98%E6%BC%94%E7%A4%BA/5-5/" class="md-nav__link">
+        安装 macOS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5-%E5%AE%9E%E6%88%98%E6%BC%94%E7%A4%BA/5-6/" class="md-nav__link">
+        完善引导
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5-%E5%AE%9E%E6%88%98%E6%BC%94%E7%A4%BA/5-7/" class="md-nav__link">
+        更新系统
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8">
+          实用姿势
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="实用姿势" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          实用姿势
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6-%E5%AE%9E%E7%94%A8%E5%A7%BF%E5%8A%BF/6-1/" class="md-nav__link">
+        USB 定制
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6-%E5%AE%9E%E7%94%A8%E5%A7%BF%E5%8A%BF/6-2/" class="md-nav__link">
+        编译触控板驱动
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6-%E5%AE%9E%E7%94%A8%E5%A7%BF%E5%8A%BF/6-3/" class="md-nav__link">
+        触控板中断示例
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6-%E5%AE%9E%E7%94%A8%E5%A7%BF%E5%8A%BF/6-4/" class="md-nav__link">
+        台式机双显卡显示
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6-%E5%AE%9E%E7%94%A8%E5%A7%BF%E5%8A%BF/6-5/" class="md-nav__link">
+        开启 HiDPi
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6-%E5%AE%9E%E7%94%A8%E5%A7%BF%E5%8A%BF/6-6/" class="md-nav__link">
+        睡眠问题排查
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6-%E5%AE%9E%E7%94%A8%E5%A7%BF%E5%8A%BF/6-7/" class="md-nav__link">
+        macOS 12 蓝牙
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6-%E5%AE%9E%E7%94%A8%E5%A7%BF%E5%8A%BF/6-8/" class="md-nav__link">
+        屏蔽不支持的硬盘
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6-%E5%AE%9E%E7%94%A8%E5%A7%BF%E5%8A%BF/6-9/" class="md-nav__link">
+        AMD 免驱独显优化
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6-%E5%AE%9E%E7%94%A8%E5%A7%BF%E5%8A%BF/6-10/" class="md-nav__link">
+        OC 主题与启动项
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6-%E5%AE%9E%E7%94%A8%E5%A7%BF%E5%8A%BF/6-11/" class="md-nav__link">
+        macOS 下触屏驱动
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6-%E5%AE%9E%E7%94%A8%E5%A7%BF%E5%8A%BF/6-12/" class="md-nav__link">
+        自定义显示器图标
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6-%E5%AE%9E%E7%94%A8%E5%A7%BF%E5%8A%BF/6-13/" class="md-nav__link">
+        核显接口输出定制
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9">
+          完美黑果
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="完美黑果" data-md-level="1">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          完美黑果
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          黑苹果
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        黑苹果
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    前言
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    通用部分
+  </a>
+  
+    <nav class="md-nav" aria-label="通用部分">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#intel-power-gadget" class="md-nav__link">
+    Intel Power Gadget
+  </a>
+  
+    <nav class="md-nav" aria-label="Intel Power Gadget">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    压力测试
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    反面教材
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hackintool" class="md-nav__link">
+    Hackintool
+  </a>
+  
+    <nav class="md-nav" aria-label="Hackintool">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    杂项
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usb" class="md-nav__link">
+    USB
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#videoproc" class="md-nav__link">
+    VideoProc
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#geekbench5" class="md-nav__link">
+    Geekbench5
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    系统信息
+  </a>
+  
+    <nav class="md-nav" aria-label="系统信息">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nvmexpress" class="md-nav__link">
+    NVMExpress
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    以太网
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    蓝牙
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wifi" class="md-nav__link">
+    WiFi
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    声音
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    麦克风
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hidpi" class="md-nav__link">
+    HiDPi
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    传感器相关
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#appstore" class="md-nav__link">
+    AppStore
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sensi" class="md-nav__link">
+    Sensi
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#blackmagic-disk-speed-test" class="md-nav__link">
+    Blackmagic Disk Speed Test
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#blackmagic-raw-speed-test" class="md-nav__link">
+    Blackmagic RAW Speed Test
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    信息
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#icloud" class="md-nav__link">
+    iCloud
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    隔空投送
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    接力
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    跨设备粘贴
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    随航
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    通用控制
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    笔记本专题
+  </a>
+  
+    <nav class="md-nav" aria-label="笔记本专题">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    触控板
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    触控板进阶
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    亮度调节
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    快捷键
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    电池
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    支持一下
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../7-2/" class="md-nav__link">
+        白苹果
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" type="checkbox" id="__nav_10" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_10">
+          OC排错
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="OC排错" data-md-level="1">
+        <label class="md-nav__title" for="__nav_10">
+          <span class="md-nav__icon md-icon"></span>
+          OC排错
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../8-OC%E6%8E%92%E9%94%99/8-1/" class="md-nav__link">
+        正常日志
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../8-OC%E6%8E%92%E9%94%99/8-2/" class="md-nav__link">
+        异常日志
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../9-%E6%88%90%E6%9E%9C%E5%88%86%E4%BA%AB/" class="md-nav__link">
+        成果分享
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_12" type="checkbox" id="__nav_12" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_12">
+          常见 QA
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="常见 QA" data-md-level="1">
+        <label class="md-nav__title" for="__nav_12">
+          <span class="md-nav__icon md-icon"></span>
+          常见 QA
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../10-%E5%B8%B8%E8%A7%81QA/10-1/" class="md-nav__link">
+        使用方法
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../10-%E5%B8%B8%E8%A7%81QA/10-2/" class="md-nav__link">
+        问题列表
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    前言
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    通用部分
+  </a>
+  
+    <nav class="md-nav" aria-label="通用部分">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#intel-power-gadget" class="md-nav__link">
+    Intel Power Gadget
+  </a>
+  
+    <nav class="md-nav" aria-label="Intel Power Gadget">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    压力测试
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    反面教材
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hackintool" class="md-nav__link">
+    Hackintool
+  </a>
+  
+    <nav class="md-nav" aria-label="Hackintool">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    杂项
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usb" class="md-nav__link">
+    USB
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#videoproc" class="md-nav__link">
+    VideoProc
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#geekbench5" class="md-nav__link">
+    Geekbench5
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    系统信息
+  </a>
+  
+    <nav class="md-nav" aria-label="系统信息">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nvmexpress" class="md-nav__link">
+    NVMExpress
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    以太网
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    蓝牙
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wifi" class="md-nav__link">
+    WiFi
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    声音
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    麦克风
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hidpi" class="md-nav__link">
+    HiDPi
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    传感器相关
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#appstore" class="md-nav__link">
+    AppStore
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sensi" class="md-nav__link">
+    Sensi
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#blackmagic-disk-speed-test" class="md-nav__link">
+    Blackmagic Disk Speed Test
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#blackmagic-raw-speed-test" class="md-nav__link">
+    Blackmagic RAW Speed Test
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    信息
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#icloud" class="md-nav__link">
+    iCloud
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    隔空投送
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    接力
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    跨设备粘贴
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    随航
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    通用控制
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    笔记本专题
+  </a>
+  
+    <nav class="md-nav" aria-label="笔记本专题">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    触控板
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    触控板进阶
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    亮度调节
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    快捷键
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    电池
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    支持一下
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  <a href="https://github.com/sqlsec/Hackintosh/edit/main/docs/7-完美黑果/7-1.md" title="编辑此页" class="md-content__button md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
+  </a>
+
+
+  <h1>黑苹果</h1>
+
+<h2 id="_1">前言<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>很多朋友自己鼓捣完黑苹果或者花钱请被人帮忙安装好黑苹果后，并不清楚目前自己的黑苹果完美度是多少，所以国光就单独开了这个章节，分享一下我心目中完美的黑苹果。</p>
+<p>另外如果有对白苹果下各项参数表现的话，可以参考这个章节<a href="/7-完美黑果/7-2.html">白苹果</a> </p>
+<h2 id="_2">通用部分<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>这部分笔记本和台式机都可以参考，为啥单独分笔记本和台式机呢？因为台式机很容易完美，但是笔记本的话就有一堆各种各样的问题了，所以下面会单独列出笔记本的部分。</p>
+<h3 id="intel-power-gadget">Intel Power Gadget<a class="headerlink" href="#intel-power-gadget" title="Permanent link">&para;</a></h3>
+<p>intel 官方出品的软件，常用来查看 CPU 的频率、功耗、稳定等相关参数。</p>
+<p>官方下载地址为：<a href="https://www.intel.com/content/www/us/en/developer/articles/tool/power-gadget.html">https://www.intel.com/content/www/us/en/developer/articles/tool/power-gadget.html</a></p>
+<p>先看一个 CPU 正常驱动的软件运行截图：</p>
+<p><img alt="" src="https://image.3001.net/images/20220213/16447316337343.jpg" />    </p>
+<p>下面分别从上到下依次解释一下各个模块的作用：</p>
+<ul>
+<li>
+<p><strong>Power</strong></p>
+</li>
+<li>
+<p>显示 CPU 的实时功耗情况</p>
+</li>
+<li>一般这块大家基本上都是正常的，除非少数配置不当，导致 CPU 一直处于超频状态</li>
+<li>
+<p><strong>Frequency</strong></p>
+</li>
+<li>
+<p>显示 CPU 以及 核显的实时频率</p>
+</li>
+<li>主要关注一下是否高低频正常，不是一直超频状态，或者一直达不到睿频的频率就行了</li>
+<li>CORE MAX：最大频率，关注一下这个是否达到你 CPU 的睿频的标准</li>
+<li>CORE AVG：平均频率</li>
+<li>CORE MIN：最低频率，一般最低频率得低于 1.0 才符合预期，笔记本尤为要关注这一点，因为低频有助于续航</li>
+<li>CORE REQ：系统预判需要调度的 CPU 频率，理想情况下这个 <strong>REQ 的粉红线要和 AVG 的蓝线曲线走势符合</strong></li>
+<li><strong>GFX AVG</strong>：实际核显达到的频率，如果你的核显没有驱动的话，是看不到这个选项的</li>
+<li><strong>GFX REQ</strong>：系统预判需要调用的核显频率，如果你的核显没有驱动的话，是看不到这个选项的</li>
+</ul>
+<p>补充一下，可以 GFX AVG 和 GFX REQ 的频率<strong>没任何意义</strong>，这个 Intel Power Gadget 不同版本看到的评率都变化很大，所以完全没规律可言，实际完美效果以自己的体验为准。</p>
+<hr />
+<p>另外提醒一下，使用 <strong>CPU-S</strong> 这类软件查看变频档位的话<strong>没有参考意义</strong>，这个国光以前拿白苹果和黑苹果对比过，白苹果的变频档位居然还不如黑苹果多，所以国光认为并不是变频档位越多越好，黑苹果的最高境界应该就是无限接近于白苹果才对。</p>
+<ul>
+<li><strong>Temperature</strong></li>
+<li>CPU  的实时温度</li>
+<li>台式机散热厉害的话，基本上日常使用最高温度不会超过 50℃ 吧</li>
+<li>笔记本的话，intel 的 CPU 发热一直是硬伤，国光我的白苹果经常温度到 95℃+，早已经习惯了</li>
+<li><strong>Utilization</strong></li>
+<li>CPU 的实时使用率</li>
+<li>这个和 Windows 下的任务管理器查看的结果差不多，这里不再赘述了</li>
+</ul>
+<h4 id="_3">压力测试<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
+<p>Intel Power Gadget 自带压力测试，可以很方便测试 CPU 和 核显的睿频情况：</p>
+<p><img alt="" src="https://image.3001.net/images/20220212/164467418711.png" /> </p>
+<h4 id="_4">反面教材<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
+<p>说了这么多，我们来看一个这块有明显问题的截图：</p>
+<p><img alt="" src="https://image.3001.net/images/20220213/16447317239081.jpg" />  </p>
+<p>图上有几个问题，我们下面来一一列出来：</p>
+<ol>
+<li>测试核显的时候，CPU 的 CORE AVG 平均频率上不去，达不到睿频的标准，可以看到很明显的 CPU 频率下跌了</li>
+<li>CORE REQ 实际上预判了需要 3.47Ghz 的频率，实际上只跑到了 0.40Ghz 的频率</li>
+</ol>
+<h3 id="hackintool">Hackintool<a class="headerlink" href="#hackintool" title="Permanent link">&para;</a></h3>
+<p>可以说是黑苹果必备的一个软件了，下载传送门：<a href="https://github.com/headkaze/Hackintool/releases">https://github.com/headkaze/Hackintool/releases</a></p>
+<p>Hackintool 可以看很多驱动的完美情况，我们先一个个来，先看下系统部分，重点关注一下我标记出来的：</p>
+<p><img alt="" src="https://image.3001.net/images/20220212/1644674388451.png" /> </p>
+<ul>
+<li>VDA 解码器，这个比较关键，如果不是完美支持的话，你的硬解肯定是不正常的。</li>
+<li>如果是台式机的话，关注一下是否这里可以看到核显的信息</li>
+<li>另外关注一下显卡是否支持 Metal，这个是 macOS 下一个很重要图形引擎</li>
+<li>最后这个 Hackintool 的系统界面不要有一些 ??? 识别不出的信息最好</li>
+</ul>
+<h4 id="_5">杂项<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
+<p><img alt="" src="https://image.3001.net/images/20220213/16447318795376.png" /> </p>
+<ul>
+<li>首先关注网卡是否都内建了</li>
+<li>蓝牙固件是否可以正常显示，没有的话请尝试重新 <a href="/6-实用姿势/6-1/">USB 定制</a></li>
+<li>显卡型号识别正常，这里没有核显的原因是因为国光我使用了无头 ID，仅计算使用，也建议大家这样使用</li>
+<li>音频设备里面除了自带的声卡以外，应该还可看到 HDMI 音频相关</li>
+<li>硬盘这块没的说，基本上大家都是正常的</li>
+</ul>
+<h4 id="usb">USB<a class="headerlink" href="#usb" title="Permanent link">&para;</a></h4>
+<p>没有多余的 USB的端口，且正确识别了 USB 类型，速率也均正常，同时记得把网卡等内部设备 Internal 内建一下：</p>
+<p><img alt="" src="https://image.3001.net/images/20220213/16447322128455.png" />  </p>
+<h3 id="videoproc">VideoProc<a class="headerlink" href="#videoproc" title="Permanent link">&para;</a></h3>
+<p>H264 和 HEVC  的状态应该都是可用状态才比较正常：</p>
+<p><img alt="" src="https://image.3001.net/images/20220213/16447329581762.png" /> </p>
+<h3 id="geekbench5">Geekbench5<a class="headerlink" href="#geekbench5" title="Permanent link">&para;</a></h3>
+<p>Geekbench5 单核跑分：1302，多核跑分：8393 分</p>
+<p><img alt="" src="https://image.3001.net/images/20220213/16447369486899.png" /> </p>
+<p>这个分数比我在 macOS 11.4 Big Sur 上跑的要略低一点，当时跑分 Geekbench5 单核跑分：1314，多核跑分：8687 分 不过这个问题不大，参考一下历届 Mac 跑分，只要跑出 CPU 应有的水平就可以了：<a href="https://browser.geekbench.com/mac-benchmarks">Geekbench5 历届 Mac 跑分情况</a></p>
+<p>蓝宝石 6600XT 白金版，解锁功耗墙，小超一下，Metal 98462 分，OpenCL 72542 分：</p>
+<p><img alt="" src="https://image.3001.net/images/20220214/16448001734556.png" /> </p>
+<p><img alt="" src="https://image.3001.net/images/20220214/16448034866246.png" /> </p>
+<p>Geekbench5 的显卡跑分这块一直不稳定，误差比较大，大家也不必过多关注 GPU 跑分这块，对了关于 AMD 显卡优化的话，可以参考这个章节：<a href="/6-实用姿势/6-9/">AMD 免驱独显优化</a></p>
+<h3 id="_6">系统信息<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<h4 id="nvmexpress">NVMExpress<a class="headerlink" href="#nvmexpress" title="Permanent link">&para;</a></h4>
+<p><img alt="" src="https://image.3001.net/images/20220216/16450237272241.png" /> </p>
+<p>WD  西数系列 TRIM 下工作比较完美，TRIM 是苹果独有的技术，可以提高 SSD 的寿命，在这个 <a href="https://github.com/dortania/bugtracker/issues/192">issue</a> 下面也列举了一些硬盘与 TRIM 的兼容程序：</p>
+<p><img alt="" src="https://image.3001.net/images/20220216/16450240171228.png" /> </p>
+<p>如果你的 SSD 不在上述列表，但是不确定是否在 TRIM 下工作良好的话，该怎么判断呢？下面是 TRIM 工作不良好的一些特征：</p>
+<ol>
+<li>打开程序比较慢，总是得跳很久</li>
+<li>鼠标很容易出现小彩虹</li>
+<li>某些情况下甚至经常卡死不动</li>
+</ol>
+<p>如果你的引导没有问题的话，那么很大程度上是你的 SSD 和 TRIM 兼容度不行，这个时候只需要在 「Kernel 内核设置」的「SetApfsTrimTimout」设置为 999 即可关闭 TRIM：</p>
+<p><img alt="" src="https://image.3001.net/images/20220216/16450244397579.png" /> </p>
+<h4 id="_7">以太网<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h4>
+<p>主要关注一下最高链接速度是否跑满了你的网卡硬件标注的规格：</p>
+<p><img alt="" src="https://image.3001.net/images/20220216/16450246714632.png" />  </p>
+<p>#### 图形卡</p>
+<p>有待补充，暂时不贴图。</p>
+<p>台式机的话图形化这里最完美的是看到 1 个显卡，这是 iMac 的默认策略配置。关于有些人可以看到核显和独显，实际上这不是标准的配置，对这个配置感兴趣的朋友可以参考：<a href="/6-实用姿势/6-4/">台式机双显卡显示</a> </p>
+<p>第二个有争议的就是显卡这里没有显示了<strong>EFI驱动程序版本</strong>，白苹果基本上都是显示的<a href="/7-完美黑果/7-2/#_5">这些信息的</a>。</p>
+<p>这种情况在早期 10.15 的时候，第三方显卡通过注入 EFI 驱动程序版本等白果卡的信息，确实对性能提升很有帮助，但是从 Big Sur 11 开始，这种方法已经不再有效了，所以我们不用过多的关注是否显示 EFI 驱动程序版本了。</p>
+<h4 id="_8">蓝牙<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h4>
+<p>这块也没啥好说的，如果蓝牙驱动话，这里是可以看到蓝牙的相关信息的，如果你的蓝牙不正常工作的话，很可能与 USB 定制有关，可以参考：<a href="/6-实用姿势/6-1/">USB 定制</a>，如果定制好的话，蓝牙还是有问题可能还和这个有关 <a href="/6-实用姿势/6-7/">macOS 12 蓝牙</a>。</p>
+<p><img alt="" src="https://image.3001.net/images/20220216/16450259535481.png" /> </p>
+<h4 id="wifi">WiFi<a class="headerlink" href="#wifi" title="Permanent link">&para;</a></h4>
+<p>主要关注是否支持隔空投送，其他的没有是特别关注的：</p>
+<p><img alt="" src="https://image.3001.net/images/20220216/16450255985904.png" /> </p>
+<p>关于国家和地区代码这个网上可能也有争议，实际上没有准确权威的结论，国光认为只要正常使用的话，地区代码是无所谓的，当然如果你看着不爽的话，非得改的话，博通网卡确实也支持修改，下面搬运的官方文档：</p>
+<p>启动项添加如下参数即可：</p>
+<ul>
+<li><code>brcmfx-country=XX</code>将国家代码更改为 XX (US, CN, #a, ...)，也可以通过引导加载程序中的 DSDT 或 Properties → DeviceProperties 注入</li>
+</ul>
+<h3 id="_9">声音<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<p>支持内置扬声器以及 HDMI 或者 DP 声音输出：</p>
+<p><img alt="" src="https://image.3001.net/images/20220218/16451991088028.jpg" /> </p>
+<p>同时插上耳机的话，也应该是支持自动切换到耳机设备的。</p>
+<h3 id="_10">麦克风<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<p>系统内置麦克风可以正常识别，Siri 语音助手可以正常交互沟通：</p>
+<p><img alt="" src="https://image.3001.net/images/20220218/1645199330665.jpg" />  </p>
+<h3 id="hidpi">HiDPi<a class="headerlink" href="#hidpi" title="Permanent link">&para;</a></h3>
+<p>没有 HiDPi 的 macOS 是没有灵魂的，4K 显示器一般默认开启 HiDPi，其他分辨率低一些的显示器得手动开启 HiDPi 了，关于开启的细节可以参考：<a href="/6-实用姿势/6-5/">开启 HiDPi</a></p>
+<p><img alt="" src="https://image.3001.net/images/20220219/16452004986806.jpg" /> </p>
+<h3 id="_11">传感器相关<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
+<p>使用腾讯柠檬清理可以很方便看到 CPU 的温度和转速：</p>
+<p><img alt="" src="https://image.3001.net/images/20220217/16450272093892.png" /> </p>
+<p>笔记本这块很容易转速无法识别，这块有些笔记本确实是硬伤，确实是无解的，所以我这块一直是随缘的。</p>
+<p>iStat Menus 可以看到更详细的温度情况：</p>
+<p><img alt="" src="https://image.3001.net/images/20220217/16450273871284.png" />    </p>
+<p>这里不知道为啥 iStat Menus 也没有识别到风扇的转速，不过问题不大，这里要关注的一点是 AMD 的这个 GPU 温度也识别， 独显温度没有识别的同学可以参考：<a href="/6-实用姿势/6-9/">AMD 免驱独显优化</a></p>
+<p><img alt="" src="https://image.3001.net/images/20220217/16450275226157.png" />  </p>
+<h3 id="appstore">AppStore<a class="headerlink" href="#appstore" title="Permanent link">&para;</a></h3>
+<p>AppStore 应该可以正常下载 APP，下载和更新应该都是比较丝滑的：</p>
+<p><img alt="" src="https://image.3001.net/images/20220216/16450265743921.png" /> </p>
+<p>这块提一下的原因是，早期使用 Clover 引导的很多人配置不规范，可能导致 AppStore 使用体验很差，所以早日转入 OC 吧，跟着这个教程配置一遍简单的。 </p>
+<h3 id="sensi">Sensi<a class="headerlink" href="#sensi" title="Permanent link">&para;</a></h3>
+<p>Sensi 测试硬盘读写速度也很方便，颜值也高：</p>
+<p><img alt="" src="https://image.3001.net/images/20220505/16517214247479.jpg" /></p>
+<h3 id="blackmagic-disk-speed-test">Blackmagic Disk Speed Test<a class="headerlink" href="#blackmagic-disk-speed-test" title="Permanent link">&para;</a></h3>
+<p>这个软件可以直接在 AppStore 商店下载，可以测试下你的 SSD 读写速度是否正常：</p>
+<p><img alt="" src="https://image.3001.net/images/20220216/16450262776331.png" /> </p>
+<p>如果你的 SSD 读写速度很明显低于标称规格的话，那么很可能是你的 SSD 和 TRIM 支持不良好，具体解决细节可以参考：<a href="/7-完美黑果/7-1.html#系统信息">通用部分 - 系统信息 - NVMExpress</a></p>
+<h3 id="blackmagic-raw-speed-test">Blackmagic RAW Speed Test<a class="headerlink" href="#blackmagic-raw-speed-test" title="Permanent link">&para;</a></h3>
+<p>这个软件可以直接在 AppStore 商店下载，用于测试 CPU 和显卡的性能表现，下图是 i7-10700 和 RX 6600XT 的测试结果：</p>
+<p><img alt="" src="https://image.3001.net/images/20220217/16451102673301.png" /> </p>
+<p>可以看到短板是我的 i7-10700 CPU 了，当然是和显卡相比的情况下，不过实际上这个 CPU 国光我用来作为日常生产力已经绰绰有余了。  </p>
+<h3 id="_12">信息<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
+<p>如果你还有 iOS 设备的话，那么你的 macOS 上的短信应该可以正常发送的：</p>
+<p><img alt="" src="https://image.3001.net/images/20220217/16451124427589.jpg" /> </p>
+<p>同理也应该可以正常接收：</p>
+<p><img alt="" src="https://image.3001.net/images/20220217/16451125087196.jpg" /> </p>
+<p>如果你有 iOS 设备，网卡确定也是合格的话，依然不可以接收和发送短信的话，那么只需要如下配置一下就 OK 了，先在 macOS 上面对信息进行如下设置：</p>
+<p><img alt="" src="https://image.3001.net/images/20220217/16451126654893.jpg" /> </p>
+<p>然后 iOS 这边进行如下设置：</p>
+<p><img alt="" src="https://image.3001.net/images/20220217/1645112779202.jpeg" />    </p>
+<h3 id="icloud">iCloud<a class="headerlink" href="#icloud" title="Permanent link">&para;</a></h3>
+<p>围绕着 iCloud 等周边功能也应该可以正常使用：</p>
+<p><img alt="" src="https://image.3001.net/images/20210705/1625477187781.png" /></p>
+<h3 id="_13">隔空投送<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
+<p>在 iOS、iPadOS、macOS 设备直接互相传输文件，目前博通系列的免驱无线网卡都可以做到：</p>
+<p><img alt="" src="https://image.3001.net/images/20210714/16262583708801.png" />  </p>
+<h3 id="_14">接力<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
+<p>macOS 上可以直接在程序坞的右下角直接打开 iOS 和 iPadOS 的系统级别应用：</p>
+<p><img alt="" src="https://image.3001.net/images/20220217/16451130891375.jpg" />  </p>
+<h3 id="_15">跨设备粘贴<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h3>
+<p>实际上 macOS 12.3 后面的通用控制更强大，再次之前只能简单的通过剪贴板跨设备粘贴文字之类的：</p>
+<p><img alt="" src="https://image.3001.net/images/20220217/16451134047441.jpg" /> </p>
+<h3 id="_16">随航<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h3>
+<p>这个和无线网卡有关，如果无线网卡免驱的话，理论上可以无线模式下随航，否则只能在有线模式下正常工作，随航的作用是将 iPad 当中 macOS 的显示器使用：</p>
+<p><img alt="" src="https://image.3001.net/images/20220217/164511083231.png" /> </p>
+<p>这样可以让闲置的 iPad 重新利用起来，用来挂个 QQ 和微信还是美滋滋的。</p>
+<h3 id="_17">通用控制<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h3>
+<p>macOS 12.3 开始正式支持通用控制功能，这个功能比随航就更加实用了，可以直接使用 macOS 的键盘和鼠标去操作你的 iPad，鼠标直接划过去就行了：</p>
+<p><img alt="" src="https://image.3001.net/images/20220217/16451119667345.jpg" /> </p>
+<p>这个和随航在设置里面的区别就是，通用控制的 iPad 和显示器不是挨边靠着的，而随航是贴在一起的。这个也可以在控制中心那边直接连接：</p>
+<p><img alt="" src="https://image.3001.net/images/20220217/16451109186520.png" />   </p>
+<p>这里小提一下，我这个显示器这边的亮度滑块无法使用，这是因为第三方显示器的原因，使用苹果自家的显示器理论上可以调节的。不过第三方显示器也不要灰心，使用开源下面 <a href="https://github.com/MonitorControl/MonitorControl/releases/">MonitorControl</a> 也是可以实现第三方显示器的亮度和音量调节的，十分方便：</p>
+<p><img alt="" src="https://image.3001.net/images/20220217/16451120346440.jpg" />  </p>
+<h2 id="_18">笔记本专题<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h2>
+<p>笔记本很多参考上面的通用部分即可，笔记本主要关注的就是睡眠、电池、触控板、快捷键、亮度调节。</p>
+<h3 id="_19">触控板<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h3>
+<p>触控板的应该支持多指手势，且体验应该得丝滑：</p>
+<p><img alt="" src="https://image.3001.net/images/20220227/16459602514182.jpg" /></p>
+<h3 id="_20">触控板进阶<a class="headerlink" href="#_20" title="Permanent link">&para;</a></h3>
+<p>触控板应该工作在最高效的 GPIO 模式，而不是大众的轮训模式：</p>
+<p><img alt="" src="https://image.3001.net/images/20220227/16459603111142.png" /> </p>
+<p>上图存在 gpioPin 和 gpioIRQ 就是 GPIO 中断模式的标志，或者你看 dmesg 日志也可以判断出来，关于触控板进阶可参考我的这篇文章：<a href="/6-实用姿势/6-3/">触控板中断示例</a> </p>
+<h3 id="_21">亮度调节<a class="headerlink" href="#_21" title="Permanent link">&para;</a></h3>
+<p><img alt="" src="https://image.3001.net/images/20220227/16459600012550.png" /> </p>
+<p>如果你的笔记本没有打 <a href="https://github.com/dortania/Getting-Started-With-ACPI/blob/master/extra-files/compiled/SSDT-PNLF.aml">SSDT-PNLF.aml</a> SSDT 的话，请打上再检测看看。</p>
+<p>如果依然不行的话，尝试启动项添加：</p>
+<ul>
+<li><code>-igfxblr</code>引导参数（或者 <code>enable-backlight-registers-fix</code>属性）修复 KBL、CFL 和 ICL 平台上的背光寄存器。</li>
+</ul>
+<p>其他可能对你有帮助的启动项：</p>
+<ul>
+<li><code>-igfxbls</code> 引导参数（或者 <code>enable-backlight-smoother</code>属性）以使 IVB+ 平台上的亮度过渡更平滑。</li>
+</ul>
+<h3 id="_22">快捷键<a class="headerlink" href="#_22" title="Permanent link">&para;</a></h3>
+<p>笔记本各个快捷键应该都正常使用：</p>
+<p><img alt="亮度快捷键" src="https://image.3001.net/images/20220227/16459604822063.jpg" /> </p>
+<p><img alt="声音快捷键" src="https://image.3001.net/images/20220227/16459605093086.jpg" />  </p>
+<p>一般来说 <a href="https://github.com/acidanthera/BrightnessKeys/releases"><strong>BrightnessKeys.kext</strong></a> 笔记本亮度快捷键驱动就足够了，或者你技术可以的话，自己去写 SSDT 定制理论上也 OK 的。</p>
+<h3 id="_23">电池<a class="headerlink" href="#_23" title="Permanent link">&para;</a></h3>
+<p>首先充电状态和非充电状态应该是可以正常丝滑切换的，而且电池没有提示不健康：</p>
+<p><img alt="" src="https://image.3001.net/images/20220227/16459608796183.jpg" /> </p>
+<p>用电历史也应该是正常的：</p>
+<p><img alt="" src="https://image.3001.net/images/20220227/16459615381033.png" /> </p>
+<p>电池选项里面也有 7 个选项：</p>
+<p><img alt="" src="https://image.3001.net/images/20220227/16459615656568.jpg" /> </p>
+<p>使用 sensi 健康度和温度也应该是正常的：</p>
+<p><img alt="" src="https://image.3001.net/images/20220227/16459616848040.jpg" /> </p>
+<p>不过我这里的生成日期啥的信息没有完善，这又不是不能用？？？   </p>
+<h2 id="_24">支持一下<a class="headerlink" href="#_24" title="Permanent link">&para;</a></h2>
+<p>本文也贴了不少图，写起来还是比较耗费时间的，估计有白苹果的人还研究黑苹果的人少之又少吧。黑苹果这块我也确实不打算耗费太多时间了，慢慢收尾了，后面还是搞我的本职工作去了。</p>
+<p>在这个喧嚣浮躁的时代，坚持写博客输出原创文章的人还有多少呢？写博客感觉一直是用爱发电的状态......</p>
+<p>如果你恰巧财力雄厚，感觉本文对你有所帮助的话，可以考虑打赏一下本文，用以维持高昂的服务器运营费用（域名费用、服务器费用、CDN 费用等）</p>
+<table>
+    <tr>
+        <td>微信
+            <center><img src="https://image.3001.net/images/20200421/1587449920128.jpg " width="70%"></center>
+        </td>
+        <td width="50%">
+          支付宝
+            <center><img src="https://image.3001.net/images/20200421/15874503376388.jpg" width="70%"></center>
+        </td>
+    </tr>
+</table>
+
+<p>国光我也写了一个打赏页面用以感谢支持我的朋友，详情请看 <a href="https://www.sqlsec.com/reward/">打赏列表 | 国光</a></p>
+
+  <hr>
+<div class="md-source-file">
+  <small>
+    
+      最后更新:
+      2022-09-19
+    
+  </small>
+</div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="页脚" >
+      
+        
+        <a href="../../6-%E5%AE%9E%E7%94%A8%E5%A7%BF%E5%8A%BF/6-13/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 核显接口输出定制" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              核显接口输出定制
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../7-2/" class="md-footer__link md-footer__link--next" aria-label="下一页: 白苹果" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              白苹果
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2021 - 2022 国光
+    </div>
+  
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    <a href="https://www.sqlsec.com" target="_blank" rel="noopener" title="国光" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M341.52 285.56c33.65 0 82.34-6.94 82.34-47 .22-6.74.86-1.82-20.88-96.24-4.62-19.15-8.68-27.84-42.31-44.65-26.09-13.34-82.92-35.37-99.73-35.37-15.66 0-20.2 20.17-38.87 20.17-18 0-31.31-15.06-48.12-15.06-16.14 0-26.66 11-34.78 33.62-27.5 77.55-26.28 74.27-26.12 78.27 0 24.8 97.64 106.11 228.47 106.11M429 254.84c4.65 22 4.65 24.35 4.65 27.25 0 37.66-42.33 58.56-98 58.56-125.74.08-235.91-73.65-235.91-122.33a49.55 49.55 0 0 1 4.06-19.72C58.56 200.86 0 208.93 0 260.63c0 84.67 200.63 189 359.49 189 121.79 0 152.51-55.08 152.51-98.58 0-34.21-29.59-73.05-82.93-96.24"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "search.suggest", "search.highlight", "search.share"], "search": "../../assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\uff0c\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d691e9de.min.js"></script>
+      <script id="click-show-text" src="https://html.sqlsec.com/click-show-text.min.js" data-mobile="false" data-text="OpenCore,Hackintosh,DSDT,SSDT,Kernel,Kexts,UEFI,NVRAM,BIOS,ACPI,Clover,AWAC,XOSI,Lilu.kext,VirtualSMC.kext,WhateverGreen.kext" data-fontsize="15px" data-random="false" async="async"></script>
+      
+    
+  </body>
+</html>
