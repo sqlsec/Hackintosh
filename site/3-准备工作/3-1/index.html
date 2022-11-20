@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://apple.sqlsec.com/3-%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C/3-1/">
       
       <link rel="icon" href="https://image.3001.net/images/20200922/16007336487809.jpg">
-      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.5.1">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.1">
     
     
       
@@ -355,11 +355,15 @@
   
 
 
-  <li class="md-tabs__item">
-    <a href="../../9-%E6%88%90%E6%9E%9C%E5%88%86%E4%BA%AB/" class="md-tabs__link">
-      成果分享
-    </a>
-  </li>
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../9-%E6%88%90%E6%9E%9C%E5%88%86%E4%BA%AB/9-1/" class="md-tabs__link">
+        成果分享
+      </a>
+    </li>
+  
 
       
         
@@ -829,6 +833,13 @@
           <li class="md-nav__item">
   <a href="#rog-strix-b460-i-gaming" class="md-nav__link">
     华硕 ROG STRIX B460 I GAMING
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#z170i-pro-gamimg" class="md-nav__link">
+    华硕 Z170I PRO GAMIMG（黑果&amp;&amp;超频）
   </a>
   
 </li>
@@ -1576,10 +1587,43 @@
   
   
   
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11" type="checkbox" id="__nav_11" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_11">
+          成果分享
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="成果分享" data-md-level="1">
+        <label class="md-nav__title" for="__nav_11">
+          <span class="md-nav__icon md-icon"></span>
+          成果分享
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
     <li class="md-nav__item">
-      <a href="../../9-%E6%88%90%E6%9E%9C%E5%88%86%E4%BA%AB/" class="md-nav__link">
-        成果分享
+      <a href="../../9-%E6%88%90%E6%9E%9C%E5%88%86%E4%BA%AB/9-1/" class="md-nav__link">
+        ITX QQLS
       </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -1763,6 +1807,13 @@
           <li class="md-nav__item">
   <a href="#rog-strix-b460-i-gaming" class="md-nav__link">
     华硕 ROG STRIX B460 I GAMING
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#z170i-pro-gamimg" class="md-nav__link">
+    华硕 Z170I PRO GAMIMG（黑果&amp;&amp;超频）
   </a>
   
 </li>
@@ -2042,11 +2093,13 @@
 <li>【BIOS 功能】-【安全选项】-【系统】</li>
 <li>【BIOS 功能】-【快速启动】-【关闭】</li>
 <li>【BIOS 功能】-【Windows 8/10】-【其他操作系统】</li>
-<li>【集成外设】-【预设启动的显示设备】-【PCIe 插槽1】</li>
+<li>【集成外设】-【预设启动的显示设备】-【PCIe 插槽1】<ul>
 <li>设置 IGFX 核显的话，你的显示器插独显，开机进系统都是黑屏</li>
 <li>设置 PCIe 插槽的话，你的核显被 Ban 进系统会发现双硬解异常</li>
 <li>完美情况就是 设置 IGFX 核显，显示器查主板，进系统后再插独显换回来</li>
 <li>虽然上面的操作麻烦了一点，不在意双硬解的话，直接设置 PCIe 插槽，显示器插独显就行</li>
+</ul>
+</li>
 <li>【集成外设】-【SW Guard Extensions（SGX）】-【关闭】</li>
 <li>【集成外设】-【Trusted Computing】-【Security Device Support】-【Disable】</li>
 <li>【集成外设】-【Super IO 配置】-【Serial Port】-【关闭】</li>
@@ -2057,33 +2110,69 @@
 </ul>
 <h3 id="rog-strix-b460-i-gaming">华硕 ROG STRIX B460 I GAMING<a class="headerlink" href="#rog-strix-b460-i-gaming" title="Permanent link">&para;</a></h3>
 <ul>
-<li>
-<p>【高级】 - 【CPU 设置】 - 【软件保护扩展（SGX）】- 【关闭】</p>
-</li>
-<li>
-<p>【高级】 - 【CPU 设置】 - 【Intel VMX 虚拟化技术】 - 【开启】</p>
-</li>
-<li>
-<p>【高级】- 【北桥】 - 【VT-d】 - 【关闭】</p>
-</li>
-<li>
-<p>【高级】- 【北桥- 【显示设置】 - 【初始化IGPU】- 【开启】</p>
-</li>
-<li>
-<p>【高级】-【可信计算-安全设备支持】-【关闭】</p>
-</li>
-<li>
-<p>【高级】-【PCI Subsystem Settings-大于4G地址空间解码】-【开启】</p>
-</li>
-<li>
-<p>【启动】- 【CSM-开启CSM】 - 【关闭】</p>
-</li>
-<li>
-<p>【启动】-【启动设置- 快速启动】- 【关闭】</p>
-</li>
-<li>
-<p>【启动】-【若出现错误等待按下F1键】-【关闭】</p>
-</li>
+<li>【高级】 - 【CPU 设置】 - 【软件保护扩展（SGX）】- 【关闭】</li>
+<li>【高级】 - 【CPU 设置】 - 【Intel VMX 虚拟化技术】 - 【开启】</li>
+<li>【高级】- 【北桥】 - 【VT-d】 - 【关闭】</li>
+<li>【高级】- 【北桥- 【显示设置】 - 【初始化IGPU】- 【开启】</li>
+<li>【高级】-【可信计算-安全设备支持】-【关闭】</li>
+<li>【高级】-【PCI Subsystem Settings-大于4G地址空间解码】-【开启】</li>
+<li>【启动】- 【CSM-开启CSM】 - 【关闭】</li>
+<li>【启动】-【启动设置- 快速启动】- 【关闭】</li>
+<li>【启动】-【若出现错误等待按下F1键】-【关闭】</li>
+</ul>
+<h3 id="z170i-pro-gamimg">华硕 Z170I PRO GAMIMG（黑果&amp;&amp;超频）<a class="headerlink" href="#z170i-pro-gamimg" title="Permanent link">&para;</a></h3>
+<p>下面是超频以及黑苹果安装 BIOS 设置的一些细节，不同的 CPU 体制不同，本文只供大家参考：</p>
+<ul>
+<li>BIOS 首页 - 手动风扇调整 - 所有 FAN 全部 <strong>涡轮加速</strong></li>
+<li>高级模式 - AI Tweaker - <strong>Ai 智能超频</strong> - Manual</li>
+<li>高级模式 - AI Tweaker - <strong>BCLK 频率</strong> - 100.0000</li>
+<li>高级模式 - AI Tweaker - <strong>华硕多核心增强</strong> - Disabled</li>
+<li>高级模式 - AI Tweaker - <strong>CPU 核心倍频</strong> - <strong>Per Core</strong> - <strong>50-48-47-46</strong> (单核 5.0Ghz 全核 4.6Ghz)</li>
+<li>高级模式 - AI Tweaker - 内存速度比率模式 - Auto</li>
+<li>高级模式 - AI Tweaker - DRAM Odd 倍频模式 - Enabled</li>
+<li>高级模式 - AI Tweaker - 内存频率 - DDR4-2666Mhz</li>
+<li>高级模式 - AI Tweaker - OC 调节 - Keep Current Settings</li>
+<li>高级模式 - AI Tweaker - <strong>EPU 节能模式</strong> - 关闭</li>
+<li>高级模式 - AI Tweaker - <strong>CPU SVID 支持</strong> - Disabled</li>
+<li>高级模式 - AI Tweaker - DIGI+ VRM - <strong>CPU 负载线校正</strong> - Level 5</li>
+<li>高级模式 - AI Tweaker - DIGI+ VRM - <strong>CPU 电流容量</strong> - 140%</li>
+<li>高级模式 - AI Tweaker - DIGI+ VRM - <strong>CPU 供电相数控制</strong> - Extreme</li>
+<li>高级模式 - AI Tweaker - DIGI+ VRM - <strong>CPU 供电相位控制</strong> - Extreme</li>
+<li>高级模式 - AI Tweaker - DIGI+ VRM - <strong>CPU Graphics Power Phase Control</strong> - Extreme</li>
+<li>高级模式 - AI Tweaker - DIGI+ VRM - <strong>DRAM 供电相位控制</strong> - Extreme</li>
+<li>高级模式 - AI Tweaker - 内置 CPU 电源管理 - Intel(R) SpeedStep(tm) - Auto</li>
+<li>高级模式 - AI Tweaker - 内置 CPU 电源管理 -  涡轮加速模式 - 开启</li>
+<li>高级模式 - AI Tweaker - 内置 CPU 电源管理 - <strong>长时间功耗限制</strong> - 200</li>
+<li>高级模式 - AI Tweaker - 内置 CPU 电源管理 - <strong>电源时间窗</strong> - 127</li>
+<li>高级模式 - AI Tweaker - 内置 CPU 电源管理 - <strong>短时间功耗限制</strong> - 200</li>
+<li>高级模式 - AI Tweaker - <strong>CPU Core/Cache Voltage</strong> - Manual Mode</li>
+<li>高级模式 - AI Tweaker - <strong>CPU 核心电压覆写</strong> - 1.280</li>
+<li>高级模式 - 高级 - CPU 设置 - <strong>超线程技术</strong> - 开启</li>
+<li>高级模式 - 高级 - CPU 设置 - <strong>开启处理器核心</strong> - 全部</li>
+<li>高级模式 - 高级 - CPU 设置 - <strong>Intel Virtualization Technology</strong> - 开启</li>
+<li>高级模式 - 高级 - CPU 设置 - <strong>硬件预取</strong> - 开启</li>
+<li>高级模式 - 高级 - CPU 设置 - <strong>SW Guard Extensions(SGX)</strong> - 关闭</li>
+<li>高级模式 - 高级 - CPU 设置 - CPU - Power Management Control - <strong>CPU C-states</strong> - 关闭</li>
+<li>高级模式 - 高级 - CPU 设置 - CPU - Power Management Control - <strong>CFG Lock</strong> - 关闭</li>
+<li>高级模式 - 高级 - 北桥 - <strong>VT-d</strong> - 关闭</li>
+<li>高级模式 - 高级 - 北桥 - <strong>大于 4G 地址空间解码</strong> - 开启</li>
+<li>高级模式 - 高级 - 北桥 - 显示设置 - <strong>首选显卡</strong> - Auto</li>
+<li>高级模式 - 高级 - 北桥 - 显示设置 - <strong>初始化 iGPU</strong> - 开启</li>
+<li>高级模式 - 高级 - 北桥 - 显示设置 - <strong>DVMT Pre-Allocated</strong> - 64M</li>
+<li>高级模式 - 高级 - PCH Storage Configuration - <strong>SATA 模式选择</strong> - AHCI</li>
+<li>高级模式 - 高级 - PCH-FW Configuration - <strong>TPM Device Selection</strong> - Discreate TPM （）</li>
+<li>高级模式 - 高级 - 内置设备 - <strong>Asmedia USB 3.1 控制器</strong> - 开启</li>
+<li>高级模式 - 高级 - 内置设备 - <strong>Asmedia USB 3.1 快速充电支持</strong> - 开启</li>
+<li>高级模式 - 高级 - 高级电源管理（APM）- <strong>Erp 支持</strong> - 关闭</li>
+<li>高级模式 - 高级 - 高级电源管理（APM）- <strong>断电恢复后电源状态</strong> - 电源关闭</li>
+<li>高级模式 - 高级 - 高级电源管理（APM）-  <strong>由 PCI-E 设备唤醒</strong> - 关闭</li>
+<li>高级模式 - 高级 - 高级电源管理（APM）-  <strong>由 RTC 唤醒</strong> - 关闭</li>
+<li>高级模式 - 高级 - USB Configuration - <strong>Legacy USB 支持</strong> - Enabled</li>
+<li>高级模式 - 启动 - <strong>快速启动</strong> - Disabled</li>
+<li>高级模式 - 启动 - 启动设置 - <strong>开机自检(POST)延迟时间</strong> - 0 秒</li>
+<li>高级模式 - 启动 - 启动设置 - <strong>若出现错误等待按下 F1 键</strong> - 关闭</li>
+<li>高级模式 - 启动 - 启动设置 - CSM（兼容性支持模块）- <strong>开启 CSM</strong> - 关闭</li>
+<li>高级模式 - 启动 - 启动设置 - 安全启动菜单 - <strong>操作系统类型</strong> - 其他操作系</li>
 </ul>
 
   <hr>
@@ -2091,7 +2180,7 @@
   <small>
     
       最后更新:
-      2022-09-19
+      2022-09-25
     
   </small>
 </div>

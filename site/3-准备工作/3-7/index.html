@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://apple.sqlsec.com/3-%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C/3-7/">
       
       <link rel="icon" href="https://image.3001.net/images/20200922/16007336487809.jpg">
-      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.5.1">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.1">
     
     
       
@@ -355,11 +355,15 @@
   
 
 
-  <li class="md-tabs__item">
-    <a href="../../9-%E6%88%90%E6%9E%9C%E5%88%86%E4%BA%AB/" class="md-tabs__link">
-      成果分享
-    </a>
-  </li>
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../9-%E6%88%90%E6%9E%9C%E5%88%86%E4%BA%AB/9-1/" class="md-tabs__link">
+        成果分享
+      </a>
+    </li>
+  
 
       
         
@@ -942,6 +946,13 @@
           <li class="md-nav__item">
   <a href="#ssdts_1" class="md-nav__link">
     添加 SSDTS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kexts_2" class="md-nav__link">
+    添加 Kexts
   </a>
   
 </li>
@@ -1624,10 +1635,43 @@
   
   
   
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11" type="checkbox" id="__nav_11" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_11">
+          成果分享
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="成果分享" data-md-level="1">
+        <label class="md-nav__title" for="__nav_11">
+          <span class="md-nav__icon md-icon"></span>
+          成果分享
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
     <li class="md-nav__item">
-      <a href="../../9-%E6%88%90%E6%9E%9C%E5%88%86%E4%BA%AB/" class="md-nav__link">
-        成果分享
+      <a href="../../9-%E6%88%90%E6%9E%9C%E5%88%86%E4%BA%AB/9-1/" class="md-nav__link">
+        ITX QQLS
       </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -1845,6 +1889,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#kexts_2" class="md-nav__link">
+    添加 Kexts
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#drivers_2" class="md-nav__link">
     添加 Drivers
   </a>
@@ -1934,7 +1985,7 @@
 <h4 id="kexts_1">添加 Kexts<a class="headerlink" href="#kexts_1" title="Permanent link">&para;</a></h4>
 <p>添加 Kexts 也是类似的操作，国光这里不在啰嗦，先删除样例自带的，然后快照添加，选择 Kexts 文件夹即可：</p>
 <p><img alt="" src="https://image.3001.net/images/20210919/16320583374476.png" />  </p>
-<p>当然 Kexts 加载的话还需要一些顺序等技巧，这个技巧会在<a href="3-8.html">下一个章节</a>详细介绍。 </p>
+<p>当然 Kexts 加载的话还需要一些顺序等技巧，这个技巧会在<a href="3-准备工作/3-8/">下一个章节</a>详细介绍。 </p>
 <h4 id="drivers_1">添加 Drivers<a class="headerlink" href="#drivers_1" title="Permanent link">&para;</a></h4>
 <p>添加 Drivers 也是类似的操作：</p>
 <p><img alt="" src="https://image.3001.net/images/20210919/16320584551705.png" />  </p>
@@ -1946,10 +1997,10 @@
 <h4 id="ssdts_1">添加 SSDTS<a class="headerlink" href="#ssdts_1" title="Permanent link">&para;</a></h4>
 <p>删除模板文件自带的 SSDT，然后选择你的 ACPI 文件夹里面的所有 SSDT 文件，打开即可完成添加操作：</p>
 <p><img alt="" src="https://image.3001.net/images/20210919/16320596213828.png" /> </p>
-<p>#### 添加 Kexts</p>
+<h4 id="kexts_2">添加 Kexts<a class="headerlink" href="#kexts_2" title="Permanent link">&para;</a></h4>
 <p>添加 Kexts 也是类似的操作，但是 OCAuxiliaryTools 不支持添加整个 Kexts 文件夹，左下角加号只能手动一个个添加，为了高效的话可以选择所有的 Kexts 文件，然后拖入到 OCAuxiliaryTools 中的 Kernel 中即可：</p>
 <p><img alt="" src="https://image.3001.net/images/20210919/16320598968967.png" />  </p>
-<p>当然 Kexts 加载的话还需要一些顺序等技巧，这个技巧会在<a href="3-8.html">下一个章节</a>详细介绍。 </p>
+<p>当然 Kexts 加载的话还需要一些顺序等技巧，这个技巧会在<a href="3-准备工作/3-8/">下一个章节</a>详细介绍。 </p>
 <h4 id="drivers_2">添加 Drivers<a class="headerlink" href="#drivers_2" title="Permanent link">&para;</a></h4>
 <p>添加 Drivers 也是类似的操作：</p>
 <p><img alt="" src="https://image.3001.net/images/20210919/16320601336699.png" />  </p>
