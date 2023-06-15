@@ -44,6 +44,8 @@ markdown_extensions:
       custom_checkbox: true
   - toc:
       permalink: true
+  - pymdownx.tabbed:
+      alternate_style: true 
 plugins:
   - git-revision-date
   - search:
@@ -120,6 +122,7 @@ nav:
     - 异常日志: 8-OC排错/8-2.md
   - 成果分享:
     - ITX QQLS: 9-成果分享/9-1.md
+    - 13代装机方案: 9-成果分享/9-2.md
   - 常见 QA:
     - 使用方法: 10-常见QA/10-1.md
     - 问题列表: 10-常见QA/10-2.md

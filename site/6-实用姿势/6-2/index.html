@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://apple.sqlsec.com/6-%E5%AE%9E%E7%94%A8%E5%A7%BF%E5%8A%BF/6-2/">
       
       <link rel="icon" href="https://image.3001.net/images/20200922/16007336487809.jpg">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.1">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-8.5.1">
     
     
       
@@ -1576,6 +1576,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../9-%E6%88%90%E6%9E%9C%E5%88%86%E4%BA%AB/9-2/" class="md-nav__link">
+        13代装机方案
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -1761,12 +1775,12 @@
 <h2 id="_2">克隆源码<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>VoodooI2C 项目所依赖的模块属于不同的仓库，所以 git clone 的时候需要使用 <code>recursive</code> 参数一次性克隆下载完：</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># 本次存放的文件夹路径仅供参考</span>
-$ <span class="nb">pwd</span>
+$<span class="w"> </span><span class="nb">pwd</span>
 /Users/bytedance/Desktop/XCode
 
-$ <span class="nb">cd</span> ~/Desktop/XCode
+$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>~/Desktop/XCode
 
-$ git clone --recursive https://github.com/VoodooI2C/VoodooI2C.git
+$<span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>--recursive<span class="w"> </span>https://github.com/VoodooI2C/VoodooI2C.git
 </code></pre></div>
 <h2 id="_3">打开项目<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <p>使用 Xcode 打开<code>VoodooI2C.xcworkspace</code>文件：</p>
@@ -1782,16 +1796,16 @@ $ git clone --recursive https://github.com/VoodooI2C/VoodooI2C.git
 <p>所以才会导致找不到 IOKit 的库文件，解决方法就是手动去补充完善 MacKernelSDK 的文件夹。</p>
 <p>acidanthera 大佬维护的 MacKernelSDK 的一个开源项目地址为：https://github.com/acidanthera/MacKernelSDK</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># 注意我当前操作的路径</span>
-$ <span class="nb">pwd</span>                                                           ✔
+$<span class="w"> </span><span class="nb">pwd</span><span class="w">                                                          </span><span class="w"> </span>✔
 /Users/bytedance/Desktop/XCode/VoodooI2C
 
 <span class="c1"># 直接下载这个项目</span>
-$ git clone https://github.com/acidanthera/MacKernelSDK.git
+$<span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/acidanthera/MacKernelSDK.git
 </code></pre></div>
 <p>此时再编译会发现之前的<code>'IOKit/IOLib.h' file not found</code> 报错消失了，这个问题得到了解决。</p>
 <h2 id="voodooinputmultitouch">VoodooInputMultitouch 缺失<a class="headerlink" href="#voodooinputmultitouch" title="Permanent link">&para;</a></h2>
 <p>解决完上面一个小问题后，会发现又出了新的报错了：</p>
-<div class="highlight"><pre><span></span><code><span class="na">&#39;VoodooInputMultitouch/VoodooInputTransducer.h&#39; file not found</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="na">&#39;VoodooInputMultitouch/VoodooInputTransducer.h&#39; file not found</span>
 </code></pre></div>
 <p><img alt="" src="https://image.3001.net/images/20211220/16399691969738.jpeg" /> </p>
 <p>不要慌，问题很大，这是因为项目里面缺少了对应的文件，也需要我们手动去补充一下。比较巧合的是，这个项目也是由acidanthera 大佬维护的 ，地址为：https://github.com/acidanthera/VoodooInput</p>
@@ -1800,11 +1814,11 @@ $ git clone https://github.com/acidanthera/MacKernelSDK.git
 <p>此时再编译应该不会报错了。</p>
 <h2 id="cldoc-cpplint">cldoc 或者 cpplint 缺失<a class="headerlink" href="#cldoc-cpplint" title="Permanent link">&para;</a></h2>
 <p>不过总有人会各种不顺，还可能会遇到 <code>xargs: cldoc: No such file or directory</code> 或者 <code>cpplint: command not found</code>这类报错，国光我这里忘记怎么解决的了，好像是直接安装 Python 的库来解决的：</p>
-<div class="highlight"><pre><span></span><code>sudo easy_install cldoc
-sudo easy_install cpplint
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>easy_install<span class="w"> </span>cldoc
+sudo<span class="w"> </span>easy_install<span class="w"> </span>cpplint
 </code></pre></div>
 <p>貌似 macOS 12.3 开始移除了 Python2 了，就没有 easy_install命令， 我们可以使用 brew 命令来替代：</p>
-<div class="highlight"><pre><span></span><code>brew install cpplint
+<div class="highlight"><pre><span></span><code>brew<span class="w"> </span>install<span class="w"> </span>cpplint
 </code></pre></div>
 <p>接着可能还遇到 cldoc 命令缺失的问题，除了安装对应的 cldoc 命令以外，还可以在项目里面直接移除掉：「Generate Documentation」部分：</p>
 <p><img alt="" src="https://image.3001.net/images/20220305/16464793321944.png" /></p>

@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://apple.sqlsec.com/6-%E5%AE%9E%E7%94%A8%E5%A7%BF%E5%8A%BF/6-3/">
       
       <link rel="icon" href="https://image.3001.net/images/20200922/16007336487809.jpg">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.1">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-8.5.1">
     
     
       
@@ -1698,6 +1698,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../9-%E6%88%90%E6%9E%9C%E5%88%86%E4%BA%AB/9-2/" class="md-nav__link">
+        13代装机方案
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -2057,13 +2071,13 @@
 <h4 id="kexts">手动加载 Kexts<a class="headerlink" href="#kexts" title="Permanent link">&para;</a></h4>
 <p>将 <code>VoodooI2C.kext</code> 和 <code>VoodooI2CHID.kext</code> 拷贝到桌面上，然后执行以下命令：</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># 修改所有者</span>
-sudo chown -R root:wheel VoodooI2C*
+sudo<span class="w"> </span>chown<span class="w"> </span>-R<span class="w"> </span>root:wheel<span class="w"> </span>VoodooI2C*
 
 <span class="c1"># 修改权限</span>
-sudo chmod -R <span class="m">755</span> VoodooI2C*
+sudo<span class="w"> </span>chmod<span class="w"> </span>-R<span class="w"> </span><span class="m">755</span><span class="w"> </span>VoodooI2C*
 
 <span class="c1"># 加载 kexts</span>
-sudo kextload -v VoodooI2C*
+sudo<span class="w"> </span>kextload<span class="w"> </span>-v<span class="w"> </span>VoodooI2C*
 </code></pre></div>
 <p>当然第一次加载 kexts 得在设置的「安全性与隐私」里面同意下权限，然后重启下电脑才可以成功加载： </p>
 <p><img alt="" src="https://image.3001.net/images/20211220/16399905575583.png" /> </p>
@@ -2110,17 +2124,17 @@ sudo kextload -v VoodooI2C*
 <p>发现左下角的路径也满足我们上面信息收集（<code>ACPI(_SB)#ACPI(PCI0)#(I2C1)#ACPI(ETPD)</code>）的情况：</p>
 <p><img alt="" src="https://image.3001.net/images/20211220/1639993158804.jpeg" /> </p>
 <p>下面将触控板的代码部分贴出来：</p>
-<div class="highlight"><pre><span></span><code><span class="n">Scope</span><span class="w"> </span><span class="p">(</span><span class="n">_SB</span><span class="p">.</span><span class="n">PCI0</span><span class="p">.</span><span class="n">I2C1</span><span class="p">)</span><span class="w"></span>
-<span class="w">    </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="n">Device</span><span class="w"> </span><span class="p">(</span><span class="n">ETPD</span><span class="p">)</span><span class="w"></span>
-<span class="w">        </span><span class="p">{</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">Scope</span><span class="w"> </span><span class="p">(</span><span class="n">_SB</span><span class="p">.</span><span class="n">PCI0</span><span class="p">.</span><span class="n">I2C1</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Device</span><span class="w"> </span><span class="p">(</span><span class="n">ETPD</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
 <span class="w">            </span><span class="n">Name</span><span class="w"> </span><span class="p">(</span><span class="n">_ADR</span><span class="p">,</span><span class="w"> </span><span class="n">One</span><span class="p">)</span><span class="w">  </span><span class="c1">// _ADR: Address</span>
-<span class="w">            </span><span class="n">Name</span><span class="w"> </span><span class="p">(</span><span class="n">ETPH</span><span class="p">,</span><span class="w"> </span><span class="n">Package</span><span class="w"> </span><span class="p">(</span><span class="mh">0x01</span><span class="p">)</span><span class="w"></span>
-<span class="w">            </span><span class="p">{</span><span class="w"></span>
-<span class="w">                </span><span class="s">&quot;ASUE1407&quot;</span><span class="w"></span>
-<span class="w">            </span><span class="p">})</span><span class="w"></span>
-<span class="w">            </span><span class="n">Name</span><span class="w"> </span><span class="p">(</span><span class="n">FTPH</span><span class="p">,</span><span class="w"> </span><span class="n">Package</span><span class="w"> </span><span class="p">(</span><span class="mh">0x09</span><span class="p">)</span><span class="w"></span>
-<span class="w">            </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="n">Name</span><span class="w"> </span><span class="p">(</span><span class="n">ETPH</span><span class="p">,</span><span class="w"> </span><span class="n">Package</span><span class="w"> </span><span class="p">(</span><span class="mh">0x01</span><span class="p">)</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="s">&quot;ASUE1407&quot;</span>
+<span class="w">            </span><span class="p">})</span>
+<span class="w">            </span><span class="n">Name</span><span class="w"> </span><span class="p">(</span><span class="n">FTPH</span><span class="p">,</span><span class="w"> </span><span class="n">Package</span><span class="w"> </span><span class="p">(</span><span class="mh">0x09</span><span class="p">)</span>
+<span class="w">            </span><span class="p">{</span>
 <span class="w">                </span><span class="s">&quot;FTE1001&quot;</span><span class="p">,</span><span class="w"> </span>
 <span class="w">                </span><span class="s">&quot;FTE1200&quot;</span><span class="p">,</span><span class="w"> </span>
 <span class="w">                </span><span class="s">&quot;FTE1200&quot;</span><span class="p">,</span><span class="w"> </span>
@@ -2129,188 +2143,188 @@ sudo kextload -v VoodooI2C*
 <span class="w">                </span><span class="s">&quot;FTE1201&quot;</span><span class="p">,</span><span class="w"> </span>
 <span class="w">                </span><span class="s">&quot;FTE1200&quot;</span><span class="p">,</span><span class="w"> </span>
 <span class="w">                </span><span class="s">&quot;FTE1200&quot;</span><span class="p">,</span><span class="w"> </span>
-<span class="w">                </span><span class="s">&quot;FTE1200&quot;</span><span class="w"></span>
-<span class="w">            </span><span class="p">})</span><span class="w"></span>
-<span class="w">            </span><span class="n">Name</span><span class="w"> </span><span class="p">(</span><span class="n">GTPH</span><span class="p">,</span><span class="w"> </span><span class="n">Package</span><span class="w"> </span><span class="p">(</span><span class="mh">0x05</span><span class="p">)</span><span class="w"></span>
-<span class="w">            </span><span class="p">{</span><span class="w"></span>
+<span class="w">                </span><span class="s">&quot;FTE1200&quot;</span>
+<span class="w">            </span><span class="p">})</span>
+<span class="w">            </span><span class="n">Name</span><span class="w"> </span><span class="p">(</span><span class="n">GTPH</span><span class="p">,</span><span class="w"> </span><span class="n">Package</span><span class="w"> </span><span class="p">(</span><span class="mh">0x05</span><span class="p">)</span>
+<span class="w">            </span><span class="p">{</span>
 <span class="w">                </span><span class="s">&quot;GDX1505&quot;</span><span class="p">,</span><span class="w"> </span>
 <span class="w">                </span><span class="s">&quot;GDX1300&quot;</span><span class="p">,</span><span class="w"> </span>
 <span class="w">                </span><span class="s">&quot;GDX1200&quot;</span><span class="p">,</span><span class="w"> </span>
 <span class="w">                </span><span class="s">&quot;GDX1301&quot;</span><span class="p">,</span><span class="w"> </span>
-<span class="w">                </span><span class="s">&quot;GDX1515&quot;</span><span class="w"></span>
-<span class="w">            </span><span class="p">})</span><span class="w"></span>
+<span class="w">                </span><span class="s">&quot;GDX1515&quot;</span>
+<span class="w">            </span><span class="p">})</span>
 <span class="w">            </span><span class="n">Method</span><span class="w"> </span><span class="p">(</span><span class="n">_HID</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">NotSerialized</span><span class="p">)</span><span class="w">  </span><span class="c1">// _HID: Hardware ID</span>
-<span class="w">            </span><span class="p">{</span><span class="w"></span>
-<span class="w">                </span><span class="n">If</span><span class="w"> </span><span class="p">(</span><span class="n">And</span><span class="w"> </span><span class="p">(</span><span class="n">TPDI</span><span class="p">,</span><span class="w"> </span><span class="mh">0x04</span><span class="p">))</span><span class="w"></span>
-<span class="w">                </span><span class="p">{</span><span class="w"></span>
-<span class="w">                    </span><span class="n">Return</span><span class="w"> </span><span class="p">(</span><span class="n">DerefOf</span><span class="w"> </span><span class="p">(</span><span class="n">Index</span><span class="w"> </span><span class="p">(</span><span class="n">ETPH</span><span class="p">,</span><span class="w"> </span><span class="n">TPHI</span><span class="p">)))</span><span class="w"></span>
-<span class="w">                </span><span class="p">}</span><span class="w"></span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="n">If</span><span class="w"> </span><span class="p">(</span><span class="n">And</span><span class="w"> </span><span class="p">(</span><span class="n">TPDI</span><span class="p">,</span><span class="w"> </span><span class="mh">0x04</span><span class="p">))</span>
+<span class="w">                </span><span class="p">{</span>
+<span class="w">                    </span><span class="n">Return</span><span class="w"> </span><span class="p">(</span><span class="n">DerefOf</span><span class="w"> </span><span class="p">(</span><span class="n">Index</span><span class="w"> </span><span class="p">(</span><span class="n">ETPH</span><span class="p">,</span><span class="w"> </span><span class="n">TPHI</span><span class="p">)))</span>
+<span class="w">                </span><span class="p">}</span>
 
-<span class="w">                </span><span class="n">If</span><span class="w"> </span><span class="p">(</span><span class="n">And</span><span class="w"> </span><span class="p">(</span><span class="n">TPDI</span><span class="p">,</span><span class="w"> </span><span class="mh">0x10</span><span class="p">))</span><span class="w"></span>
-<span class="w">                </span><span class="p">{</span><span class="w"></span>
-<span class="w">                    </span><span class="n">Return</span><span class="w"> </span><span class="p">(</span><span class="n">DerefOf</span><span class="w"> </span><span class="p">(</span><span class="n">Index</span><span class="w"> </span><span class="p">(</span><span class="n">FTPH</span><span class="p">,</span><span class="w"> </span><span class="n">TPHI</span><span class="p">)))</span><span class="w"></span>
-<span class="w">                </span><span class="p">}</span><span class="w"></span>
+<span class="w">                </span><span class="n">If</span><span class="w"> </span><span class="p">(</span><span class="n">And</span><span class="w"> </span><span class="p">(</span><span class="n">TPDI</span><span class="p">,</span><span class="w"> </span><span class="mh">0x10</span><span class="p">))</span>
+<span class="w">                </span><span class="p">{</span>
+<span class="w">                    </span><span class="n">Return</span><span class="w"> </span><span class="p">(</span><span class="n">DerefOf</span><span class="w"> </span><span class="p">(</span><span class="n">Index</span><span class="w"> </span><span class="p">(</span><span class="n">FTPH</span><span class="p">,</span><span class="w"> </span><span class="n">TPHI</span><span class="p">)))</span>
+<span class="w">                </span><span class="p">}</span>
 
-<span class="w">                </span><span class="n">If</span><span class="w"> </span><span class="p">(</span><span class="n">And</span><span class="w"> </span><span class="p">(</span><span class="n">TPDI</span><span class="p">,</span><span class="w"> </span><span class="mh">0x40</span><span class="p">))</span><span class="w"></span>
-<span class="w">                </span><span class="p">{</span><span class="w"></span>
-<span class="w">                    </span><span class="n">Return</span><span class="w"> </span><span class="p">(</span><span class="n">DerefOf</span><span class="w"> </span><span class="p">(</span><span class="n">Index</span><span class="w"> </span><span class="p">(</span><span class="n">GTPH</span><span class="p">,</span><span class="w"> </span><span class="n">TPHI</span><span class="p">)))</span><span class="w"></span>
-<span class="w">                </span><span class="p">}</span><span class="w"></span>
+<span class="w">                </span><span class="n">If</span><span class="w"> </span><span class="p">(</span><span class="n">And</span><span class="w"> </span><span class="p">(</span><span class="n">TPDI</span><span class="p">,</span><span class="w"> </span><span class="mh">0x40</span><span class="p">))</span>
+<span class="w">                </span><span class="p">{</span>
+<span class="w">                    </span><span class="n">Return</span><span class="w"> </span><span class="p">(</span><span class="n">DerefOf</span><span class="w"> </span><span class="p">(</span><span class="n">Index</span><span class="w"> </span><span class="p">(</span><span class="n">GTPH</span><span class="p">,</span><span class="w"> </span><span class="n">TPHI</span><span class="p">)))</span>
+<span class="w">                </span><span class="p">}</span>
 
-<span class="w">                </span><span class="n">Return</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;ELAN1010&quot;</span><span class="p">)</span><span class="w"></span>
-<span class="w">            </span><span class="p">}</span><span class="w"></span>
+<span class="w">                </span><span class="n">Return</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;ELAN1010&quot;</span><span class="p">)</span>
+<span class="w">            </span><span class="p">}</span>
 
 <span class="w">            </span><span class="n">Name</span><span class="w"> </span><span class="p">(</span><span class="n">_CID</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;PNP0C50&quot;</span><span class="p">)</span><span class="w">  </span><span class="c1">// _CID: Compatible ID</span>
 <span class="w">            </span><span class="n">Name</span><span class="w"> </span><span class="p">(</span><span class="n">_UID</span><span class="p">,</span><span class="w"> </span><span class="n">One</span><span class="p">)</span><span class="w">  </span><span class="c1">// _UID: Unique ID</span>
 <span class="w">            </span><span class="n">Name</span><span class="w"> </span><span class="p">(</span><span class="n">_S0W</span><span class="p">,</span><span class="w"> </span><span class="mh">0x03</span><span class="p">)</span><span class="w">  </span><span class="c1">// _S0W: S0 Device Wake State</span>
 <span class="w">            </span><span class="n">Method</span><span class="w"> </span><span class="p">(</span><span class="n">_DSM</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="n">NotSerialized</span><span class="p">)</span><span class="w">  </span><span class="c1">// _DSM: Device-Specific Method</span>
-<span class="w">            </span><span class="p">{</span><span class="w"></span>
-<span class="w">                </span><span class="n">If</span><span class="w"> </span><span class="p">(</span><span class="n">LEqual</span><span class="w"> </span><span class="p">(</span><span class="n">Arg0</span><span class="p">,</span><span class="w"> </span><span class="n">ToUUID</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;3cdff6f7-4267-4555-ad05-b30a3d8938de&quot;</span><span class="p">)</span><span class="w"> </span><span class="cm">/* HID I2C Device */</span><span class="p">))</span><span class="w"></span>
-<span class="w">                </span><span class="p">{</span><span class="w"></span>
-<span class="w">                    </span><span class="n">If</span><span class="w"> </span><span class="p">(</span><span class="n">LEqual</span><span class="w"> </span><span class="p">(</span><span class="n">Arg2</span><span class="p">,</span><span class="w"> </span><span class="n">Zero</span><span class="p">))</span><span class="w"></span>
-<span class="w">                    </span><span class="p">{</span><span class="w"></span>
-<span class="w">                        </span><span class="n">If</span><span class="w"> </span><span class="p">(</span><span class="n">LEqual</span><span class="w"> </span><span class="p">(</span><span class="n">Arg1</span><span class="p">,</span><span class="w"> </span><span class="n">One</span><span class="p">))</span><span class="w"></span>
-<span class="w">                        </span><span class="p">{</span><span class="w"></span>
-<span class="w">                            </span><span class="n">Return</span><span class="w"> </span><span class="p">(</span><span class="n">Buffer</span><span class="w"> </span><span class="p">(</span><span class="n">One</span><span class="p">)</span><span class="w"></span>
-<span class="w">                            </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="n">If</span><span class="w"> </span><span class="p">(</span><span class="n">LEqual</span><span class="w"> </span><span class="p">(</span><span class="n">Arg0</span><span class="p">,</span><span class="w"> </span><span class="n">ToUUID</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;3cdff6f7-4267-4555-ad05-b30a3d8938de&quot;</span><span class="p">)</span><span class="w"> </span><span class="cm">/* HID I2C Device */</span><span class="p">))</span>
+<span class="w">                </span><span class="p">{</span>
+<span class="w">                    </span><span class="n">If</span><span class="w"> </span><span class="p">(</span><span class="n">LEqual</span><span class="w"> </span><span class="p">(</span><span class="n">Arg2</span><span class="p">,</span><span class="w"> </span><span class="n">Zero</span><span class="p">))</span>
+<span class="w">                    </span><span class="p">{</span>
+<span class="w">                        </span><span class="n">If</span><span class="w"> </span><span class="p">(</span><span class="n">LEqual</span><span class="w"> </span><span class="p">(</span><span class="n">Arg1</span><span class="p">,</span><span class="w"> </span><span class="n">One</span><span class="p">))</span>
+<span class="w">                        </span><span class="p">{</span>
+<span class="w">                            </span><span class="n">Return</span><span class="w"> </span><span class="p">(</span><span class="n">Buffer</span><span class="w"> </span><span class="p">(</span><span class="n">One</span><span class="p">)</span>
+<span class="w">                            </span><span class="p">{</span>
 <span class="w">                                 </span><span class="mh">0x03</span><span class="w">                                           </span>
-<span class="w">                            </span><span class="p">})</span><span class="w"></span>
-<span class="w">                        </span><span class="p">}</span><span class="w"></span>
-<span class="w">                        </span><span class="n">Else</span><span class="w"></span>
-<span class="w">                        </span><span class="p">{</span><span class="w"></span>
-<span class="w">                            </span><span class="n">Return</span><span class="w"> </span><span class="p">(</span><span class="n">Buffer</span><span class="w"> </span><span class="p">(</span><span class="n">One</span><span class="p">)</span><span class="w"></span>
-<span class="w">                            </span><span class="p">{</span><span class="w"></span>
+<span class="w">                            </span><span class="p">})</span>
+<span class="w">                        </span><span class="p">}</span>
+<span class="w">                        </span><span class="n">Else</span>
+<span class="w">                        </span><span class="p">{</span>
+<span class="w">                            </span><span class="n">Return</span><span class="w"> </span><span class="p">(</span><span class="n">Buffer</span><span class="w"> </span><span class="p">(</span><span class="n">One</span><span class="p">)</span>
+<span class="w">                            </span><span class="p">{</span>
 <span class="w">                                 </span><span class="mh">0x00</span><span class="w">                                           </span>
-<span class="w">                            </span><span class="p">})</span><span class="w"></span>
-<span class="w">                        </span><span class="p">}</span><span class="w"></span>
-<span class="w">                    </span><span class="p">}</span><span class="w"></span>
+<span class="w">                            </span><span class="p">})</span>
+<span class="w">                        </span><span class="p">}</span>
+<span class="w">                    </span><span class="p">}</span>
 
-<span class="w">                  </span><span class="n">If</span><span class="w"> </span><span class="p">(</span><span class="n">LEqual</span><span class="w"> </span><span class="p">(</span><span class="n">Arg2</span><span class="p">,</span><span class="w"> </span><span class="n">One</span><span class="p">))</span><span class="w"></span>
-<span class="w">                    </span><span class="p">{</span><span class="w"></span>
-<span class="w">                        </span><span class="n">Return</span><span class="w"> </span><span class="p">(</span><span class="n">One</span><span class="p">)</span><span class="w"></span>
-<span class="w">                        </span><span class="p">}</span><span class="w"></span>
-<span class="w">                    </span><span class="p">}</span><span class="w"></span>
-<span class="w">                    </span><span class="n">Else</span><span class="w"></span>
-<span class="w">                    </span><span class="p">{</span><span class="w"></span>
-<span class="w">                        </span><span class="n">Return</span><span class="w"> </span><span class="p">(</span><span class="n">Buffer</span><span class="w"> </span><span class="p">(</span><span class="n">One</span><span class="p">)</span><span class="w"></span>
-<span class="w">                        </span><span class="p">{</span><span class="w"></span>
+<span class="w">                  </span><span class="n">If</span><span class="w"> </span><span class="p">(</span><span class="n">LEqual</span><span class="w"> </span><span class="p">(</span><span class="n">Arg2</span><span class="p">,</span><span class="w"> </span><span class="n">One</span><span class="p">))</span>
+<span class="w">                    </span><span class="p">{</span>
+<span class="w">                        </span><span class="n">Return</span><span class="w"> </span><span class="p">(</span><span class="n">One</span><span class="p">)</span>
+<span class="w">                        </span><span class="p">}</span>
+<span class="w">                    </span><span class="p">}</span>
+<span class="w">                    </span><span class="n">Else</span>
+<span class="w">                    </span><span class="p">{</span>
+<span class="w">                        </span><span class="n">Return</span><span class="w"> </span><span class="p">(</span><span class="n">Buffer</span><span class="w"> </span><span class="p">(</span><span class="n">One</span><span class="p">)</span>
+<span class="w">                        </span><span class="p">{</span>
 <span class="w">                             </span><span class="mh">0x00</span><span class="w">                                           </span>
-<span class="w">                        </span><span class="p">})</span><span class="w"></span>
-<span class="w">                    </span><span class="p">}</span><span class="w"></span>
-<span class="w">                </span><span class="p">}</span><span class="w"></span>
+<span class="w">                        </span><span class="p">})</span>
+<span class="w">                    </span><span class="p">}</span>
+<span class="w">                </span><span class="p">}</span>
 <span class="w">          </span><span class="n">Method</span><span class="w"> </span><span class="p">(</span><span class="n">_STA</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">NotSerialized</span><span class="p">)</span><span class="w">  </span><span class="c1">// _STA: Status</span>
-<span class="w">          </span><span class="p">{</span><span class="w"></span>
-<span class="w">                      </span><span class="n">If</span><span class="w"> </span><span class="p">(</span><span class="n">LOr</span><span class="w"> </span><span class="p">(</span><span class="n">LNotEqual</span><span class="w"> </span><span class="p">(</span><span class="n">TPIF</span><span class="p">,</span><span class="w"> </span><span class="n">One</span><span class="p">),</span><span class="w"> </span><span class="n">LAnd</span><span class="w"> </span><span class="p">(</span><span class="n">DSYN</span><span class="p">,</span><span class="w"> </span><span class="n">One</span><span class="p">)))</span><span class="w"></span>
-<span class="w">                      </span><span class="p">{</span><span class="w"></span>
-<span class="w">                          </span><span class="n">Return</span><span class="w"> </span><span class="p">(</span><span class="n">Zero</span><span class="p">)</span><span class="w"></span>
-<span class="w">                      </span><span class="p">}</span><span class="w"></span>
+<span class="w">          </span><span class="p">{</span>
+<span class="w">                      </span><span class="n">If</span><span class="w"> </span><span class="p">(</span><span class="n">LOr</span><span class="w"> </span><span class="p">(</span><span class="n">LNotEqual</span><span class="w"> </span><span class="p">(</span><span class="n">TPIF</span><span class="p">,</span><span class="w"> </span><span class="n">One</span><span class="p">),</span><span class="w"> </span><span class="n">LAnd</span><span class="w"> </span><span class="p">(</span><span class="n">DSYN</span><span class="p">,</span><span class="w"> </span><span class="n">One</span><span class="p">)))</span>
+<span class="w">                      </span><span class="p">{</span>
+<span class="w">                          </span><span class="n">Return</span><span class="w"> </span><span class="p">(</span><span class="n">Zero</span><span class="p">)</span>
+<span class="w">                      </span><span class="p">}</span>
 
-<span class="w">                      </span><span class="n">Return</span><span class="w"> </span><span class="p">(</span><span class="mh">0x0F</span><span class="p">)</span><span class="w"></span>
-<span class="w">               </span><span class="p">}</span><span class="w"></span>
+<span class="w">                      </span><span class="n">Return</span><span class="w"> </span><span class="p">(</span><span class="mh">0x0F</span><span class="p">)</span>
+<span class="w">               </span><span class="p">}</span>
 
 <span class="w">          </span><span class="n">Method</span><span class="w"> </span><span class="p">(</span><span class="n">_CRS</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">Serialized</span><span class="p">)</span><span class="w">  </span><span class="c1">// _CRS: Current Resource Settings</span>
-<span class="w">          </span><span class="p">{</span><span class="w"></span>
-<span class="w">                </span><span class="n">Name</span><span class="w"> </span><span class="p">(</span><span class="n">SBFI</span><span class="p">,</span><span class="w"> </span><span class="n">ResourceTemplate</span><span class="w"> </span><span class="p">()</span><span class="w"></span>
-<span class="w">                </span><span class="p">{</span><span class="w"></span>
-<span class="w">                    </span><span class="n">I2cSerialBusV2</span><span class="w"> </span><span class="p">(</span><span class="mh">0x0015</span><span class="p">,</span><span class="w"> </span><span class="n">ControllerInitiated</span><span class="p">,</span><span class="w"> </span><span class="mh">0x00061A80</span><span class="p">,</span><span class="w"></span>
-<span class="w">                        </span><span class="n">AddressingMode7Bit</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\\</span><span class="s">_SB.PCI0.I2C1&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">                        </span><span class="mh">0x00</span><span class="p">,</span><span class="w"> </span><span class="n">ResourceConsumer</span><span class="p">,</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="n">Exclusive</span><span class="p">,</span><span class="w"></span>
-<span class="w">                        </span><span class="p">)</span><span class="w"></span>
-<span class="w">                    </span><span class="n">Interrupt</span><span class="w"> </span><span class="p">(</span><span class="n">ResourceConsumer</span><span class="p">,</span><span class="w"> </span><span class="n">Level</span><span class="p">,</span><span class="w"> </span><span class="n">ActiveLow</span><span class="p">,</span><span class="w"> </span><span class="n">Exclusive</span><span class="p">,</span><span class="w"> </span><span class="p">,,</span><span class="w"> </span><span class="p">)</span><span class="w"></span>
-<span class="w">                    </span><span class="p">{</span><span class="w"></span>
-<span class="w">                        </span><span class="mh">0x0000006D</span><span class="p">,</span><span class="w"></span>
-<span class="w">                    </span><span class="p">}</span><span class="w"></span>
-<span class="w">                </span><span class="p">})</span><span class="w"></span>
-<span class="w">                </span><span class="n">Return</span><span class="w"> </span><span class="p">(</span><span class="n">SBFI</span><span class="p">)</span><span class="w"></span>
-<span class="w">            </span><span class="p">}</span><span class="w"></span>
-<span class="w">        </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="w">          </span><span class="p">{</span>
+<span class="w">                </span><span class="n">Name</span><span class="w"> </span><span class="p">(</span><span class="n">SBFI</span><span class="p">,</span><span class="w"> </span><span class="n">ResourceTemplate</span><span class="w"> </span><span class="p">()</span>
+<span class="w">                </span><span class="p">{</span>
+<span class="w">                    </span><span class="n">I2cSerialBusV2</span><span class="w"> </span><span class="p">(</span><span class="mh">0x0015</span><span class="p">,</span><span class="w"> </span><span class="n">ControllerInitiated</span><span class="p">,</span><span class="w"> </span><span class="mh">0x00061A80</span><span class="p">,</span>
+<span class="w">                        </span><span class="n">AddressingMode7Bit</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\\</span><span class="s">_SB.PCI0.I2C1&quot;</span><span class="p">,</span>
+<span class="w">                        </span><span class="mh">0x00</span><span class="p">,</span><span class="w"> </span><span class="n">ResourceConsumer</span><span class="p">,</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="n">Exclusive</span><span class="p">,</span>
+<span class="w">                        </span><span class="p">)</span>
+<span class="w">                    </span><span class="n">Interrupt</span><span class="w"> </span><span class="p">(</span><span class="n">ResourceConsumer</span><span class="p">,</span><span class="w"> </span><span class="n">Level</span><span class="p">,</span><span class="w"> </span><span class="n">ActiveLow</span><span class="p">,</span><span class="w"> </span><span class="n">Exclusive</span><span class="p">,</span><span class="w"> </span><span class="p">,,</span><span class="w"> </span><span class="p">)</span>
+<span class="w">                    </span><span class="p">{</span>
+<span class="w">                        </span><span class="mh">0x0000006D</span><span class="p">,</span>
+<span class="w">                    </span><span class="p">}</span>
+<span class="w">                </span><span class="p">})</span>
+<span class="w">                </span><span class="n">Return</span><span class="w"> </span><span class="p">(</span><span class="n">SBFI</span><span class="p">)</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
 </code></pre></div>
 <h2 id="gpio-pinning">GPIO Pinning 固定<a class="headerlink" href="#gpio-pinning" title="Permanent link">&para;</a></h2>
 <p>国光这里只介绍如何定制 GPIO 中断，轮询和其他模式不在本文的范畴内。</p>
 <h3 id="_6">寻找触控板关键代码<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
 <p>根据<code>_CRS</code>方法这个特征，我们可以很容易直找到触控板代码中类似如下的代码片段：</p>
 <div class="highlight"><pre><span></span><code><span class="n">Method</span><span class="w"> </span><span class="p">(</span><span class="n">_CRS</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">Serialized</span><span class="p">)</span><span class="w">  </span><span class="c1">// _CRS: Current Resource Settings</span>
-<span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="n">Name</span><span class="w"> </span><span class="p">(</span><span class="n">SBFI</span><span class="p">,</span><span class="w"> </span><span class="n">ResourceTemplate</span><span class="w"> </span><span class="p">()</span><span class="w"></span>
-<span class="w">        </span><span class="p">{</span><span class="w"></span>
-<span class="w">          </span><span class="n">I2cSerialBusV2</span><span class="w"> </span><span class="p">(</span><span class="mh">0x0015</span><span class="p">,</span><span class="w"> </span><span class="n">ControllerInitiated</span><span class="p">,</span><span class="w"> </span><span class="mh">0x00061A80</span><span class="p">,</span><span class="w"></span>
-<span class="w">                          </span><span class="n">AddressingMode7Bit</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\\</span><span class="s">_SB.PCI0.I2C1&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">                          </span><span class="mh">0x00</span><span class="p">,</span><span class="w"> </span><span class="n">ResourceConsumer</span><span class="p">,</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="n">Exclusive</span><span class="p">,</span><span class="w"></span>
-<span class="w">                         </span><span class="p">)</span><span class="w"></span>
-<span class="w">            </span><span class="n">Interrupt</span><span class="w"> </span><span class="p">(</span><span class="n">ResourceConsumer</span><span class="p">,</span><span class="w"> </span><span class="n">Level</span><span class="p">,</span><span class="w"> </span><span class="n">ActiveLow</span><span class="p">,</span><span class="w"> </span><span class="n">Exclusive</span><span class="p">,</span><span class="w"> </span><span class="p">,,</span><span class="w"> </span><span class="p">)</span><span class="w"></span>
-<span class="w">          </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="mh">0x0000006D</span><span class="p">,</span><span class="w"></span>
-<span class="w">          </span><span class="p">}</span><span class="w"></span>
-<span class="w">        </span><span class="p">})</span><span class="w"></span>
-<span class="w">    </span><span class="n">Return</span><span class="w"> </span><span class="p">(</span><span class="n">SBFI</span><span class="p">)</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="p">{</span>
+<span class="w">  </span><span class="n">Name</span><span class="w"> </span><span class="p">(</span><span class="n">SBFI</span><span class="p">,</span><span class="w"> </span><span class="n">ResourceTemplate</span><span class="w"> </span><span class="p">()</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">          </span><span class="n">I2cSerialBusV2</span><span class="w"> </span><span class="p">(</span><span class="mh">0x0015</span><span class="p">,</span><span class="w"> </span><span class="n">ControllerInitiated</span><span class="p">,</span><span class="w"> </span><span class="mh">0x00061A80</span><span class="p">,</span>
+<span class="w">                          </span><span class="n">AddressingMode7Bit</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\\</span><span class="s">_SB.PCI0.I2C1&quot;</span><span class="p">,</span>
+<span class="w">                          </span><span class="mh">0x00</span><span class="p">,</span><span class="w"> </span><span class="n">ResourceConsumer</span><span class="p">,</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="n">Exclusive</span><span class="p">,</span>
+<span class="w">                         </span><span class="p">)</span>
+<span class="w">            </span><span class="n">Interrupt</span><span class="w"> </span><span class="p">(</span><span class="n">ResourceConsumer</span><span class="p">,</span><span class="w"> </span><span class="n">Level</span><span class="p">,</span><span class="w"> </span><span class="n">ActiveLow</span><span class="p">,</span><span class="w"> </span><span class="n">Exclusive</span><span class="p">,</span><span class="w"> </span><span class="p">,,</span><span class="w"> </span><span class="p">)</span>
+<span class="w">          </span><span class="p">{</span>
+<span class="w">            </span><span class="mh">0x0000006D</span><span class="p">,</span>
+<span class="w">          </span><span class="p">}</span>
+<span class="w">        </span><span class="p">})</span>
+<span class="w">    </span><span class="n">Return</span><span class="w"> </span><span class="p">(</span><span class="n">SBFI</span><span class="p">)</span>
+<span class="p">}</span>
 </code></pre></div>
 <h3 id="sbfi">重命名 SBFI<a class="headerlink" href="#sbfi" title="Permanent link">&para;</a></h3>
 <p>VoodooI2C 在以 GPIO 中断模式调用 DSDT 中触摸设备的_CRS 方法时，一律使用 <code>SBFG</code> 参数而不是 <code>SBFI</code> 参数。所以我们目前的触控板代码里面的 <code>SBFI</code> 变量是不满足要求的，我们先把 <code>SBFI</code>重命名为 <code>SBFB</code>，至于 <code>SBFG</code> 变量我们后面单独添加一下（如果你的 DSDT 里面没有的话）。</p>
 <div class="highlight"><pre><span></span><code><span class="n">Method</span><span class="w"> </span><span class="p">(</span><span class="n">_CRS</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">Serialized</span><span class="p">)</span><span class="w">  </span><span class="c1">// _CRS: Current Resource Settings</span>
-<span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="n">Name</span><span class="w"> </span><span class="p">(</span><span class="n">SBFB</span><span class="p">,</span><span class="w"> </span><span class="n">ResourceTemplate</span><span class="w"> </span><span class="p">()</span><span class="w"></span>
-<span class="w">        </span><span class="p">{</span><span class="w"></span>
-<span class="w">          </span><span class="n">I2cSerialBusV2</span><span class="w"> </span><span class="p">(</span><span class="mh">0x0015</span><span class="p">,</span><span class="w"> </span><span class="n">ControllerInitiated</span><span class="p">,</span><span class="w"> </span><span class="mh">0x00061A80</span><span class="p">,</span><span class="w"></span>
-<span class="w">                          </span><span class="n">AddressingMode7Bit</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\\</span><span class="s">_SB.PCI0.I2C1&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">                          </span><span class="mh">0x00</span><span class="p">,</span><span class="w"> </span><span class="n">ResourceConsumer</span><span class="p">,</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="n">Exclusive</span><span class="p">,</span><span class="w"></span>
-<span class="w">                         </span><span class="p">)</span><span class="w"></span>
+<span class="p">{</span>
+<span class="w">  </span><span class="n">Name</span><span class="w"> </span><span class="p">(</span><span class="n">SBFB</span><span class="p">,</span><span class="w"> </span><span class="n">ResourceTemplate</span><span class="w"> </span><span class="p">()</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">          </span><span class="n">I2cSerialBusV2</span><span class="w"> </span><span class="p">(</span><span class="mh">0x0015</span><span class="p">,</span><span class="w"> </span><span class="n">ControllerInitiated</span><span class="p">,</span><span class="w"> </span><span class="mh">0x00061A80</span><span class="p">,</span>
+<span class="w">                          </span><span class="n">AddressingMode7Bit</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\\</span><span class="s">_SB.PCI0.I2C1&quot;</span><span class="p">,</span>
+<span class="w">                          </span><span class="mh">0x00</span><span class="p">,</span><span class="w"> </span><span class="n">ResourceConsumer</span><span class="p">,</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="n">Exclusive</span><span class="p">,</span>
+<span class="w">                         </span><span class="p">)</span>
 <span class="w">  </span><span class="c1">//         Interrupt (ResourceConsumer, Level, ActiveLow, Exclusive, ,, )</span>
 
 <span class="w">  </span><span class="c1">//        {</span>
 <span class="w">  </span><span class="c1">//          0x0000006D,</span>
 <span class="w">  </span><span class="c1">//        }</span>
-<span class="w">        </span><span class="p">})</span><span class="w"></span>
-<span class="w">    </span><span class="n">Return</span><span class="w"> </span><span class="p">(</span><span class="n">SBFB</span><span class="p">)</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="p">})</span>
+<span class="w">    </span><span class="n">Return</span><span class="w"> </span><span class="p">(</span><span class="n">SBFB</span><span class="p">)</span>
+<span class="p">}</span>
 </code></pre></div>
 <p>重命名后移除 <code>_CRS</code> 方法中的以下内容（即上面代码注释的部分）：</p>
-<div class="highlight"><pre><span></span><code><span class="n">Interrupt</span><span class="w"> </span><span class="p">(</span><span class="n">ResourceConsumer</span><span class="p">,</span><span class="w"> </span><span class="n">Level</span><span class="p">,</span><span class="w"> </span><span class="n">ActiveLow</span><span class="p">,</span><span class="w"> </span><span class="n">Exclusive</span><span class="p">,</span><span class="w"> </span><span class="p">,,</span><span class="w"> </span><span class="p">)</span><span class="w"></span>
-<span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="mh">0x0000006D</span><span class="p">,</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">Interrupt</span><span class="w"> </span><span class="p">(</span><span class="n">ResourceConsumer</span><span class="p">,</span><span class="w"> </span><span class="n">Level</span><span class="p">,</span><span class="w"> </span><span class="n">ActiveLow</span><span class="p">,</span><span class="w"> </span><span class="n">Exclusive</span><span class="p">,</span><span class="w"> </span><span class="p">,,</span><span class="w"> </span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">  </span><span class="mh">0x0000006D</span><span class="p">,</span>
+<span class="p">}</span>
 </code></pre></div>
 <h3 id="gpio-pin">寻找 GPIO Pin<a class="headerlink" href="#gpio-pin" title="Permanent link">&para;</a></h3>
 <p>在触控板的代码中寻找类似如下的代码片段：</p>
-<div class="highlight"><pre><span></span><code><span class="n">Name</span><span class="w"> </span><span class="p">(</span><span class="n">SBFG</span><span class="p">,</span><span class="w"> </span><span class="n">ResourceTemplate</span><span class="w"> </span><span class="p">()</span><span class="w"></span>
-<span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">GpioInt</span><span class="w"> </span><span class="p">(</span><span class="n">Level</span><span class="p">,</span><span class="w"> </span><span class="n">ActiveLow</span><span class="p">,</span><span class="w"> </span><span class="n">ExclusiveAndWake</span><span class="p">,</span><span class="w"> </span><span class="n">PullDefault</span><span class="p">,</span><span class="w"> </span><span class="mh">0x0000</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="s">&quot;</span><span class="se">\\</span><span class="s">_SB.PCI0.GPI0&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0x00</span><span class="p">,</span><span class="w"> </span><span class="n">ResourceConsumer</span><span class="p">,</span><span class="w"> </span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="p">)</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">Name</span><span class="w"> </span><span class="p">(</span><span class="n">SBFG</span><span class="p">,</span><span class="w"> </span><span class="n">ResourceTemplate</span><span class="w"> </span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">GpioInt</span><span class="w"> </span><span class="p">(</span><span class="n">Level</span><span class="p">,</span><span class="w"> </span><span class="n">ActiveLow</span><span class="p">,</span><span class="w"> </span><span class="n">ExclusiveAndWake</span><span class="p">,</span><span class="w"> </span><span class="n">PullDefault</span><span class="p">,</span><span class="w"> </span><span class="mh">0x0000</span><span class="p">,</span>
+<span class="w">        </span><span class="s">&quot;</span><span class="se">\\</span><span class="s">_SB.PCI0.GPI0&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0x00</span><span class="p">,</span><span class="w"> </span><span class="n">ResourceConsumer</span><span class="p">,</span><span class="w"> </span><span class="p">,</span>
+<span class="w">    </span><span class="p">)</span>
 <span class="w">  </span><span class="p">{</span><span class="w">   </span><span class="c1">// Pin list</span>
-<span class="w">      </span><span class="mh">0x0000</span><span class="w"></span>
-<span class="w">  </span><span class="p">}</span><span class="w"></span>
-<span class="p">})</span><span class="w"></span>
+<span class="w">      </span><span class="mh">0x0000</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">})</span>
 </code></pre></div>
 <p>如果找到的话，那么恭喜你，你的设备可能都不需要计算 GPIO Pin 值。没有找到也没有关系，我们可以手动添加，具体参考下面内容。</p>
 <h3 id="gpio">添加 GPIO 模板<a class="headerlink" href="#gpio" title="Permanent link">&para;</a></h3>
 <p>很明显我的触控板搜索不到 GPIO 相关的代码，所以我们需要复制上面的代码片段，将其添加到 _CRS 方法下面：</p>
 <div class="highlight"><pre><span></span><code><span class="n">Method</span><span class="w"> </span><span class="p">(</span><span class="n">_CRS</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">Serialized</span><span class="p">)</span><span class="w">  </span><span class="c1">// _CRS: Current Resource Settings</span>
-<span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="n">Name</span><span class="w"> </span><span class="p">(</span><span class="n">SBFB</span><span class="p">,</span><span class="w"> </span><span class="n">ResourceTemplate</span><span class="w"> </span><span class="p">()</span><span class="w"></span>
-<span class="w">        </span><span class="p">{</span><span class="w"></span>
-<span class="w">          </span><span class="n">I2cSerialBusV2</span><span class="w"> </span><span class="p">(</span><span class="mh">0x0015</span><span class="p">,</span><span class="w"> </span><span class="n">ControllerInitiated</span><span class="p">,</span><span class="w"> </span><span class="mh">0x00061A80</span><span class="p">,</span><span class="w"></span>
-<span class="w">                          </span><span class="n">AddressingMode7Bit</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\\</span><span class="s">_SB.PCI0.I2C1&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">                          </span><span class="mh">0x00</span><span class="p">,</span><span class="w"> </span><span class="n">ResourceConsumer</span><span class="p">,</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="n">Exclusive</span><span class="p">,</span><span class="w"></span>
-<span class="w">                         </span><span class="p">)</span><span class="w"></span>
-<span class="w">        </span><span class="p">})</span><span class="w"></span>
+<span class="p">{</span>
+<span class="w">  </span><span class="n">Name</span><span class="w"> </span><span class="p">(</span><span class="n">SBFB</span><span class="p">,</span><span class="w"> </span><span class="n">ResourceTemplate</span><span class="w"> </span><span class="p">()</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">          </span><span class="n">I2cSerialBusV2</span><span class="w"> </span><span class="p">(</span><span class="mh">0x0015</span><span class="p">,</span><span class="w"> </span><span class="n">ControllerInitiated</span><span class="p">,</span><span class="w"> </span><span class="mh">0x00061A80</span><span class="p">,</span>
+<span class="w">                          </span><span class="n">AddressingMode7Bit</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\\</span><span class="s">_SB.PCI0.I2C1&quot;</span><span class="p">,</span>
+<span class="w">                          </span><span class="mh">0x00</span><span class="p">,</span><span class="w"> </span><span class="n">ResourceConsumer</span><span class="p">,</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="n">Exclusive</span><span class="p">,</span>
+<span class="w">                         </span><span class="p">)</span>
+<span class="w">        </span><span class="p">})</span>
 <span class="w">    </span><span class="c1">// 下面是新增的 GPIO 模板代码片段</span>
-<span class="w">    </span><span class="n">Name</span><span class="w"> </span><span class="p">(</span><span class="n">SBFG</span><span class="p">,</span><span class="w"> </span><span class="n">ResourceTemplate</span><span class="w"> </span><span class="p">()</span><span class="w"></span>
-<span class="w">          </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="n">GpioInt</span><span class="w"> </span><span class="p">(</span><span class="n">Level</span><span class="p">,</span><span class="w"> </span><span class="n">ActiveLow</span><span class="p">,</span><span class="w"> </span><span class="n">ExclusiveAndWake</span><span class="p">,</span><span class="w"> </span><span class="n">PullDefault</span><span class="p">,</span><span class="w"> </span><span class="mh">0x0000</span><span class="p">,</span><span class="w"></span>
-<span class="w">                     </span><span class="s">&quot;</span><span class="se">\\</span><span class="s">_SB.PCI0.GPI0&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0x00</span><span class="p">,</span><span class="w"> </span><span class="n">ResourceConsumer</span><span class="p">,</span><span class="w"> </span><span class="p">,</span><span class="w"></span>
-<span class="w">                    </span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="n">Name</span><span class="w"> </span><span class="p">(</span><span class="n">SBFG</span><span class="p">,</span><span class="w"> </span><span class="n">ResourceTemplate</span><span class="w"> </span><span class="p">()</span>
+<span class="w">          </span><span class="p">{</span>
+<span class="w">            </span><span class="n">GpioInt</span><span class="w"> </span><span class="p">(</span><span class="n">Level</span><span class="p">,</span><span class="w"> </span><span class="n">ActiveLow</span><span class="p">,</span><span class="w"> </span><span class="n">ExclusiveAndWake</span><span class="p">,</span><span class="w"> </span><span class="n">PullDefault</span><span class="p">,</span><span class="w"> </span><span class="mh">0x0000</span><span class="p">,</span>
+<span class="w">                     </span><span class="s">&quot;</span><span class="se">\\</span><span class="s">_SB.PCI0.GPI0&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0x00</span><span class="p">,</span><span class="w"> </span><span class="n">ResourceConsumer</span><span class="p">,</span><span class="w"> </span><span class="p">,</span>
+<span class="w">                    </span><span class="p">)</span>
 <span class="w">            </span><span class="p">{</span><span class="w">   </span><span class="c1">// Pin list</span>
 <span class="w">              </span><span class="mh">0x0000</span><span class="w">   </span><span class="c1">// 这个值 我们待会要计算一下</span>
-<span class="w">            </span><span class="p">}</span><span class="w"></span>
-<span class="w">          </span><span class="p">})</span><span class="w"></span>
-<span class="w">    </span><span class="n">Return</span><span class="w"> </span><span class="p">(</span><span class="n">SBFB</span><span class="p">)</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">          </span><span class="p">})</span>
+<span class="w">    </span><span class="n">Return</span><span class="w"> </span><span class="p">(</span><span class="n">SBFB</span><span class="p">)</span>
+<span class="p">}</span>
 </code></pre></div>
 <h3 id="_crs">修改 _CRS 返回值<a class="headerlink" href="#_crs" title="Permanent link">&para;</a></h3>
 <p>因为我们 <code>_CRS</code> 方法里面还引入了 SBFG 变量，所以得将默认的 <code>Return (SBFB)</code> 返回值修改为：</p>
-<div class="highlight"><pre><span></span><code><span class="n">Return</span><span class="w"> </span><span class="p">(</span><span class="n">ConcatenateResTemplate</span><span class="w"> </span><span class="p">(</span><span class="n">SBFB</span><span class="p">,</span><span class="w"> </span><span class="n">SBFG</span><span class="p">))</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">Return</span><span class="w"> </span><span class="p">(</span><span class="n">ConcatenateResTemplate</span><span class="w"> </span><span class="p">(</span><span class="n">SBFB</span><span class="p">,</span><span class="w"> </span><span class="n">SBFG</span><span class="p">))</span>
 </code></pre></div>
 <blockquote>
 <p><a href="https://github.com/williambj1">Bat.bat</a> 大佬原话：有 gpioint 的设备不用算 pin，没有的加上也基本上不可能成功，算 pin 其实是最后死马当活马医的方案。</p>
@@ -2324,9 +2338,9 @@ sudo kextload -v VoodooI2C*
 <div class="highlight"><pre><span></span><code><span class="n">If</span><span class="w"> </span><span class="n">APICPIN</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">47</span><span class="w"> </span><span class="n">And</span><span class="w"> </span><span class="n">APICPIN</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">79</span><span class="w"> </span><span class="n">Then</span><span class="w">     </span>
 <span class="w">    </span><span class="n">GPIOPIN</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">APICPIN</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">24</span><span class="w">   </span>
 <span class="w">    </span><span class="n">GPIOPIN2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">APICPIN</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">72</span><span class="w">  </span>
-<span class="n">ElseIf</span><span class="w"> </span><span class="n">APICPIN</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">79</span><span class="w"> </span><span class="n">And</span><span class="w"> </span><span class="n">APICPIN</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">119</span><span class="w"> </span><span class="n">Then</span><span class="w"></span>
-<span class="w">    </span><span class="n">GPIOPIN</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">APICPIN</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">24</span><span class="w"></span>
-<span class="n">End</span><span class="w"> </span><span class="n">If</span><span class="w"></span>
+<span class="n">ElseIf</span><span class="w"> </span><span class="n">APICPIN</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">79</span><span class="w"> </span><span class="n">And</span><span class="w"> </span><span class="n">APICPIN</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">119</span><span class="w"> </span><span class="n">Then</span>
+<span class="w">    </span><span class="n">GPIOPIN</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">APICPIN</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">24</span>
+<span class="n">End</span><span class="w"> </span><span class="n">If</span>
 </code></pre></div>
 <ul>
 <li><strong>CoffeeLake-H</strong>（intel 8 代标压 CPU）</li>
@@ -2337,13 +2351,13 @@ sudo kextload -v VoodooI2C*
 <span class="w">    </span><span class="n">If</span><span class="w"> </span><span class="n">APICPIN</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">47</span><span class="w"> </span><span class="n">And</span><span class="w"> </span><span class="n">APICPIN</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">59</span><span class="w"> </span><span class="n">Then</span><span class="w"> </span><span class="n">GPIOPIN3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">APICPIN</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">304</span><span class="w">  </span>
 <span class="n">ElseIf</span><span class="w"> </span><span class="n">APICPIN</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">71</span><span class="w"> </span><span class="n">And</span><span class="w"> </span><span class="n">APICPIN</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">95</span><span class="w"> </span><span class="n">Then</span><span class="w"> </span>
 <span class="w">    </span><span class="n">GPIOPIN</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">APICPIN</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">8</span><span class="w">    </span>
-<span class="w">    </span><span class="n">GPIOPIN3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">APICPIN</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">152</span><span class="w"></span>
+<span class="w">    </span><span class="n">GPIOPIN3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">APICPIN</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">152</span>
 <span class="w">    </span><span class="n">GPIOPIN2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">APICPIN</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">120</span><span class="w"> </span>
 <span class="n">ElseIf</span><span class="w"> </span><span class="n">APICPIN</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">95</span><span class="w"> </span><span class="n">And</span><span class="w"> </span><span class="n">APICPIN</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">119</span><span class="w"> </span><span class="n">Then</span><span class="w"> </span>
 <span class="w">    </span><span class="n">GPIOPIN</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">APICPIN</span><span class="w">        </span>
 <span class="n">If</span><span class="w"> </span><span class="n">APICPIN</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">108</span><span class="w"> </span><span class="n">And</span><span class="w"> </span><span class="n">APICPIN</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">115</span><span class="w"> </span><span class="n">Then</span><span class="w"> </span>
 <span class="w">    </span><span class="n">GPIOPIN2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">APICPIN</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">20</span><span class="w"> </span>
-<span class="n">End</span><span class="w"> </span><span class="n">If</span><span class="w"></span>
+<span class="n">End</span><span class="w"> </span><span class="n">If</span>
 </code></pre></div>
 <ul>
 <li><strong>CoffeeLake-LF 和 Whiskylake</strong>（intel 8 代低压 CPU 和 Whiskylake 架构 CPU）</li>
@@ -2358,7 +2372,7 @@ sudo kextload -v VoodooI2C*
 <span class="w">    </span><span class="n">GPIOPIN</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">APICPIN</span><span class="w">        </span>
 <span class="n">ElseIf</span><span class="w"> </span><span class="n">APICPIN</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">108</span><span class="w"> </span><span class="n">And</span><span class="w"> </span><span class="n">APICPIN</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">115</span><span class="w"> </span><span class="n">Then</span><span class="w"> </span>
 <span class="w">    </span><span class="n">GPIOPIN2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">APICPIN</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">44</span><span class="w"> </span>
-<span class="n">End</span><span class="w"> </span><span class="n">If</span><span class="w"></span>
+<span class="n">End</span><span class="w"> </span><span class="n">If</span>
 </code></pre></div>
 <p>我的笔记本 CPU 是 <code>i7-10510U</code>，属于 Comet Lake 的低压 CPU，会发现上述公式并没有 Comet Lake 系列的，不过 <a href="https://github.com/williambj1">Bat.bat</a> 大佬说 10 代就是 8 代的马甲，所以使用 CoffeeLake-LF 和 Whiskylake 公式即可，带入公式可计算出我们的 GPIO Pin 的十进制：</p>
 <p>我们的 APICPIN 的 16进制为 6d，转换为 10 进制为 109，满足公式如下条件：</p>
@@ -2382,85 +2396,85 @@ sudo kextload -v VoodooI2C*
 <p>使用<a href="https://github.com/vulgo/IORegistryExplorer">IORegistryExplorer</a> 可以看到我们的这个 GDX1515 冷门小众的触控板终于工作在 GPIO 中断模式下了，可以看到出现了 <code>gpioPin</code> 和 <code>gpioIRQ</code> 属性值，完美：</p>
 <p><img alt="img" src="https://image.3001.net/images/20211221/1640056552178.png" /></p>
 <p>再来看下 dmesg 的日志情况：</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># 发现了 GDX1515 的 I2C 协议的触控板</span><span class="w"></span>
-<span class="na">[   44.313108]: VoodooI2CControllerDriver::pci8086,2e9 Found I2C device: GDX1515</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="c1"># 发现了 GDX1515 的 I2C 协议的触控板</span>
+<span class="na">[   44.313108]</span><span class="o">:</span><span class="w"> </span><span class="s">VoodooI2CControllerDriver::pci8086,2e9 Found I2C device: GDX1515</span>
 
-<span class="c1"># ETPD 发现了有效的 _CRS 方法</span><span class="w"></span>
-<span class="na">[   44.313178]: VoodooI2CDeviceNub::ETPD Found valid resources from _CRS method</span><span class="w"></span>
-<span class="na">[   44.313182]: VoodooI2CControllerDriver::pci8086,2e8 Got bus configuration values</span><span class="w"></span>
-<span class="na">[   44.313231]: VoodooI2CDeviceNub::ETPD Returned index 0x0 from _DSM or XDSM method is not supported</span><span class="w"></span>
-<span class="na">[   44.313235]: VoodooI2CDeviceNub::ETPD Could not retrieve resources from _DSM or XDSM method</span><span class="w"></span>
+<span class="c1"># ETPD 发现了有效的 _CRS 方法</span>
+<span class="na">[   44.313178]</span><span class="o">:</span><span class="w"> </span><span class="s">VoodooI2CDeviceNub::ETPD Found valid resources from _CRS method</span>
+<span class="na">[   44.313182]</span><span class="o">:</span><span class="w"> </span><span class="s">VoodooI2CControllerDriver::pci8086,2e8 Got bus configuration values</span>
+<span class="na">[   44.313231]</span><span class="o">:</span><span class="w"> </span><span class="s">VoodooI2CDeviceNub::ETPD Returned index 0x0 from _DSM or XDSM method is not supported</span>
+<span class="na">[   44.313235]</span><span class="o">:</span><span class="w"> </span><span class="s">VoodooI2CDeviceNub::ETPD Could not retrieve resources from _DSM or XDSM method</span>
 
-<span class="c1"># ETPD 发现了有效的 GPIO 中断</span><span class="w"></span>
-<span class="na">[   44.313244]: VoodooI2CDeviceNub::ETPD Found valid GPIO interrupts</span><span class="w"></span>
-<span class="na">[   44.313344]: VoodooI2CControllerDriver::pci8086,2e8 Publishing device nubs</span><span class="w"></span>
+<span class="c1"># ETPD 发现了有效的 GPIO 中断</span>
+<span class="na">[   44.313244]</span><span class="o">:</span><span class="w"> </span><span class="s">VoodooI2CDeviceNub::ETPD Found valid GPIO interrupts</span>
+<span class="na">[   44.313344]</span><span class="o">:</span><span class="w"> </span><span class="s">VoodooI2CControllerDriver::pci8086,2e8 Publishing device nubs</span>
 
-<span class="c1"># ETPD 得到 GPIO 控制器</span><span class="w"></span>
-<span class="na">[   44.313347]: VoodooI2CDeviceNub::ETPD Got GPIO Controller! VoodooGPIOCannonLakeLP</span><span class="w"></span>
-<span class="na">[   44.816012]: VoodooI2CHIDDevice:0x100000738 start</span><span class="w"></span>
+<span class="c1"># ETPD 得到 GPIO 控制器</span>
+<span class="na">[   44.313347]</span><span class="o">:</span><span class="w"> </span><span class="s">VoodooI2CDeviceNub::ETPD Got GPIO Controller! VoodooGPIOCannonLakeLP</span>
+<span class="na">[   44.816012]</span><span class="o">:</span><span class="w"> </span><span class="s">VoodooI2CHIDDevice:0x100000738 start</span>
 
-<span class="c1"># GDX1515 设备启动的重置完成</span><span class="w"></span>
-<span class="na">[   44.919729]: VoodooI2CHIDDevice::GDX1515 Device initiated reset accomplished</span><span class="w"></span>
-<span class="na">[   45.050029]: VoodooI2CHIDDevice:0x100000738 creating interfaces</span><span class="w"></span>
-<span class="na">[   45.051068]: VoodooI2CHIDDevice:0x100000738 Matching has vendor DeviceUsagePage : ff0c bundleIdentifier com.apple.AppleUserHIDDrivers ioclass AppleUserHIDEventService but transport and vendorID is missing</span><span class="w"></span>
-<span class="na">[   45.053582]: VoodooI2CPrecisionTouchpadHIDEventDriver:0x10000073d start</span><span class="w"></span>
-<span class="na">[   45.059693]: open by VoodooI2CPrecisionTouchpadHIDEventDriver 0x10000073d (0x0)</span><span class="w"></span>
+<span class="c1"># GDX1515 设备启动的重置完成</span>
+<span class="na">[   44.919729]</span><span class="o">:</span><span class="w"> </span><span class="s">VoodooI2CHIDDevice::GDX1515 Device initiated reset accomplished</span>
+<span class="na">[   45.050029]</span><span class="o">:</span><span class="w"> </span><span class="s">VoodooI2CHIDDevice:0x100000738 creating interfaces</span>
+<span class="na">[   45.051068]</span><span class="o">:</span><span class="w"> </span><span class="s">VoodooI2CHIDDevice:0x100000738 Matching has vendor DeviceUsagePage : ff0c bundleIdentifier com.apple.AppleUserHIDDrivers ioclass AppleUserHIDEventService but transport and vendorID is missing</span>
+<span class="na">[   45.053582]</span><span class="o">:</span><span class="w"> </span><span class="s">VoodooI2CPrecisionTouchpadHIDEventDriver:0x10000073d start</span>
+<span class="na">[   45.059693]</span><span class="o">:</span><span class="w"> </span><span class="s">open by VoodooI2CPrecisionTouchpadHIDEventDriver 0x10000073d (0x0)</span>
 
-<span class="c1"># GDX1515 进入  Precision Touchpad Mode (PTP)模式，即高精度触控板模式</span><span class="w"></span>
-<span class="na">[   45.059739]: VoodooI2CPrecisionTouchpadHIDEventDriver::GDX1515 Putting device into Precision Touchpad Mode</span><span class="w"></span>
+<span class="c1"># GDX1515 进入  Precision Touchpad Mode (PTP)模式，即高精度触控板模式</span>
+<span class="na">[   45.059739]</span><span class="o">:</span><span class="w"> </span><span class="s">VoodooI2CPrecisionTouchpadHIDEventDriver::GDX1515 Putting device into Precision Touchpad Mode</span>
 </code></pre></div>
 <p>从日志中也可以看到完美工作了，工作在 GPIO 中断模式下。</p>
 <p>为了有对比，下面再附上没有工作在 GPIO 中断模式下的日志情况：</p>
 <ul>
 <li><strong>没有定制 DSDT 在轮询下的日志</strong></li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="na">[   48.517816]: VoodooI2CControllerDriver::pci8086,2e9 Found I2C device: GDX1515</span><span class="w"></span>
-<span class="na">[   48.517869]: VoodooI2CDeviceNub::ETPD Found valid resources from _CRS method</span><span class="w"></span>
-<span class="na">[   48.517913]: VoodooI2CDeviceNub::ETPD Returned index 0x0 from _DSM or XDSM method is not supported</span><span class="w"></span>
-<span class="na">[   48.517917]: VoodooI2CDeviceNub::ETPD Could not retrieve resources from _DSM or XDSM method</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="na">[   48.517816]</span><span class="o">:</span><span class="w"> </span><span class="s">VoodooI2CControllerDriver::pci8086,2e9 Found I2C device: GDX1515</span>
+<span class="na">[   48.517869]</span><span class="o">:</span><span class="w"> </span><span class="s">VoodooI2CDeviceNub::ETPD Found valid resources from _CRS method</span>
+<span class="na">[   48.517913]</span><span class="o">:</span><span class="w"> </span><span class="s">VoodooI2CDeviceNub::ETPD Returned index 0x0 from _DSM or XDSM method is not supported</span>
+<span class="na">[   48.517917]</span><span class="o">:</span><span class="w"> </span><span class="s">VoodooI2CDeviceNub::ETPD Could not retrieve resources from _DSM or XDSM method</span>
 
-<span class="c1"># ETPD 警告，发现了不兼容的 APIC pin 值 6d，它是大于 2f 的</span><span class="w"></span>
-<span class="na">[   48.517925]: VoodooI2CDeviceNub::ETPD Warning: Incompatible APIC interrupt pin (0x6d &gt; 0x2f)</span><span class="w"></span>
+<span class="c1"># ETPD 警告，发现了不兼容的 APIC pin 值 6d，它是大于 2f 的</span>
+<span class="na">[   48.517925]</span><span class="o">:</span><span class="w"> </span><span class="s">VoodooI2CDeviceNub::ETPD Warning: Incompatible APIC interrupt pin (0x6d &gt; 0x2f)</span>
 
-<span class="c1"># ETPD 找不到任何 APIC 或 GPIO 中断。 您可能将在轮询模式下运行。</span><span class="w"></span>
-<span class="na">[   48.517931]: VoodooI2CDeviceNub::ETPD Warning: Could not find any APIC nor GPIO interrupts. Your chosen satellite will run in polling mode if implemented.</span><span class="w"></span>
-<span class="na">[   48.519529]: VoodooI2CHIDDevice:0x100000725 start</span><span class="w"></span>
+<span class="c1"># ETPD 找不到任何 APIC 或 GPIO 中断。 您可能将在轮询模式下运行。</span>
+<span class="na">[   48.517931]</span><span class="o">:</span><span class="w"> </span><span class="s">VoodooI2CDeviceNub::ETPD Warning: Could not find any APIC nor GPIO interrupts. Your chosen satellite will run in polling mode if implemented.</span>
+<span class="na">[   48.519529]</span><span class="o">:</span><span class="w"> </span><span class="s">VoodooI2CHIDDevice:0x100000725 start</span>
 
-<span class="c1"># GDX1515 无法获取中断事件源，改用轮询模式</span><span class="w"></span>
-<span class="na">[   48.519539]: VoodooI2CHIDDevice::GDX1515 Warning: Could not get interrupt event source, using polling instead</span><span class="w"></span>
-<span class="na">[   48.722472]: VoodooI2CHIDDevice::GDX1515 Device initiated reset accomplished</span><span class="w"></span>
-<span class="na">[   48.854707]: VoodooI2CHIDDevice:0x100000725 creating interfaces</span><span class="w"></span>
-<span class="na">[   48.856351]: VoodooI2CHIDDevice:0x100000725 Matching has vendor DeviceUsagePage : ff0c bundleIdentifier com.apple.AppleUserHIDDrivers ioclass AppleUserHIDEventService but transport and vendorID is missing</span><span class="w"></span>
-<span class="na">[   48.860549]: VoodooI2CPrecisionTouchpadHIDEventDriver:0x10000072a start</span><span class="w"></span>
-<span class="na">[   48.866671]: open by VoodooI2CPrecisionTouchpadHIDEventDriver 0x10000072a (0x0)</span><span class="w"></span>
+<span class="c1"># GDX1515 无法获取中断事件源，改用轮询模式</span>
+<span class="na">[   48.519539]</span><span class="o">:</span><span class="w"> </span><span class="s">VoodooI2CHIDDevice::GDX1515 Warning: Could not get interrupt event source, using polling instead</span>
+<span class="na">[   48.722472]</span><span class="o">:</span><span class="w"> </span><span class="s">VoodooI2CHIDDevice::GDX1515 Device initiated reset accomplished</span>
+<span class="na">[   48.854707]</span><span class="o">:</span><span class="w"> </span><span class="s">VoodooI2CHIDDevice:0x100000725 creating interfaces</span>
+<span class="na">[   48.856351]</span><span class="o">:</span><span class="w"> </span><span class="s">VoodooI2CHIDDevice:0x100000725 Matching has vendor DeviceUsagePage : ff0c bundleIdentifier com.apple.AppleUserHIDDrivers ioclass AppleUserHIDEventService but transport and vendorID is missing</span>
+<span class="na">[   48.860549]</span><span class="o">:</span><span class="w"> </span><span class="s">VoodooI2CPrecisionTouchpadHIDEventDriver:0x10000072a start</span>
+<span class="na">[   48.866671]</span><span class="o">:</span><span class="w"> </span><span class="s">open by VoodooI2CPrecisionTouchpadHIDEventDriver 0x10000072a (0x0)</span>
 
-<span class="c1"># GDX1515 进入  Precision Touchpad Mode (PTP)模式，即高精度触控板模式</span><span class="w"></span>
-<span class="na">[   48.866716]: VoodooI2CPrecisionTouchpadHIDEventDriver::GDX1515 Putting device into Precision Touchpad Mode</span><span class="w"></span>
+<span class="c1"># GDX1515 进入  Precision Touchpad Mode (PTP)模式，即高精度触控板模式</span>
+<span class="na">[   48.866716]</span><span class="o">:</span><span class="w"> </span><span class="s">VoodooI2CPrecisionTouchpadHIDEventDriver::GDX1515 Putting device into Precision Touchpad Mode</span>
 </code></pre></div>
 <ul>
 <li><strong>定制了 DSDT，但 GPIO 不正确的日志</strong></li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="na">[   37.835221]: VoodooI2CControllerDriver::pci8086,2e9 Found I2C device: GDX1515</span><span class="w"></span>
-<span class="na">[   37.835266]: VoodooI2CDeviceNub::ETPD Found valid resources from _CRS method</span><span class="w"></span>
-<span class="na">[   37.835298]: VoodooI2CDeviceNub::ETPD Returned index 0x0 from _DSM or XDSM method is not supported</span><span class="w"></span>
-<span class="na">[   37.835306]: VoodooI2CDeviceNub::ETPD Could not retrieve resources from _DSM or XDSM method</span><span class="w"></span>
-<span class="na">[   37.835309]: KextLog: AuxKC bundle com.alexandred.VoodooI2CServices marked as loadable</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="na">[   37.835221]</span><span class="o">:</span><span class="w"> </span><span class="s">VoodooI2CControllerDriver::pci8086,2e9 Found I2C device: GDX1515</span>
+<span class="na">[   37.835266]</span><span class="o">:</span><span class="w"> </span><span class="s">VoodooI2CDeviceNub::ETPD Found valid resources from _CRS method</span>
+<span class="na">[   37.835298]</span><span class="o">:</span><span class="w"> </span><span class="s">VoodooI2CDeviceNub::ETPD Returned index 0x0 from _DSM or XDSM method is not supported</span>
+<span class="na">[   37.835306]</span><span class="o">:</span><span class="w"> </span><span class="s">VoodooI2CDeviceNub::ETPD Could not retrieve resources from _DSM or XDSM method</span>
+<span class="na">[   37.835309]</span><span class="o">:</span><span class="w"> </span><span class="s">KextLog: AuxKC bundle com.alexandred.VoodooI2CServices marked as loadable</span>
 
-<span class="c1"># ETPD 发现了有效的 GPIO 中断</span><span class="w"></span>
-<span class="na">[   37.835312]: VoodooI2CDeviceNub::ETPD Found valid GPIO interrupts</span><span class="w"></span>
-<span class="na">[   37.835408]: VoodooI2CDeviceNub::ETPD Got GPIO Controller! VoodooGPIOCannonLakeLP</span><span class="w"></span>
-<span class="na">[   38.337232]: VoodooI2CHIDDevice:0x100000761 start</span><span class="w"></span>
+<span class="c1"># ETPD 发现了有效的 GPIO 中断</span>
+<span class="na">[   37.835312]</span><span class="o">:</span><span class="w"> </span><span class="s">VoodooI2CDeviceNub::ETPD Found valid GPIO interrupts</span>
+<span class="na">[   37.835408]</span><span class="o">:</span><span class="w"> </span><span class="s">VoodooI2CDeviceNub::ETPD Got GPIO Controller! VoodooGPIOCannonLakeLP</span>
+<span class="na">[   38.337232]</span><span class="o">:</span><span class="w"> </span><span class="s">VoodooI2CHIDDevice:0x100000761 start</span>
 
-<span class="c1"># 无法获取 GPIO 引脚的硬件引脚 81（错误的 GPIO Pin 的10进制），无法获取中断事件源，改用轮询</span><span class="w"></span>
-<span class="na">[   38.337263]: VoodooGPIOCannonLakeLP::Failed getting hardware pin for GPIO pin 81VoodooI2CHIDDevice::GDX1515 Warning: Could not get interrupt event source, using polling instead</span><span class="w"></span>
-<span class="na">[   38.539715]: VoodooI2CHIDDevice::GDX1515 Device initiated reset accomplished</span><span class="w"></span>
-<span class="na">[   38.670485]: VoodooI2CHIDDevice:0x100000761 creating interfaces</span><span class="w"></span>
-<span class="na">[   38.672136]: VoodooI2CHIDDevice:0x100000761 Matching has vendor DeviceUsagePage : ff0c bundleIdentifier com.apple.AppleUserHIDDrivers ioclass AppleUserHIDEventService but transport and vendorID is missing</span><span class="w"></span>
-<span class="na">[   38.676469]: VoodooI2CPrecisionTouchpadHIDEventDriver:0x100000766 start</span><span class="w"></span>
-<span class="na">[   38.682612]: open by VoodooI2CPrecisionTouchpadHIDEventDriver 0x100000766 (0x0)</span><span class="w"></span>
+<span class="c1"># 无法获取 GPIO 引脚的硬件引脚 81（错误的 GPIO Pin 的10进制），无法获取中断事件源，改用轮询</span>
+<span class="na">[   38.337263]</span><span class="o">:</span><span class="w"> </span><span class="s">VoodooGPIOCannonLakeLP::Failed getting hardware pin for GPIO pin 81VoodooI2CHIDDevice::GDX1515 Warning: Could not get interrupt event source, using polling instead</span>
+<span class="na">[   38.539715]</span><span class="o">:</span><span class="w"> </span><span class="s">VoodooI2CHIDDevice::GDX1515 Device initiated reset accomplished</span>
+<span class="na">[   38.670485]</span><span class="o">:</span><span class="w"> </span><span class="s">VoodooI2CHIDDevice:0x100000761 creating interfaces</span>
+<span class="na">[   38.672136]</span><span class="o">:</span><span class="w"> </span><span class="s">VoodooI2CHIDDevice:0x100000761 Matching has vendor DeviceUsagePage : ff0c bundleIdentifier com.apple.AppleUserHIDDrivers ioclass AppleUserHIDEventService but transport and vendorID is missing</span>
+<span class="na">[   38.676469]</span><span class="o">:</span><span class="w"> </span><span class="s">VoodooI2CPrecisionTouchpadHIDEventDriver:0x100000766 start</span>
+<span class="na">[   38.682612]</span><span class="o">:</span><span class="w"> </span><span class="s">open by VoodooI2CPrecisionTouchpadHIDEventDriver 0x100000766 (0x0)</span>
 
-<span class="c1"># GDX1515 进入  Precision Touchpad Mode (PTP)模式，即高精度触控板模式</span><span class="w"></span>
-<span class="na">[   38.682668]: VoodooI2CPrecisionTouchpadHIDEventDriver::GDX1515 Putting device into Precision Touchpad Mode</span><span class="w"></span>
+<span class="c1"># GDX1515 进入  Precision Touchpad Mode (PTP)模式，即高精度触控板模式</span>
+<span class="na">[   38.682668]</span><span class="o">:</span><span class="w"> </span><span class="s">VoodooI2CPrecisionTouchpadHIDEventDriver::GDX1515 Putting device into Precision Touchpad Mode</span>
 </code></pre></div>
 <h2 id="_8">炫耀一下<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
 <p>双屏笔记本真的很帅，等我最近做一期视频记录一下，到时候也又可以去 B 站水了：</p>

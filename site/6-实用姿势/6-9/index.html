@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://apple.sqlsec.com/6-%E5%AE%9E%E7%94%A8%E5%A7%BF%E5%8A%BF/6-9/">
       
       <link rel="icon" href="https://image.3001.net/images/20200922/16007336487809.jpg">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.1">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-8.5.1">
     
     
       
@@ -1664,6 +1664,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../9-%E6%88%90%E6%9E%9C%E5%88%86%E4%BA%AB/9-2/" class="md-nav__link">
+        13代装机方案
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -2087,226 +2101,226 @@
 <p><img alt="" src="https://image.3001.net/images/20220505/16517184489757.jpg" /> </p>
 <p>详细的注入参数可以参考下面的细节。</p>
 <h3 id="radeon-5300">Radeon 5300<a class="headerlink" href="#radeon-5300" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code> <span class="nt">&lt;key&gt;</span>DeviceProperties<span class="nt">&lt;/key&gt;</span>
-    <span class="nt">&lt;dict&gt;</span>
-        <span class="nt">&lt;key&gt;</span>Add<span class="nt">&lt;/key&gt;</span>
-        <span class="nt">&lt;dict&gt;</span>
-            <span class="nt">&lt;key&gt;</span>这里写你显卡的实际的设备路径(Hackintool PCIE里面可以看到)<span class="nt">&lt;/key&gt;</span>
-            <span class="nt">&lt;dict&gt;</span>
-                <span class="nt">&lt;key&gt;</span>@0,name<span class="nt">&lt;/key&gt;</span>
-                <span class="nt">&lt;string&gt;</span>ATY,Keelback<span class="nt">&lt;/string&gt;</span>
-                <span class="nt">&lt;key&gt;</span>@1,name<span class="nt">&lt;/key&gt;</span>
-                <span class="nt">&lt;string&gt;</span>ATY,Keelback<span class="nt">&lt;/string&gt;</span>
-                <span class="nt">&lt;key&gt;</span>@2,name<span class="nt">&lt;/key&gt;</span>
-                <span class="nt">&lt;string&gt;</span>ATY,Keelback<span class="nt">&lt;/string&gt;</span>
-                <span class="nt">&lt;key&gt;</span>@3,name<span class="nt">&lt;/key&gt;</span>
-                <span class="nt">&lt;string&gt;</span>ATY,Keelback<span class="nt">&lt;/string&gt;</span>
-                <span class="nt">&lt;key&gt;</span>ATY,EFIVersion<span class="nt">&lt;/key&gt;</span>
-                <span class="nt">&lt;string&gt;</span>01.01.190<span class="nt">&lt;/string&gt;</span>
-                <span class="nt">&lt;key&gt;</span>device_type<span class="nt">&lt;/key&gt;</span>
-                <span class="nt">&lt;string&gt;</span>ATY,KeelbackParent<span class="nt">&lt;/string&gt;</span>
-            <span class="nt">&lt;/dict&gt;</span>
-        <span class="nt">&lt;/dict&gt;</span>
-    <span class="nt">&lt;/dict&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="w"> </span><span class="nt">&lt;key&gt;</span>DeviceProperties<span class="nt">&lt;/key&gt;</span>
+<span class="w">    </span><span class="nt">&lt;dict&gt;</span>
+<span class="w">        </span><span class="nt">&lt;key&gt;</span>Add<span class="nt">&lt;/key&gt;</span>
+<span class="w">        </span><span class="nt">&lt;dict&gt;</span>
+<span class="w">            </span><span class="nt">&lt;key&gt;</span>这里写你显卡的实际的设备路径(Hackintool<span class="w"> </span>PCIE里面可以看到)<span class="nt">&lt;/key&gt;</span>
+<span class="w">            </span><span class="nt">&lt;dict&gt;</span>
+<span class="w">                </span><span class="nt">&lt;key&gt;</span>@0,name<span class="nt">&lt;/key&gt;</span>
+<span class="w">                </span><span class="nt">&lt;string&gt;</span>ATY,Keelback<span class="nt">&lt;/string&gt;</span>
+<span class="w">                </span><span class="nt">&lt;key&gt;</span>@1,name<span class="nt">&lt;/key&gt;</span>
+<span class="w">                </span><span class="nt">&lt;string&gt;</span>ATY,Keelback<span class="nt">&lt;/string&gt;</span>
+<span class="w">                </span><span class="nt">&lt;key&gt;</span>@2,name<span class="nt">&lt;/key&gt;</span>
+<span class="w">                </span><span class="nt">&lt;string&gt;</span>ATY,Keelback<span class="nt">&lt;/string&gt;</span>
+<span class="w">                </span><span class="nt">&lt;key&gt;</span>@3,name<span class="nt">&lt;/key&gt;</span>
+<span class="w">                </span><span class="nt">&lt;string&gt;</span>ATY,Keelback<span class="nt">&lt;/string&gt;</span>
+<span class="w">                </span><span class="nt">&lt;key&gt;</span>ATY,EFIVersion<span class="nt">&lt;/key&gt;</span>
+<span class="w">                </span><span class="nt">&lt;string&gt;</span>01.01.190<span class="nt">&lt;/string&gt;</span>
+<span class="w">                </span><span class="nt">&lt;key&gt;</span>device_type<span class="nt">&lt;/key&gt;</span>
+<span class="w">                </span><span class="nt">&lt;string&gt;</span>ATY,KeelbackParent<span class="nt">&lt;/string&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/dict&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/dict&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/dict&gt;</span>
 </code></pre></div>
 <h3 id="radeon-5500">Radeon 5500<a class="headerlink" href="#radeon-5500" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code> <span class="nt">&lt;key&gt;</span>DeviceProperties<span class="nt">&lt;/key&gt;</span>
-    <span class="nt">&lt;dict&gt;</span>
-        <span class="nt">&lt;key&gt;</span>Add<span class="nt">&lt;/key&gt;</span>
-        <span class="nt">&lt;dict&gt;</span>
-            <span class="nt">&lt;key&gt;</span>这里写你显卡的实际的设备路径(Hackintool PCIE里面可以看到)<span class="nt">&lt;/key&gt;</span>
-            <span class="nt">&lt;dict&gt;</span>
-                <span class="nt">&lt;key&gt;</span>@0,name<span class="nt">&lt;/key&gt;</span>
-                <span class="nt">&lt;string&gt;</span>ATY,Python<span class="nt">&lt;/string&gt;</span>
-                <span class="nt">&lt;key&gt;</span>@1,name<span class="nt">&lt;/key&gt;</span>
-                <span class="nt">&lt;string&gt;</span>ATY,Python<span class="nt">&lt;/string&gt;</span>
-                <span class="nt">&lt;key&gt;</span>@2,name<span class="nt">&lt;/key&gt;</span>
-                <span class="nt">&lt;string&gt;</span>ATY,Python<span class="nt">&lt;/string&gt;</span>
-                <span class="nt">&lt;key&gt;</span>@3,name<span class="nt">&lt;/key&gt;</span>
-                <span class="nt">&lt;string&gt;</span>ATY,Python<span class="nt">&lt;/string&gt;</span>
-                <span class="nt">&lt;key&gt;</span>ATY,EFIVersion<span class="nt">&lt;/key&gt;</span>
-                <span class="nt">&lt;string&gt;</span>01.01.231<span class="nt">&lt;/string&gt;</span>
-                <span class="nt">&lt;key&gt;</span>device_type<span class="nt">&lt;/key&gt;</span>
-                <span class="nt">&lt;string&gt;</span>ATY,PythonParent<span class="nt">&lt;/string&gt;</span>
-            <span class="nt">&lt;/dict&gt;</span>
-        <span class="nt">&lt;/dict&gt;</span>
-    <span class="nt">&lt;/dict&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="w"> </span><span class="nt">&lt;key&gt;</span>DeviceProperties<span class="nt">&lt;/key&gt;</span>
+<span class="w">    </span><span class="nt">&lt;dict&gt;</span>
+<span class="w">        </span><span class="nt">&lt;key&gt;</span>Add<span class="nt">&lt;/key&gt;</span>
+<span class="w">        </span><span class="nt">&lt;dict&gt;</span>
+<span class="w">            </span><span class="nt">&lt;key&gt;</span>这里写你显卡的实际的设备路径(Hackintool<span class="w"> </span>PCIE里面可以看到)<span class="nt">&lt;/key&gt;</span>
+<span class="w">            </span><span class="nt">&lt;dict&gt;</span>
+<span class="w">                </span><span class="nt">&lt;key&gt;</span>@0,name<span class="nt">&lt;/key&gt;</span>
+<span class="w">                </span><span class="nt">&lt;string&gt;</span>ATY,Python<span class="nt">&lt;/string&gt;</span>
+<span class="w">                </span><span class="nt">&lt;key&gt;</span>@1,name<span class="nt">&lt;/key&gt;</span>
+<span class="w">                </span><span class="nt">&lt;string&gt;</span>ATY,Python<span class="nt">&lt;/string&gt;</span>
+<span class="w">                </span><span class="nt">&lt;key&gt;</span>@2,name<span class="nt">&lt;/key&gt;</span>
+<span class="w">                </span><span class="nt">&lt;string&gt;</span>ATY,Python<span class="nt">&lt;/string&gt;</span>
+<span class="w">                </span><span class="nt">&lt;key&gt;</span>@3,name<span class="nt">&lt;/key&gt;</span>
+<span class="w">                </span><span class="nt">&lt;string&gt;</span>ATY,Python<span class="nt">&lt;/string&gt;</span>
+<span class="w">                </span><span class="nt">&lt;key&gt;</span>ATY,EFIVersion<span class="nt">&lt;/key&gt;</span>
+<span class="w">                </span><span class="nt">&lt;string&gt;</span>01.01.231<span class="nt">&lt;/string&gt;</span>
+<span class="w">                </span><span class="nt">&lt;key&gt;</span>device_type<span class="nt">&lt;/key&gt;</span>
+<span class="w">                </span><span class="nt">&lt;string&gt;</span>ATY,PythonParent<span class="nt">&lt;/string&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/dict&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/dict&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/dict&gt;</span>
 </code></pre></div>
 <h3 id="radeon-5700">Radeon 5700<a class="headerlink" href="#radeon-5700" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="nt">&lt;key&gt;</span>DeviceProperties<span class="nt">&lt;/key&gt;</span>
-    <span class="nt">&lt;dict&gt;</span>
-        <span class="nt">&lt;key&gt;</span>Add<span class="nt">&lt;/key&gt;</span>
-        <span class="nt">&lt;dict&gt;</span>
-            <span class="nt">&lt;key&gt;</span>这里写你显卡的实际的设备路径(Hackintool PCIE里面可以看到)<span class="nt">&lt;/key&gt;</span>
-            <span class="nt">&lt;dict&gt;</span>
-                <span class="nt">&lt;key&gt;</span>@0,name<span class="nt">&lt;/key&gt;</span>
-                <span class="nt">&lt;string&gt;</span>ATY,Adder<span class="nt">&lt;/string&gt;</span>
-                <span class="nt">&lt;key&gt;</span>@1,name<span class="nt">&lt;/key&gt;</span>
-                <span class="nt">&lt;string&gt;</span>ATY,Adder<span class="nt">&lt;/string&gt;</span>
-                <span class="nt">&lt;key&gt;</span>@2,name<span class="nt">&lt;/key&gt;</span>
-                <span class="nt">&lt;string&gt;</span>ATY,Adder<span class="nt">&lt;/string&gt;</span>
-                <span class="nt">&lt;key&gt;</span>@3,name<span class="nt">&lt;/key&gt;</span>
-                <span class="nt">&lt;string&gt;</span>ATY,Adder<span class="nt">&lt;/string&gt;</span>
-                <span class="nt">&lt;key&gt;</span>AAPL00,DualLink<span class="nt">&lt;/key&gt;</span>
-                <span class="nt">&lt;data&gt;</span>
-                AQAAAA==
-                <span class="nt">&lt;/data&gt;</span>
-                <span class="nt">&lt;key&gt;</span>ATY,Card#<span class="nt">&lt;/key&gt;</span>
-                <span class="nt">&lt;string&gt;</span>102-D32200-00<span class="nt">&lt;/string&gt;</span>
-                <span class="nt">&lt;key&gt;</span>ATY,Copyright<span class="nt">&lt;/key&gt;</span>
-                <span class="nt">&lt;string&gt;</span>Copyright AMD Inc. All Rights Reserved. 2005-2019<span class="nt">&lt;/string&gt;</span>
-                <span class="nt">&lt;key&gt;</span>ATY,DeviceName<span class="nt">&lt;/key&gt;</span>
-                <span class="nt">&lt;string&gt;</span>W5700X<span class="nt">&lt;/string&gt;</span>
-                <span class="nt">&lt;key&gt;</span>ATY,EFIVersion<span class="nt">&lt;/key&gt;</span>
-                <span class="nt">&lt;string&gt;</span>01.01.190<span class="nt">&lt;/string&gt;</span>
-                <span class="nt">&lt;key&gt;</span>ATY,FamilyName<span class="nt">&lt;/key&gt;</span>
-                <span class="nt">&lt;string&gt;</span>Radeon Pro<span class="nt">&lt;/string&gt;</span>
-                <span class="nt">&lt;key&gt;</span>ATY,Rom#<span class="nt">&lt;/key&gt;</span>
-                <span class="nt">&lt;string&gt;</span>113-D3220E-190<span class="nt">&lt;/string&gt;</span>
-                <span class="nt">&lt;key&gt;</span>CAIL_EnableLBPWSupport<span class="nt">&lt;/key&gt;</span>
-                <span class="nt">&lt;integer&gt;</span>0<span class="nt">&lt;/integer&gt;</span>
-                <span class="nt">&lt;key&gt;</span>CAIL_EnableMaxPlayloadSizeSync<span class="nt">&lt;/key&gt;</span>
-                <span class="nt">&lt;integer&gt;</span>1<span class="nt">&lt;/integer&gt;</span>
-                <span class="nt">&lt;key&gt;</span>CFG_CAA<span class="nt">&lt;/key&gt;</span>
-                <span class="nt">&lt;integer&gt;</span>0<span class="nt">&lt;/integer&gt;</span>
-                <span class="nt">&lt;key&gt;</span>CFG_FB_LIMIT<span class="nt">&lt;/key&gt;</span>
-                <span class="nt">&lt;integer&gt;</span>0<span class="nt">&lt;/integer&gt;</span>
-                <span class="nt">&lt;key&gt;</span>CFG_FORCE_MAX_DPS<span class="nt">&lt;/key&gt;</span>
-                <span class="nt">&lt;integer&gt;</span>1<span class="nt">&lt;/integer&gt;</span>
-                <span class="nt">&lt;key&gt;</span>CFG_GEN_FLAGS<span class="nt">&lt;/key&gt;</span>
-                <span class="nt">&lt;integer&gt;</span>0<span class="nt">&lt;/integer&gt;</span>
-                <span class="nt">&lt;key&gt;</span>CFG_NO_MST<span class="nt">&lt;/key&gt;</span>
-                <span class="nt">&lt;integer&gt;</span>0<span class="nt">&lt;/integer&gt;</span>
-                <span class="nt">&lt;key&gt;</span>CFG_NVV<span class="nt">&lt;/key&gt;</span>
-                <span class="nt">&lt;integer&gt;</span>2<span class="nt">&lt;/integer&gt;</span>
-                <span class="nt">&lt;key&gt;</span>CFG_PAA<span class="nt">&lt;/key&gt;</span>
-                <span class="nt">&lt;integer&gt;</span>0<span class="nt">&lt;/integer&gt;</span>
-                <span class="nt">&lt;key&gt;</span>CFG_PULSE_INT<span class="nt">&lt;/key&gt;</span>
-                <span class="nt">&lt;integer&gt;</span>1<span class="nt">&lt;/integer&gt;</span>
-                <span class="nt">&lt;key&gt;</span>CFG_TPS1S<span class="nt">&lt;/key&gt;</span>
-                <span class="nt">&lt;integer&gt;</span>1<span class="nt">&lt;/integer&gt;</span>
-                <span class="nt">&lt;key&gt;</span>CFG_TRANS_WSRV<span class="nt">&lt;/key&gt;</span>
-                <span class="nt">&lt;integer&gt;</span>1<span class="nt">&lt;/integer&gt;</span>
-                <span class="nt">&lt;key&gt;</span>CFG_UFL_CHK<span class="nt">&lt;/key&gt;</span>
-                <span class="nt">&lt;integer&gt;</span>0<span class="nt">&lt;/integer&gt;</span>
-                <span class="nt">&lt;key&gt;</span>CFG_UFL_STP<span class="nt">&lt;/key&gt;</span>
-                <span class="nt">&lt;integer&gt;</span>0<span class="nt">&lt;/integer&gt;</span>
-                <span class="nt">&lt;key&gt;</span>CFG_USE_AGDC<span class="nt">&lt;/key&gt;</span>
-                <span class="nt">&lt;integer&gt;</span>1<span class="nt">&lt;/integer&gt;</span>
-                <span class="nt">&lt;key&gt;</span>CFG_USE_CP2<span class="nt">&lt;/key&gt;</span>
-                <span class="nt">&lt;integer&gt;</span>1<span class="nt">&lt;/integer&gt;</span>
-                <span class="nt">&lt;key&gt;</span>CFG_USE_CPSTATUS<span class="nt">&lt;/key&gt;</span>
-                <span class="nt">&lt;integer&gt;</span>1<span class="nt">&lt;/integer&gt;</span>
-                <span class="nt">&lt;key&gt;</span>CFG_USE_DPT<span class="nt">&lt;/key&gt;</span>
-                <span class="nt">&lt;integer&gt;</span>1<span class="nt">&lt;/integer&gt;</span>
-                <span class="nt">&lt;key&gt;</span>CFG_USE_FBC<span class="nt">&lt;/key&gt;</span>
-                <span class="nt">&lt;integer&gt;</span>0<span class="nt">&lt;/integer&gt;</span>
-                <span class="nt">&lt;key&gt;</span>CFG_USE_FBWRKLP<span class="nt">&lt;/key&gt;</span>
-                <span class="nt">&lt;integer&gt;</span>1<span class="nt">&lt;/integer&gt;</span>
-                <span class="nt">&lt;key&gt;</span>CFG_USE_FEDS<span class="nt">&lt;/key&gt;</span>
-                <span class="nt">&lt;integer&gt;</span>1<span class="nt">&lt;/integer&gt;</span>
-                <span class="nt">&lt;key&gt;</span>CFG_USE_LPT<span class="nt">&lt;/key&gt;</span>
-                <span class="nt">&lt;integer&gt;</span>1<span class="nt">&lt;/integer&gt;</span>
-                <span class="nt">&lt;key&gt;</span>CFG_USE_PSR<span class="nt">&lt;/key&gt;</span>
-                <span class="nt">&lt;integer&gt;</span>0<span class="nt">&lt;/integer&gt;</span>
-                <span class="nt">&lt;key&gt;</span>CFG_USE_SCANOUT<span class="nt">&lt;/key&gt;</span>
-                <span class="nt">&lt;integer&gt;</span>1<span class="nt">&lt;/integer&gt;</span>
-                <span class="nt">&lt;key&gt;</span>CFG_USE_SRRB<span class="nt">&lt;/key&gt;</span>
-                <span class="nt">&lt;integer&gt;</span>0<span class="nt">&lt;/integer&gt;</span>
-                <span class="nt">&lt;key&gt;</span>CFG_USE_STUTTER<span class="nt">&lt;/key&gt;</span>
-                <span class="nt">&lt;integer&gt;</span>1<span class="nt">&lt;/integer&gt;</span>
-                <span class="nt">&lt;key&gt;</span>CFG_USE_TCON<span class="nt">&lt;/key&gt;</span>
-                <span class="nt">&lt;integer&gt;</span>1<span class="nt">&lt;/integer&gt;</span>
-                <span class="nt">&lt;key&gt;</span>PP_DisableDIDT<span class="nt">&lt;/key&gt;</span>
-                <span class="nt">&lt;integer&gt;</span>1<span class="nt">&lt;/integer&gt;</span>
-                <span class="nt">&lt;key&gt;</span>PP_DisablePowerContainment<span class="nt">&lt;/key&gt;</span>
-                <span class="nt">&lt;integer&gt;</span>1<span class="nt">&lt;/integer&gt;</span>
-                <span class="nt">&lt;key&gt;</span>PP_DisableVoltageIsland<span class="nt">&lt;/key&gt;</span>
-                <span class="nt">&lt;integer&gt;</span>0<span class="nt">&lt;/integer&gt;</span>
-                <span class="nt">&lt;key&gt;</span>PP_FuzzyFanControl<span class="nt">&lt;/key&gt;</span>
-                <span class="nt">&lt;integer&gt;</span>1<span class="nt">&lt;/integer&gt;</span>
-                <span class="nt">&lt;key&gt;</span>device_type<span class="nt">&lt;/key&gt;</span>
-                <span class="nt">&lt;string&gt;</span>ATY,AdderParent<span class="nt">&lt;/string&gt;</span>
-                <span class="nt">&lt;key&gt;</span>hda-gfx<span class="nt">&lt;/key&gt;</span>
-                <span class="nt">&lt;string&gt;</span>onboard-1<span class="nt">&lt;/string&gt;</span>
-                <span class="nt">&lt;key&gt;</span>model<span class="nt">&lt;/key&gt;</span>
-                <span class="nt">&lt;string&gt;</span>Radeon Pro W5700X<span class="nt">&lt;/string&gt;</span>
-                <span class="nt">&lt;key&gt;</span>name<span class="nt">&lt;/key&gt;</span>
-                <span class="nt">&lt;string&gt;</span>ATY_GPU<span class="nt">&lt;/string&gt;</span>
-            <span class="nt">&lt;/dict&gt;</span>
-        <span class="nt">&lt;/dict&gt;</span>
-    <span class="nt">&lt;/dict&gt;</span>
+<span class="w">    </span><span class="nt">&lt;dict&gt;</span>
+<span class="w">        </span><span class="nt">&lt;key&gt;</span>Add<span class="nt">&lt;/key&gt;</span>
+<span class="w">        </span><span class="nt">&lt;dict&gt;</span>
+<span class="w">            </span><span class="nt">&lt;key&gt;</span>这里写你显卡的实际的设备路径(Hackintool<span class="w"> </span>PCIE里面可以看到)<span class="nt">&lt;/key&gt;</span>
+<span class="w">            </span><span class="nt">&lt;dict&gt;</span>
+<span class="w">                </span><span class="nt">&lt;key&gt;</span>@0,name<span class="nt">&lt;/key&gt;</span>
+<span class="w">                </span><span class="nt">&lt;string&gt;</span>ATY,Adder<span class="nt">&lt;/string&gt;</span>
+<span class="w">                </span><span class="nt">&lt;key&gt;</span>@1,name<span class="nt">&lt;/key&gt;</span>
+<span class="w">                </span><span class="nt">&lt;string&gt;</span>ATY,Adder<span class="nt">&lt;/string&gt;</span>
+<span class="w">                </span><span class="nt">&lt;key&gt;</span>@2,name<span class="nt">&lt;/key&gt;</span>
+<span class="w">                </span><span class="nt">&lt;string&gt;</span>ATY,Adder<span class="nt">&lt;/string&gt;</span>
+<span class="w">                </span><span class="nt">&lt;key&gt;</span>@3,name<span class="nt">&lt;/key&gt;</span>
+<span class="w">                </span><span class="nt">&lt;string&gt;</span>ATY,Adder<span class="nt">&lt;/string&gt;</span>
+<span class="w">                </span><span class="nt">&lt;key&gt;</span>AAPL00,DualLink<span class="nt">&lt;/key&gt;</span>
+<span class="w">                </span><span class="nt">&lt;data&gt;</span>
+<span class="w">                </span>AQAAAA==
+<span class="w">                </span><span class="nt">&lt;/data&gt;</span>
+<span class="w">                </span><span class="nt">&lt;key&gt;</span>ATY,Card#<span class="nt">&lt;/key&gt;</span>
+<span class="w">                </span><span class="nt">&lt;string&gt;</span>102-D32200-00<span class="nt">&lt;/string&gt;</span>
+<span class="w">                </span><span class="nt">&lt;key&gt;</span>ATY,Copyright<span class="nt">&lt;/key&gt;</span>
+<span class="w">                </span><span class="nt">&lt;string&gt;</span>Copyright<span class="w"> </span>AMD<span class="w"> </span>Inc.<span class="w"> </span>All<span class="w"> </span>Rights<span class="w"> </span>Reserved.<span class="w"> </span>2005-2019<span class="nt">&lt;/string&gt;</span>
+<span class="w">                </span><span class="nt">&lt;key&gt;</span>ATY,DeviceName<span class="nt">&lt;/key&gt;</span>
+<span class="w">                </span><span class="nt">&lt;string&gt;</span>W5700X<span class="nt">&lt;/string&gt;</span>
+<span class="w">                </span><span class="nt">&lt;key&gt;</span>ATY,EFIVersion<span class="nt">&lt;/key&gt;</span>
+<span class="w">                </span><span class="nt">&lt;string&gt;</span>01.01.190<span class="nt">&lt;/string&gt;</span>
+<span class="w">                </span><span class="nt">&lt;key&gt;</span>ATY,FamilyName<span class="nt">&lt;/key&gt;</span>
+<span class="w">                </span><span class="nt">&lt;string&gt;</span>Radeon<span class="w"> </span>Pro<span class="nt">&lt;/string&gt;</span>
+<span class="w">                </span><span class="nt">&lt;key&gt;</span>ATY,Rom#<span class="nt">&lt;/key&gt;</span>
+<span class="w">                </span><span class="nt">&lt;string&gt;</span>113-D3220E-190<span class="nt">&lt;/string&gt;</span>
+<span class="w">                </span><span class="nt">&lt;key&gt;</span>CAIL_EnableLBPWSupport<span class="nt">&lt;/key&gt;</span>
+<span class="w">                </span><span class="nt">&lt;integer&gt;</span>0<span class="nt">&lt;/integer&gt;</span>
+<span class="w">                </span><span class="nt">&lt;key&gt;</span>CAIL_EnableMaxPlayloadSizeSync<span class="nt">&lt;/key&gt;</span>
+<span class="w">                </span><span class="nt">&lt;integer&gt;</span>1<span class="nt">&lt;/integer&gt;</span>
+<span class="w">                </span><span class="nt">&lt;key&gt;</span>CFG_CAA<span class="nt">&lt;/key&gt;</span>
+<span class="w">                </span><span class="nt">&lt;integer&gt;</span>0<span class="nt">&lt;/integer&gt;</span>
+<span class="w">                </span><span class="nt">&lt;key&gt;</span>CFG_FB_LIMIT<span class="nt">&lt;/key&gt;</span>
+<span class="w">                </span><span class="nt">&lt;integer&gt;</span>0<span class="nt">&lt;/integer&gt;</span>
+<span class="w">                </span><span class="nt">&lt;key&gt;</span>CFG_FORCE_MAX_DPS<span class="nt">&lt;/key&gt;</span>
+<span class="w">                </span><span class="nt">&lt;integer&gt;</span>1<span class="nt">&lt;/integer&gt;</span>
+<span class="w">                </span><span class="nt">&lt;key&gt;</span>CFG_GEN_FLAGS<span class="nt">&lt;/key&gt;</span>
+<span class="w">                </span><span class="nt">&lt;integer&gt;</span>0<span class="nt">&lt;/integer&gt;</span>
+<span class="w">                </span><span class="nt">&lt;key&gt;</span>CFG_NO_MST<span class="nt">&lt;/key&gt;</span>
+<span class="w">                </span><span class="nt">&lt;integer&gt;</span>0<span class="nt">&lt;/integer&gt;</span>
+<span class="w">                </span><span class="nt">&lt;key&gt;</span>CFG_NVV<span class="nt">&lt;/key&gt;</span>
+<span class="w">                </span><span class="nt">&lt;integer&gt;</span>2<span class="nt">&lt;/integer&gt;</span>
+<span class="w">                </span><span class="nt">&lt;key&gt;</span>CFG_PAA<span class="nt">&lt;/key&gt;</span>
+<span class="w">                </span><span class="nt">&lt;integer&gt;</span>0<span class="nt">&lt;/integer&gt;</span>
+<span class="w">                </span><span class="nt">&lt;key&gt;</span>CFG_PULSE_INT<span class="nt">&lt;/key&gt;</span>
+<span class="w">                </span><span class="nt">&lt;integer&gt;</span>1<span class="nt">&lt;/integer&gt;</span>
+<span class="w">                </span><span class="nt">&lt;key&gt;</span>CFG_TPS1S<span class="nt">&lt;/key&gt;</span>
+<span class="w">                </span><span class="nt">&lt;integer&gt;</span>1<span class="nt">&lt;/integer&gt;</span>
+<span class="w">                </span><span class="nt">&lt;key&gt;</span>CFG_TRANS_WSRV<span class="nt">&lt;/key&gt;</span>
+<span class="w">                </span><span class="nt">&lt;integer&gt;</span>1<span class="nt">&lt;/integer&gt;</span>
+<span class="w">                </span><span class="nt">&lt;key&gt;</span>CFG_UFL_CHK<span class="nt">&lt;/key&gt;</span>
+<span class="w">                </span><span class="nt">&lt;integer&gt;</span>0<span class="nt">&lt;/integer&gt;</span>
+<span class="w">                </span><span class="nt">&lt;key&gt;</span>CFG_UFL_STP<span class="nt">&lt;/key&gt;</span>
+<span class="w">                </span><span class="nt">&lt;integer&gt;</span>0<span class="nt">&lt;/integer&gt;</span>
+<span class="w">                </span><span class="nt">&lt;key&gt;</span>CFG_USE_AGDC<span class="nt">&lt;/key&gt;</span>
+<span class="w">                </span><span class="nt">&lt;integer&gt;</span>1<span class="nt">&lt;/integer&gt;</span>
+<span class="w">                </span><span class="nt">&lt;key&gt;</span>CFG_USE_CP2<span class="nt">&lt;/key&gt;</span>
+<span class="w">                </span><span class="nt">&lt;integer&gt;</span>1<span class="nt">&lt;/integer&gt;</span>
+<span class="w">                </span><span class="nt">&lt;key&gt;</span>CFG_USE_CPSTATUS<span class="nt">&lt;/key&gt;</span>
+<span class="w">                </span><span class="nt">&lt;integer&gt;</span>1<span class="nt">&lt;/integer&gt;</span>
+<span class="w">                </span><span class="nt">&lt;key&gt;</span>CFG_USE_DPT<span class="nt">&lt;/key&gt;</span>
+<span class="w">                </span><span class="nt">&lt;integer&gt;</span>1<span class="nt">&lt;/integer&gt;</span>
+<span class="w">                </span><span class="nt">&lt;key&gt;</span>CFG_USE_FBC<span class="nt">&lt;/key&gt;</span>
+<span class="w">                </span><span class="nt">&lt;integer&gt;</span>0<span class="nt">&lt;/integer&gt;</span>
+<span class="w">                </span><span class="nt">&lt;key&gt;</span>CFG_USE_FBWRKLP<span class="nt">&lt;/key&gt;</span>
+<span class="w">                </span><span class="nt">&lt;integer&gt;</span>1<span class="nt">&lt;/integer&gt;</span>
+<span class="w">                </span><span class="nt">&lt;key&gt;</span>CFG_USE_FEDS<span class="nt">&lt;/key&gt;</span>
+<span class="w">                </span><span class="nt">&lt;integer&gt;</span>1<span class="nt">&lt;/integer&gt;</span>
+<span class="w">                </span><span class="nt">&lt;key&gt;</span>CFG_USE_LPT<span class="nt">&lt;/key&gt;</span>
+<span class="w">                </span><span class="nt">&lt;integer&gt;</span>1<span class="nt">&lt;/integer&gt;</span>
+<span class="w">                </span><span class="nt">&lt;key&gt;</span>CFG_USE_PSR<span class="nt">&lt;/key&gt;</span>
+<span class="w">                </span><span class="nt">&lt;integer&gt;</span>0<span class="nt">&lt;/integer&gt;</span>
+<span class="w">                </span><span class="nt">&lt;key&gt;</span>CFG_USE_SCANOUT<span class="nt">&lt;/key&gt;</span>
+<span class="w">                </span><span class="nt">&lt;integer&gt;</span>1<span class="nt">&lt;/integer&gt;</span>
+<span class="w">                </span><span class="nt">&lt;key&gt;</span>CFG_USE_SRRB<span class="nt">&lt;/key&gt;</span>
+<span class="w">                </span><span class="nt">&lt;integer&gt;</span>0<span class="nt">&lt;/integer&gt;</span>
+<span class="w">                </span><span class="nt">&lt;key&gt;</span>CFG_USE_STUTTER<span class="nt">&lt;/key&gt;</span>
+<span class="w">                </span><span class="nt">&lt;integer&gt;</span>1<span class="nt">&lt;/integer&gt;</span>
+<span class="w">                </span><span class="nt">&lt;key&gt;</span>CFG_USE_TCON<span class="nt">&lt;/key&gt;</span>
+<span class="w">                </span><span class="nt">&lt;integer&gt;</span>1<span class="nt">&lt;/integer&gt;</span>
+<span class="w">                </span><span class="nt">&lt;key&gt;</span>PP_DisableDIDT<span class="nt">&lt;/key&gt;</span>
+<span class="w">                </span><span class="nt">&lt;integer&gt;</span>1<span class="nt">&lt;/integer&gt;</span>
+<span class="w">                </span><span class="nt">&lt;key&gt;</span>PP_DisablePowerContainment<span class="nt">&lt;/key&gt;</span>
+<span class="w">                </span><span class="nt">&lt;integer&gt;</span>1<span class="nt">&lt;/integer&gt;</span>
+<span class="w">                </span><span class="nt">&lt;key&gt;</span>PP_DisableVoltageIsland<span class="nt">&lt;/key&gt;</span>
+<span class="w">                </span><span class="nt">&lt;integer&gt;</span>0<span class="nt">&lt;/integer&gt;</span>
+<span class="w">                </span><span class="nt">&lt;key&gt;</span>PP_FuzzyFanControl<span class="nt">&lt;/key&gt;</span>
+<span class="w">                </span><span class="nt">&lt;integer&gt;</span>1<span class="nt">&lt;/integer&gt;</span>
+<span class="w">                </span><span class="nt">&lt;key&gt;</span>device_type<span class="nt">&lt;/key&gt;</span>
+<span class="w">                </span><span class="nt">&lt;string&gt;</span>ATY,AdderParent<span class="nt">&lt;/string&gt;</span>
+<span class="w">                </span><span class="nt">&lt;key&gt;</span>hda-gfx<span class="nt">&lt;/key&gt;</span>
+<span class="w">                </span><span class="nt">&lt;string&gt;</span>onboard-1<span class="nt">&lt;/string&gt;</span>
+<span class="w">                </span><span class="nt">&lt;key&gt;</span>model<span class="nt">&lt;/key&gt;</span>
+<span class="w">                </span><span class="nt">&lt;string&gt;</span>Radeon<span class="w"> </span>Pro<span class="w"> </span>W5700X<span class="nt">&lt;/string&gt;</span>
+<span class="w">                </span><span class="nt">&lt;key&gt;</span>name<span class="nt">&lt;/key&gt;</span>
+<span class="w">                </span><span class="nt">&lt;string&gt;</span>ATY_GPU<span class="nt">&lt;/string&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/dict&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/dict&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/dict&gt;</span>
 </code></pre></div>
 <h3 id="radeon-6600">Radeon 6600<a class="headerlink" href="#radeon-6600" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="nt">&lt;key&gt;</span>这里写你显卡的实际的设备路径(Hackintool PCIE里面可以看到)<span class="nt">&lt;/key&gt;</span>
-            <span class="nt">&lt;dict&gt;</span>
-                <span class="nt">&lt;key&gt;</span>@0,name<span class="nt">&lt;/key&gt;</span>
-                <span class="nt">&lt;string&gt;</span>ATY,Henbury<span class="nt">&lt;/string&gt;</span>
-                <span class="nt">&lt;key&gt;</span>@1,name<span class="nt">&lt;/key&gt;</span>
-                <span class="nt">&lt;string&gt;</span>ATY,Henbury<span class="nt">&lt;/string&gt;</span>
-                <span class="nt">&lt;key&gt;</span>@2,name<span class="nt">&lt;/key&gt;</span>
-                <span class="nt">&lt;string&gt;</span>ATY,Henbury<span class="nt">&lt;/string&gt;</span>
-                <span class="nt">&lt;key&gt;</span>@3,name<span class="nt">&lt;/key&gt;</span>
-                <span class="nt">&lt;string&gt;</span>ATY,Henbury<span class="nt">&lt;/string&gt;</span>
-                <span class="nt">&lt;key&gt;</span>ATY,DeviceName<span class="nt">&lt;/key&gt;</span>
-                <span class="nt">&lt;string&gt;</span>W6600X<span class="nt">&lt;/string&gt;</span>
-                <span class="nt">&lt;key&gt;</span>ATY,EFIVersion<span class="nt">&lt;/key&gt;</span>
-                <span class="nt">&lt;string&gt;</span>01.01.270<span class="nt">&lt;/string&gt;</span>
-                <span class="nt">&lt;key&gt;</span>ATY,FamilyName<span class="nt">&lt;/key&gt;</span>
-                <span class="nt">&lt;string&gt;</span>Radeon Pro<span class="nt">&lt;/string&gt;</span>
-                <span class="nt">&lt;key&gt;</span>device_type<span class="nt">&lt;/key&gt;</span>
-                <span class="nt">&lt;string&gt;</span>ATY,HenburyParent<span class="nt">&lt;/string&gt;</span>
-                <span class="nt">&lt;key&gt;</span>model<span class="nt">&lt;/key&gt;</span>
-                <span class="nt">&lt;string&gt;</span>AMD Radeon RRO W6600X<span class="nt">&lt;/string&gt;</span>
-                <span class="nt">&lt;key&gt;</span>name<span class="nt">&lt;/key&gt;</span>
-                <span class="nt">&lt;string&gt;</span>ATY,Henbury<span class="nt">&lt;/string&gt;</span>
-            <span class="nt">&lt;/dict&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;key&gt;</span>这里写你显卡的实际的设备路径(Hackintool<span class="w"> </span>PCIE里面可以看到)<span class="nt">&lt;/key&gt;</span>
+<span class="w">            </span><span class="nt">&lt;dict&gt;</span>
+<span class="w">                </span><span class="nt">&lt;key&gt;</span>@0,name<span class="nt">&lt;/key&gt;</span>
+<span class="w">                </span><span class="nt">&lt;string&gt;</span>ATY,Henbury<span class="nt">&lt;/string&gt;</span>
+<span class="w">                </span><span class="nt">&lt;key&gt;</span>@1,name<span class="nt">&lt;/key&gt;</span>
+<span class="w">                </span><span class="nt">&lt;string&gt;</span>ATY,Henbury<span class="nt">&lt;/string&gt;</span>
+<span class="w">                </span><span class="nt">&lt;key&gt;</span>@2,name<span class="nt">&lt;/key&gt;</span>
+<span class="w">                </span><span class="nt">&lt;string&gt;</span>ATY,Henbury<span class="nt">&lt;/string&gt;</span>
+<span class="w">                </span><span class="nt">&lt;key&gt;</span>@3,name<span class="nt">&lt;/key&gt;</span>
+<span class="w">                </span><span class="nt">&lt;string&gt;</span>ATY,Henbury<span class="nt">&lt;/string&gt;</span>
+<span class="w">                </span><span class="nt">&lt;key&gt;</span>ATY,DeviceName<span class="nt">&lt;/key&gt;</span>
+<span class="w">                </span><span class="nt">&lt;string&gt;</span>W6600X<span class="nt">&lt;/string&gt;</span>
+<span class="w">                </span><span class="nt">&lt;key&gt;</span>ATY,EFIVersion<span class="nt">&lt;/key&gt;</span>
+<span class="w">                </span><span class="nt">&lt;string&gt;</span>01.01.270<span class="nt">&lt;/string&gt;</span>
+<span class="w">                </span><span class="nt">&lt;key&gt;</span>ATY,FamilyName<span class="nt">&lt;/key&gt;</span>
+<span class="w">                </span><span class="nt">&lt;string&gt;</span>Radeon<span class="w"> </span>Pro<span class="nt">&lt;/string&gt;</span>
+<span class="w">                </span><span class="nt">&lt;key&gt;</span>device_type<span class="nt">&lt;/key&gt;</span>
+<span class="w">                </span><span class="nt">&lt;string&gt;</span>ATY,HenburyParent<span class="nt">&lt;/string&gt;</span>
+<span class="w">                </span><span class="nt">&lt;key&gt;</span>model<span class="nt">&lt;/key&gt;</span>
+<span class="w">                </span><span class="nt">&lt;string&gt;</span>AMD<span class="w"> </span>Radeon<span class="w"> </span>RRO<span class="w"> </span>W6600X<span class="nt">&lt;/string&gt;</span>
+<span class="w">                </span><span class="nt">&lt;key&gt;</span>name<span class="nt">&lt;/key&gt;</span>
+<span class="w">                </span><span class="nt">&lt;string&gt;</span>ATY,Henbury<span class="nt">&lt;/string&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/dict&gt;</span>
 </code></pre></div>
 <h3 id="radeon-6800">Radeon 6800<a class="headerlink" href="#radeon-6800" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>    <span class="nt">&lt;key&gt;</span>DeviceProperties<span class="nt">&lt;/key&gt;</span>
-    <span class="nt">&lt;dict&gt;</span>
-        <span class="nt">&lt;key&gt;</span>Add<span class="nt">&lt;/key&gt;</span>
-        <span class="nt">&lt;dict&gt;</span>
-            <span class="nt">&lt;key&gt;</span>这里写你显卡的实际的设备路径(Hackintool PCIE里面可以看到)<span class="nt">&lt;/key&gt;</span>
-            <span class="nt">&lt;dict&gt;</span>
-                <span class="nt">&lt;key&gt;</span>@0,name<span class="nt">&lt;/key&gt;</span>
-                <span class="nt">&lt;string&gt;</span>ATY,Belknap<span class="nt">&lt;/string&gt;</span>
-                <span class="nt">&lt;key&gt;</span>@1,name<span class="nt">&lt;/key&gt;</span>
-                <span class="nt">&lt;string&gt;</span>ATY,Belknap<span class="nt">&lt;/string&gt;</span>
-                <span class="nt">&lt;key&gt;</span>@2,name<span class="nt">&lt;/key&gt;</span>
-                <span class="nt">&lt;string&gt;</span>ATY,Belknap<span class="nt">&lt;/string&gt;</span>
-                <span class="nt">&lt;key&gt;</span>@3,name<span class="nt">&lt;/key&gt;</span>
-                <span class="nt">&lt;string&gt;</span>ATY,Belknap<span class="nt">&lt;/string&gt;</span>
-                <span class="nt">&lt;key&gt;</span>device_type<span class="nt">&lt;/key&gt;</span>
-                <span class="nt">&lt;string&gt;</span>ATY,BelknapParent<span class="nt">&lt;/string&gt;</span>
-            <span class="nt">&lt;/dict&gt;</span>
-        <span class="nt">&lt;/dict&gt;</span>
-        <span class="nt">&lt;key&gt;</span>Delete<span class="nt">&lt;/key&gt;</span>
-        <span class="nt">&lt;dict/&gt;</span>
-    <span class="nt">&lt;/dict&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="nt">&lt;key&gt;</span>DeviceProperties<span class="nt">&lt;/key&gt;</span>
+<span class="w">    </span><span class="nt">&lt;dict&gt;</span>
+<span class="w">        </span><span class="nt">&lt;key&gt;</span>Add<span class="nt">&lt;/key&gt;</span>
+<span class="w">        </span><span class="nt">&lt;dict&gt;</span>
+<span class="w">            </span><span class="nt">&lt;key&gt;</span>这里写你显卡的实际的设备路径(Hackintool<span class="w"> </span>PCIE里面可以看到)<span class="nt">&lt;/key&gt;</span>
+<span class="w">            </span><span class="nt">&lt;dict&gt;</span>
+<span class="w">                </span><span class="nt">&lt;key&gt;</span>@0,name<span class="nt">&lt;/key&gt;</span>
+<span class="w">                </span><span class="nt">&lt;string&gt;</span>ATY,Belknap<span class="nt">&lt;/string&gt;</span>
+<span class="w">                </span><span class="nt">&lt;key&gt;</span>@1,name<span class="nt">&lt;/key&gt;</span>
+<span class="w">                </span><span class="nt">&lt;string&gt;</span>ATY,Belknap<span class="nt">&lt;/string&gt;</span>
+<span class="w">                </span><span class="nt">&lt;key&gt;</span>@2,name<span class="nt">&lt;/key&gt;</span>
+<span class="w">                </span><span class="nt">&lt;string&gt;</span>ATY,Belknap<span class="nt">&lt;/string&gt;</span>
+<span class="w">                </span><span class="nt">&lt;key&gt;</span>@3,name<span class="nt">&lt;/key&gt;</span>
+<span class="w">                </span><span class="nt">&lt;string&gt;</span>ATY,Belknap<span class="nt">&lt;/string&gt;</span>
+<span class="w">                </span><span class="nt">&lt;key&gt;</span>device_type<span class="nt">&lt;/key&gt;</span>
+<span class="w">                </span><span class="nt">&lt;string&gt;</span>ATY,BelknapParent<span class="nt">&lt;/string&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/dict&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/dict&gt;</span>
+<span class="w">        </span><span class="nt">&lt;key&gt;</span>Delete<span class="nt">&lt;/key&gt;</span>
+<span class="w">        </span><span class="nt">&lt;dict/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/dict&gt;</span>
 </code></pre></div>
 <h3 id="radeon-6900">Radeon 6900<a class="headerlink" href="#radeon-6900" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>    <span class="nt">&lt;key&gt;</span>DeviceProperties<span class="nt">&lt;/key&gt;</span>
-    <span class="nt">&lt;dict&gt;</span>
-        <span class="nt">&lt;key&gt;</span>Add<span class="nt">&lt;/key&gt;</span>
-        <span class="nt">&lt;dict&gt;</span>
-            <span class="nt">&lt;key&gt;</span>这里写你显卡的实际的设备路径(Hackintool PCIE里面可以看到)<span class="nt">&lt;/key&gt;</span>
-            <span class="nt">&lt;dict&gt;</span>
-                <span class="nt">&lt;key&gt;</span>@0,name<span class="nt">&lt;/key&gt;</span>
-                <span class="nt">&lt;string&gt;</span>ATY,Carswell<span class="nt">&lt;/string&gt;</span>
-                <span class="nt">&lt;key&gt;</span>@1,name<span class="nt">&lt;/key&gt;</span>
-                <span class="nt">&lt;string&gt;</span>ATY,Carswell<span class="nt">&lt;/string&gt;</span>
-                <span class="nt">&lt;key&gt;</span>@2,name<span class="nt">&lt;/key&gt;</span>
-                <span class="nt">&lt;string&gt;</span>ATY,Carswell<span class="nt">&lt;/string&gt;</span>
-                <span class="nt">&lt;key&gt;</span>@3,name<span class="nt">&lt;/key&gt;</span>
-                <span class="nt">&lt;string&gt;</span>ATY,Carswell<span class="nt">&lt;/string&gt;</span>
-                <span class="nt">&lt;key&gt;</span>device_type<span class="nt">&lt;/key&gt;</span>
-                <span class="nt">&lt;string&gt;</span>ATY,CarswellParent<span class="nt">&lt;/string&gt;</span>
-            <span class="nt">&lt;/dict&gt;</span>
-        <span class="nt">&lt;/dict&gt;</span>
-        <span class="nt">&lt;key&gt;</span>Delete<span class="nt">&lt;/key&gt;</span>
-        <span class="nt">&lt;dict/&gt;</span>
-    <span class="nt">&lt;/dict&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="nt">&lt;key&gt;</span>DeviceProperties<span class="nt">&lt;/key&gt;</span>
+<span class="w">    </span><span class="nt">&lt;dict&gt;</span>
+<span class="w">        </span><span class="nt">&lt;key&gt;</span>Add<span class="nt">&lt;/key&gt;</span>
+<span class="w">        </span><span class="nt">&lt;dict&gt;</span>
+<span class="w">            </span><span class="nt">&lt;key&gt;</span>这里写你显卡的实际的设备路径(Hackintool<span class="w"> </span>PCIE里面可以看到)<span class="nt">&lt;/key&gt;</span>
+<span class="w">            </span><span class="nt">&lt;dict&gt;</span>
+<span class="w">                </span><span class="nt">&lt;key&gt;</span>@0,name<span class="nt">&lt;/key&gt;</span>
+<span class="w">                </span><span class="nt">&lt;string&gt;</span>ATY,Carswell<span class="nt">&lt;/string&gt;</span>
+<span class="w">                </span><span class="nt">&lt;key&gt;</span>@1,name<span class="nt">&lt;/key&gt;</span>
+<span class="w">                </span><span class="nt">&lt;string&gt;</span>ATY,Carswell<span class="nt">&lt;/string&gt;</span>
+<span class="w">                </span><span class="nt">&lt;key&gt;</span>@2,name<span class="nt">&lt;/key&gt;</span>
+<span class="w">                </span><span class="nt">&lt;string&gt;</span>ATY,Carswell<span class="nt">&lt;/string&gt;</span>
+<span class="w">                </span><span class="nt">&lt;key&gt;</span>@3,name<span class="nt">&lt;/key&gt;</span>
+<span class="w">                </span><span class="nt">&lt;string&gt;</span>ATY,Carswell<span class="nt">&lt;/string&gt;</span>
+<span class="w">                </span><span class="nt">&lt;key&gt;</span>device_type<span class="nt">&lt;/key&gt;</span>
+<span class="w">                </span><span class="nt">&lt;string&gt;</span>ATY,CarswellParent<span class="nt">&lt;/string&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/dict&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/dict&gt;</span>
+<span class="w">        </span><span class="nt">&lt;key&gt;</span>Delete<span class="nt">&lt;/key&gt;</span>
+<span class="w">        </span><span class="nt">&lt;dict/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/dict&gt;</span>
 </code></pre></div>
 <h2 id="_11">参考链接<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
 <p>下面是写这篇文章的一些参考链接，感兴趣的朋友可以自己去看看：</p>

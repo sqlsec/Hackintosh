@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://apple.sqlsec.com/3-%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C/3-2/">
       
       <link rel="icon" href="https://image.3001.net/images/20200922/16007336487809.jpg">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.1">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-8.5.1">
     
     
       
@@ -1589,6 +1589,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../9-%E6%88%90%E6%9E%9C%E5%88%86%E4%BA%AB/9-2/" class="md-nav__link">
+        13代装机方案
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -1795,20 +1809,20 @@
 <h2 id="docs">Docs<a class="headerlink" href="#docs" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>~/Downloads/OpenCore-0.7.3-RELEASE/Docs
 .
-├── AcpiSamples          <span class="c1"># ACPI 示例文件</span>
-│   ├── Binaries         <span class="c1"># 编译好的 ACPI 文件</span>
-│   │   ├── SSDT-ALS0.aml
-│   │   ├── SSDT-AWAC-DISABLE.aml
-│   │   ...
-│   └── Source           <span class="c1"># ACPI 原始文件</span>
-│       ├── SSDT-ALS0.dsl
-│       ├── SSDT-AWAC-DISABLE.dsl
-│       ...
-├── Changelog.md         <span class="c1"># 版本更新日志</span>
-├── Configuration.pdf    <span class="c1"># 当期版本的官方配置文档</span>
-├── Differences.pdf      <span class="c1"># 和上一个版本的改变部分</span>
-├── Sample.plist         <span class="c1"># 当期版本的配置文件模板</span>
-└── SampleCustom.plist   <span class="c1"># 当期版本的配置文件模板</span>
+├──<span class="w"> </span>AcpiSamples<span class="w">          </span><span class="c1"># ACPI 示例文件</span>
+│<span class="w">   </span>├──<span class="w"> </span>Binaries<span class="w">         </span><span class="c1"># 编译好的 ACPI 文件</span>
+│<span class="w">   </span>│<span class="w">   </span>├──<span class="w"> </span>SSDT-ALS0.aml
+│<span class="w">   </span>│<span class="w">   </span>├──<span class="w"> </span>SSDT-AWAC-DISABLE.aml
+│<span class="w">   </span>│<span class="w">   </span>...
+│<span class="w">   </span>└──<span class="w"> </span>Source<span class="w">           </span><span class="c1"># ACPI 原始文件</span>
+│<span class="w">       </span>├──<span class="w"> </span>SSDT-ALS0.dsl
+│<span class="w">       </span>├──<span class="w"> </span>SSDT-AWAC-DISABLE.dsl
+│<span class="w">       </span>...
+├──<span class="w"> </span>Changelog.md<span class="w">         </span><span class="c1"># 版本更新日志</span>
+├──<span class="w"> </span>Configuration.pdf<span class="w">    </span><span class="c1"># 当期版本的官方配置文档</span>
+├──<span class="w"> </span>Differences.pdf<span class="w">      </span><span class="c1"># 和上一个版本的改变部分</span>
+├──<span class="w"> </span>Sample.plist<span class="w">         </span><span class="c1"># 当期版本的配置文件模板</span>
+└──<span class="w"> </span>SampleCustom.plist<span class="w">   </span><span class="c1"># 当期版本的配置文件模板</span>
 </code></pre></div>
 <p>这里面文件都比较好理解，除了发现貌似 2 个配置文件模板，分别是 Sample.plist 和 SampleCustom.plist，但是国光我对比了一下，发现二者基本上没有差别，理论上都是可使用的，我们普遍使用 <code>Sample.plist</code> 这个配置文件比较多。</p>
 <h2 id="utilities">Utilities<a class="headerlink" href="#utilities" title="Permanent link">&para;</a></h2>
@@ -1831,35 +1845,35 @@
 <p>最后来到了我们的重头戏 EFI 部分，下面是 EFI 主要文件夹的作用讲解：</p>
 <div class="highlight"><pre><span></span><code>~/Downloads/OpenCore-0.7.3-RELEASE/X64/EFI
 .
-├── BOOT                          <span class="c1"># 引导文件夹</span>
-│   └── BOOTx64.efi               <span class="c1"># 引导文件</span>
-└── OC                            <span class="c1"># OC 文件夹</span>
-    ├── ACPI                      <span class="c1"># ACPI 存放的文件夹</span>
-    │   ├── SSDT-EC.aml
-    │   ├── SSDT-PLUG.aml
-    │   │── SSDT-PNLF.aml
-    │       ...
-    ├── Drivers                   <span class="c1"># OC 驱动的文件夹</span>
-    │   ├── AudioDxe.efi
-    │   ├── CrScreenshotDxe.efi
-    │   ├── HiiDatabase.efi
-    │       ...
-    ├── Kexts                     <span class="c1"># 存放内核拓展 kexts 的文件夹</span>
-    │   ├── AppleALC.kext
-    │   ├── Lilu.kext
-    │   ├── WhateverGreen.kext
-    │       ...
-    ├── OpenCore.efi              <span class="c1"># OC 的核心文件</span>
-    ├── Resources                 <span class="c1"># OC 的主题样式</span>
-    │   ├── Audio
-    │   ├── Font
-    │   ├── Image
-    │   └── Label
-    └── Tools                     <span class="c1"># OC 小工具文件夹</span>
-        ├── BootKicker.efi
-        ├── ChipTune.efi
-        ├── CleanNvram.efi
-            ...
+├──<span class="w"> </span>BOOT<span class="w">                          </span><span class="c1"># 引导文件夹</span>
+│<span class="w">   </span>└──<span class="w"> </span>BOOTx64.efi<span class="w">               </span><span class="c1"># 引导文件</span>
+└──<span class="w"> </span>OC<span class="w">                            </span><span class="c1"># OC 文件夹</span>
+<span class="w">    </span>├──<span class="w"> </span>ACPI<span class="w">                    </span><span class="c1"># ACPI 存放的文件夹</span>
+<span class="w">    </span>│<span class="w">   </span>├──<span class="w"> </span>SSDT-EC.aml
+<span class="w">    </span>│<span class="w">   </span>├──<span class="w"> </span>SSDT-PLUG.aml
+<span class="w">    </span>│<span class="w">   </span>│──<span class="w"> </span>SSDT-PNLF.aml
+<span class="w">    </span>│<span class="w">       </span>...
+<span class="w">    </span>├──<span class="w"> </span>Drivers<span class="w">                   </span><span class="c1"># OC 驱动的文件夹</span>
+<span class="w">    </span>│<span class="w">   </span>├──<span class="w"> </span>AudioDxe.efi
+<span class="w">    </span>│<span class="w">   </span>├──<span class="w"> </span>CrScreenshotDxe.efi
+<span class="w">    </span>│<span class="w">   </span>├──<span class="w"> </span>HiiDatabase.efi
+<span class="w">    </span>│<span class="w">       </span>...
+<span class="w">    </span>├──<span class="w"> </span>Kexts<span class="w">                     </span><span class="c1"># 存放内核拓展 kexts 的文件夹</span>
+<span class="w">    </span>│<span class="w">   </span>├──<span class="w"> </span>AppleALC.kext
+<span class="w">    </span>│<span class="w">   </span>├──<span class="w"> </span>Lilu.kext
+<span class="w">    </span>│<span class="w">   </span>├──<span class="w"> </span>WhateverGreen.kext
+<span class="w">    </span>│<span class="w">       </span>...
+<span class="w">    </span>├──<span class="w"> </span>OpenCore.efi<span class="w">              </span><span class="c1"># OC 的核心文件</span>
+<span class="w">    </span>├──<span class="w"> </span>Resources<span class="w">                 </span><span class="c1"># OC 的主题样式</span>
+<span class="w">    </span>│<span class="w">   </span>├──<span class="w"> </span>Audio
+<span class="w">    </span>│<span class="w">   </span>├──<span class="w"> </span>Font
+<span class="w">    </span>│<span class="w">   </span>├──<span class="w"> </span>Image
+<span class="w">    </span>│<span class="w">   </span>└──<span class="w"> </span>Label
+<span class="w">    </span>└──<span class="w"> </span>Tools<span class="w">                     </span><span class="c1"># OC 小工具文件夹</span>
+<span class="w">        </span>├──<span class="w"> </span>BootKicker.efi
+<span class="w">        </span>├──<span class="w"> </span>ChipTune.efi
+<span class="w">        </span>├──<span class="w"> </span>CleanNvram.efi
+<span class="w">            </span>...
 </code></pre></div>
 <h3 id="boot">BOOT<a class="headerlink" href="#boot" title="Permanent link">&para;</a></h3>
 <p>BOOT 引导文件夹，下面躺着 BOOTx64.ef 引导文件</p>

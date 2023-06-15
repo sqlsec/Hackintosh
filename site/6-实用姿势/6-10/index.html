@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://apple.sqlsec.com/6-%E5%AE%9E%E7%94%A8%E5%A7%BF%E5%8A%BF/6-10/">
       
       <link rel="icon" href="https://image.3001.net/images/20200922/16007336487809.jpg">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.1">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-8.5.1">
     
     
       
@@ -1609,6 +1609,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../9-%E6%88%90%E6%9E%9C%E5%88%86%E4%BA%AB/9-2/" class="md-nav__link">
+        13代装机方案
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -1879,10 +1893,10 @@
 <li>你想把mac的启动项标题命名为Monterey，则文本文件的内容就为<code>Monterey</code>,文件复制到<code>/System/Volumes/Preboot/UUID-number/System/Library/CoreServices</code>至于UUID每个人都不同，你只需要访达前往输入<code>/System/Volumes/Preboot/</code>接下来的目录用鼠标点击即可。</li>
 <li>这一步要在mac环境下进行<code>.contentDetails</code>在 Windows下是隐藏文件，终端输入以下命令即可显示隐藏文件</li>
 </ul>
-<div class="highlight"><pre><span></span><code>defaults write com.apple.finder AppleShowAllFiles -boolean true<span class="p">;</span>killall Finder
+<div class="highlight"><pre><span></span><code>defaults<span class="w"> </span>write<span class="w"> </span>com.apple.finder<span class="w"> </span>AppleShowAllFiles<span class="w"> </span>-boolean<span class="w"> </span>true<span class="p">;</span>killall<span class="w"> </span>Finder
 </code></pre></div>
 <p>终端输入以下命令隐藏隐藏文件</p>
-<p><div class="highlight"><pre><span></span><code>defaults write com.apple.finder AppleShowAllFiles -boolean false<span class="p">;</span>killall Finder
+<p><div class="highlight"><pre><span></span><code>defaults<span class="w"> </span>write<span class="w"> </span>com.apple.finder<span class="w"> </span>AppleShowAllFiles<span class="w"> </span>-boolean<span class="w"> </span>false<span class="p">;</span>killall<span class="w"> </span>Finder
 </code></pre></div>
 - 此项工作需要关闭SIP，如何关闭请看OC配置的Misc章节最后部分</p>
 <h2 id="_8">手动添加的启动项<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
